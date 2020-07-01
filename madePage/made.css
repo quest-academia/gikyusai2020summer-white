@@ -49,11 +49,6 @@ main{
   background-color: white;
 }
 
-@media(min-width: 576px)
-.col-10{
-  height: 75%;
-}
-
 .comment{
   line-height: 2em;
   border-bottom: dotted 0.1rem gray;
