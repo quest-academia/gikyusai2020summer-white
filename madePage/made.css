@@ -1,0 +1,60 @@
+/* ? font-familyは何？ */
+html{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+  background-color: #fcfddb;
+}
+
+#form1{
+  height: 3rem;
+  background-color: #ffd401;
+}
+
+#form1 input[type=text]{
+  height: 2rem;
+  border-radius:2rem;
+  border: solid #ff7a28;
+  width: 15rem;
+}
+#form1 input[type=submit]{
+  height: 2rem;
+  border-radius:2rem;
+  border: solid #ff7a28;
+  background: #ff7a28;
+  color: #fdfdfd;
+}
+
+.navbar{
+  border-bottom: inset 0.5em #fba50b;
+}
+
+.whiteline{
+  background: linear-gradient(transparent 60%, #fdfdfd 60%);
+}
+
+.nav-item a {
+  color: black;
+}
+
+.firstborder{
+  border: solid #10821a thick;
+  border-radius: 2em;
+  background-color: white;
+}
+.secondborder{
+  border: solid #fae264 thick;
+  border-radius: 2em;
+  background-color: white;
+}
+
+@media(min-width: 576px)
+.col-10{
+  height: 75%;
+}
+
+.comment{
+  line-height: 2em;
+  border-bottom: dotted 0.1rem gray;
+}
