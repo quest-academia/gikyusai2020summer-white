@@ -48,6 +48,12 @@ main{
   border-radius: 2em;
   background-color: white;
 }
+/* スマホサイズでコンテンツの飛び出し防止 */
+@media(max-width: 576px){
+  .firstborder .row .col-10{
+    height: 75%;
+  }
+}
 
 .comment{
   line-height: 2em;
