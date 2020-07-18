@@ -16,7 +16,7 @@ class CreateChallengesTable extends Migration
         Schema::create('challenges', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('recipie_id');
+            $table->integer('recipe_id');
             $table->string('img');
             $table->text('impression');
             $table->timestamps();
