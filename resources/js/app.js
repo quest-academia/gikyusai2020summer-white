@@ -20,7 +20,35 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('favorite-component', require('./components/FavoriteComponent.vue').default);
+
+import FavoriteComponent from './components/FavoriteComponent.vue';
+Vue.component('favorite-component', FavoriteComponent);
+
+import Favorite from './components/Favorite.vue';
+Vue.component('favorite', Favorite);
+//Vue.component('favorite-component', require('./components/FavoriteComponent.vue').default);
+
+Vue.component('keijiban', require('./components/Keijiban.vue').default);
+
+import axios from "axios";
+axios.interceptors.request.use(
+	config => {
+		console.log('interceptors request', config);
+		return config;
+	},
+	error => {
+		return Promise.reject(error);
+	}
+);
+axios.interceptors.response.use(
+	response => {
+		console.log('interceptors response', response);
+		return response;
+	},
+	error => {
+		return Promise.reject(error);
+	}
+);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -14,8 +14,8 @@
 </head>
 <body>
 <div id="app">
-	<example-component></example-component>
 	<favorite-component></favorite-component>
+	<keijiban></keijiban>
 </div>
 <!-- Scripts -->
 <script src="{{ mix('/js/app.js') }}" defer></script>
