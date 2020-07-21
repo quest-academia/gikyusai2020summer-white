@@ -24,12 +24,11 @@ class RecipesRequest extends FormRequest
     public function rules()
     {
         return [
-			'user_id'  => 'required|integer|exists:users,id',
-			'name'     => 'required|string|max:255',
-			'img'      => 'required|file|mimes:jpg,jpeg,png,gif',
-			'time'     => 'required|integer',
-			'liqueur'  => 'required|integer',
-			'invention'=> 'required|string|max:255',
+			'name'     	  => 'required|string|max:255',
+			'recipes_img' => 'required|mimes:jpg,jpeg,png,gif',
+			'time'        => 'required|integer',
+			'liqueur'     => 'required|integer',
+			'invention'   => 'nullable|string|max:255',
         ];
     }
 }
