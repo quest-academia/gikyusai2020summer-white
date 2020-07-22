@@ -1,5 +1,8 @@
 <template>
 	<div>
+		<a href="/">TopPage</a>
+		<br>
+		<br>
 		<router-link v-bind:to="{name: 'iine'}">
 			<button class="btn btn-primary">いいね！へ行く</button>
 		</router-link>
@@ -71,6 +74,6 @@
 				this.name = "";
 				this.comment = "";
 			}
-		}
+		},
 	}
 </script>

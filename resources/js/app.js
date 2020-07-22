@@ -26,10 +26,12 @@ import Iine from './components/Iine.vue';
 import VueRouter from 'vue-router';
 import Top from './components/Top.vue';
 import Keijiban from './components/Keijiban.vue';
+import TopLink from "./components/TopLink.vue";
 
 Vue.use(VueRouter);
 
 Vue.component('top', require('./components/Top.vue').default);
+Vue.component('top-link', require('./components/TopLink.vue').default);
 
 const router = new VueRouter({
 	mode: 'history',

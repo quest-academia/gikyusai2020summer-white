@@ -1,5 +1,8 @@
 <template>
 	<div>
+		<a href="/">TopPage</a>
+		<br>
+		<br>
 		<router-link v-bind:to="{name: 'keijiban'}">
 			<button class="btn btn-primary">掲示板へ行く</button>
 		</router-link>
