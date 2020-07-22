@@ -8,7 +8,7 @@
 		</div>
 
 		<br><br>
-		<h1 class="mb-3">「いいね！」機能のサンプル</h1>
+		<h1 class="mb-3">トップページ</h1>
 		user_id: {{ challengeId }}
 		<table class="table table-bordered">
 			<thead class="bg-info text-white">

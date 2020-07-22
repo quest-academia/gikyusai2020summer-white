@@ -38008,7 +38008,7 @@ var render = function() {
     _c("br"),
     _c("br"),
     _vm._v(" "),
-    _c("h1", { staticClass: "mb-3" }, [_vm._v("「いいね！」機能のサンプル")]),
+    _c("h1", { staticClass: "mb-3" }, [_vm._v("トップページ")]),
     _vm._v("\n\tuser_id: " + _vm._s(_vm.challengeId) + "\n\t"),
     _c("table", { staticClass: "table table-bordered" }, [
       _vm._m(2),
