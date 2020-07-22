@@ -1,5 +1,13 @@
 <template>
 	<div>
+		<div>
+			<a href="/iine">いいね！へ行く</a>
+		</div>
+		<div>
+			<a href="/keijiban">掲示板へ行く</a>
+		</div>
+
+		<br><br>
 		<h1 class="mb-3">「いいね！」機能のサンプル</h1>
 		user_id: {{ challengeId }}
 		<table class="table table-bordered">

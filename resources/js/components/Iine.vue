@@ -1,5 +1,9 @@
 <template>
 	<div>
+		<router-link v-bind:to="{name: 'keijiban'}">
+			<button class="btn btn-primary">掲示板へ行く</button>
+		</router-link>
+		<br><br>
 		<button v-if="flag" v-on:click="changeFavorite">いいね済</button>
 		<button v-else v-on:click="changeFavorite">いいね</button>
 		<span>{{ number }}</span>

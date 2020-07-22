@@ -1,5 +1,8 @@
 <template>
 	<div>
+		<router-link v-bind:to="{name: 'iine'}">
+			<button class="btn btn-primary">いいね！へ行く</button>
+		</router-link>
 		<br><br>
 		<h3>掲示板に投稿する</h3>	
 		<label for="name">ニックネーム</label>
@@ -17,7 +20,7 @@
 		<button v-on:click="createComment">ボタン</button>
 		<br><br>
 		<h2>掲示板</h2>
-		<div v-for="post in posts" v-bind:key="post.name">
+		<div v-for="post in posts" v-bind:key="post.id">
 			<div>名前：{{ post.name }}</div>
 			<div>コメント：{{ post.comment }}</div>
 			<br>
@@ -59,7 +62,8 @@
 						}
 					)
 					.then(response => {
-						console.log(response);
+						this.posts = response.data.posts
+						console.log(response.data.posts);
 					})
 					.catch(error => {
 						console.log(error);

@@ -14,7 +14,7 @@ class PostController extends Controller
      */
     public function index()
     {
-		$posts = Post::all();
+		$posts = Post::orderBy('id','desc')->get();
 		return response()->json(
             [
                 'posts' => $posts
@@ -47,7 +47,14 @@ class PostController extends Controller
 		$post->comment = $request->comment;
 		$post->save();
 
-        return view('create');
+		$posts = Post::orderBy('id','desc')->get();
+		return response()->json(
+            [
+                'posts' => $posts
+            ],
+            200,[],
+            JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT
+        );
     }
 
     /**
