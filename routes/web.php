@@ -28,6 +28,9 @@ Route::post('/favorite', 'FavoriteController@favorite');
 Route::post('/unfavorite', 'FavoriteController@unfavorite');
 Route::get('/getUsers', 'FavoriteController@getUsers');
 
+Route::get('/recipes/list', 'RecipesController@list');
+Route::post('/recipes/search', 'RecipesController@search');
+
 Route::get('/test', function() {
     return view('app');
 });

@@ -27,6 +27,7 @@ import VueRouter from 'vue-router';
 import Top from './components/Top.vue';
 import Keijiban from './components/Keijiban.vue';
 import TopLink from "./components/TopLink.vue";
+import TopPage from "./components/TopPage.vue";
 
 Vue.use(VueRouter);
 
@@ -45,6 +46,11 @@ const router = new VueRouter({
 			path: '/keijiban',
 			name: 'keijiban',
 			component: Keijiban
+		},
+		{
+			path: '/toppage',
+			name: 'toppage',
+			component: TopPage
 		}
 	]
 });

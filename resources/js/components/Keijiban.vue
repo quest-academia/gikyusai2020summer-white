@@ -4,7 +4,7 @@
 		<br>
 		<br>
 		<router-link v-bind:to="{name: 'iine'}">
-			<button class="btn btn-primary">いいね！へ行く</button>
+			<button class="btn btn-primary">いいね!へ行く</button>
 		</router-link>
 		<br><br>
 		<h3>掲示板に投稿する</h3>	
