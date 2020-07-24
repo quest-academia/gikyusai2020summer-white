@@ -8,6 +8,7 @@ use App\Http\Requests\RecipesRequest;
 
 use App\User;
 use App\Recipe;
+use App\Ingredient;
 
 class RecipesController extends Controller
 {
@@ -58,6 +59,22 @@ class RecipesController extends Controller
 
 			// imgファイル自体を保存
 			$recipeImg->storeAs('public/recipes_img', $fileName);
+
+			//ingredientの内容
+			$ingredient = new Ingredient;
+			$ingredient->recipe_id = \Auth::user()->id;
+			$max = count($_POST['ingedients']);
+			for($i=0; $i<$max; $i++){
+				$ingredient->name = $request->ingedients;
+				// $ingredient->save();
+			}
+			$max2 = count($_POST['ingedient']);
+			for($i=0; $i<$max2; $i++){
+				$ingredient->quantity = $request->ingedient;
+			}
+			$ingredient->save();
+			var_dump(__LINE__);
+			
 
 			// トランザクションの保存処理を実行
 			\DB::commit();
