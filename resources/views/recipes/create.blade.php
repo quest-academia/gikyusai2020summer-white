@@ -123,74 +123,82 @@
 
 			<div class="col-md-3 offset-md-1">
 			  <label for="count">1.　</label>
-			  <input type="text" placeholder="例　ピーマン">
+			  <input type="text" name="ingedients[]" placeholder="例　ピーマン">
 			</div>
 			<div class="col-md-8">
-			  <input type="text" placeholder="例　3個">
-			</div>
-			<div class="col-md-3 offset-md-1">
-			  <label for="count">2.　</label>
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedient[]" placeholder="例　3個">
 			</div>
 
-			<div class="col-md-8">
-			  <input type="text" placeholder="">
+			<div class="col-md-3 offset-md-1">
+			  <label for="count">2.　</label>
+			  <input type="text" name="ingedients[]" placeholder="">
 			</div>
+			<div class="col-md-8">
+			  <input type="text" name="ingedient[]" placeholder="">
+			</div>
+
 			<div class="col-md-3 offset-md-1">
 			  <label for="count">3.　</label>
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedients[]" placeholder="">
 			</div>
 			<div class="col-md-8">
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedient[]" placeholder="">
 			</div>
+
 			<div class="col-md-3 offset-md-1">
 			  <label for="count">4.　</label>
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedients[]" placeholder="">
 			</div>
 			<div class="col-md-8">
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedient[]" placeholder="">
 			</div>
+
 			<div class="col-md-3 offset-md-1">
 			  <label for="count">5.　</label>
-			  <input type="text" placeholder="">　
+			  <input type="text" name="ingedients[]" placeholder="">　
 			</div>
 			<div class="col-md-8">
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedient[]" placeholder="">
 			</div>
+
 			<div class="col-md-3 offset-md-1">
 			  <label for="count">6.　</label>
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedients[]" placeholder="">
 			</div>
 			<div class="col-md-8">
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedient[]" placeholder="">
 			</div>
+
 			<div class="col-md-3 offset-md-1">
 			  <label for="count">7.　</label>
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedients[]" placeholder="">
 			</div>
 			<div class="col-md-8">
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedient[]" placeholder="">
 			</div>
+
 			<div class="col-md-3 offset-md-1">
 			  <label for="count">8.　</label>
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedients[]" placeholder="">
 			</div>
 			<div class="col-md-8">
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedient[]" placeholder="">
 			</div>
+
 			<div class="col-md-3 offset-md-1">
 			  <label for="count">9.　</label>
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedients[]" placeholder="">
 			</div>
 			<div class="col-md-8">
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedient[]" placeholder="">
 			</div>
+
 			<div class="col-md-3 offset-md-1">
 			  <label for="count">10.　 </label>
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedients[]" placeholder="">
 			</div>
 			<div class="col-md-8">
-			  <input type="text" placeholder="">
+			  <input type="text" name="ingedient[]" placeholder="">
 			</div>
 
 			<div class="col-md-11 offset-md-1">
