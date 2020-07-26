@@ -19,6 +19,8 @@ Route::get('/recipes/create', 'RecipesController@create')->name('recipes.create'
 Route::post('/recipes/store', 'RecipesController@store')->name('recipes.store');
 Route::get('/recipes/show/{id}', 'RecipesController@show')->name('recipes.show')->where('id', '[0-9]+');
 
+Route::resoure('/recipes/{id}/challenge', 'ChallengesController', ['except' => ['index']]);
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
