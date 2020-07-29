@@ -10,14 +10,11 @@ use App\Challenge;
 
 class ChallengesController extends Controller
 {
-    
-
     public function create()
     {
         //
     }
 
-    
     public function store(ChallengesRequest $request)
     {
         //
@@ -33,13 +30,11 @@ class ChallengesController extends Controller
         //
     }
 
-  
     public function update(ChallengesRequest $request, $id)
     {
         //
     }
 
-  
     public function destroy($id)
     {
         //
