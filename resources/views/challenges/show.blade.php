@@ -16,10 +16,10 @@
 
           <!-- ! データ -->
           <h3>
-            <span class="mr-5">{{ $recipe_user->name }}の</span><span>{{ $recipe->name }}</span>
+            <span class="mr-5">{{$user->name}}の</span><span>{{ $recipe->name }}</span>
           </h3>
 
-          <img class="mt-3" src="" alt="NO IMAGE" style="width: 80%; height: 50%;">
+          <img class="mt-3" src="/storage/challenges_img/{{ $challenge->img }}" alt="NO IMAGE" style="width: 80%; height: 50%;">
           <p class="text-justify mt-4">
             <span class="comment">{{ $challenge->impression }}</span>
           </p>
