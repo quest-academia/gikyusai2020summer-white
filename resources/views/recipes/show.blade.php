@@ -39,6 +39,14 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <form method="get" action="{{ route('challenges.create') }}">
+          <input type="hidden" name="recipe_id" value="{{$recipe->id}}">
+            <button type="submit" class="btn btn-lg btn-info" style="width: 100%; color: white;">自分の「作ってみた」を投稿する</button>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 @endsection

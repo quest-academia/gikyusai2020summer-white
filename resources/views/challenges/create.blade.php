@@ -8,8 +8,10 @@
 
           <h3 class="mb-5">作ってみた投稿</h3>
 
-          <form method="post" action="{{route('challenges.store',['recipe_id'=>$recipe->id])}}" enctype="multipart/form-data">
+          <form method="post" action="{{route('challenges.store')}}" enctype="multipart/form-data">
           @csrf
+            <input type="hidden" name="recipe_id" value="{{$recipe->id}}">
+
             <div id="form-group my-5">
               <label for="comment">コメント <span class="badge badge-danger">必須</span></label>
               <!-- <button class="needbtn ml-4">必須</button> -->

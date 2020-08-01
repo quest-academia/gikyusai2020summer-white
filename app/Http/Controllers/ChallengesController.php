@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// use App\Http\Requests\ChallengesRequest;
+use App\Http\Requests\ChallengesStoreRequest;
+use App\Http\Requests\ChallengesUpdateRequest;
 use App\User;
 use App\Recipe;
 use App\Challenge;
@@ -12,35 +13,33 @@ use Carbon\Carbon;
 class ChallengesController extends Controller
 {
     
-    public function create($recipe_id)
+    public function create(Request $request)
     {
+        $recipe_id = $request->query('recipe_id');
         $recipe = Recipe::find($recipe_id);
-
-        return view('challenges.create',[
-            'recipe' => $recipe,
-        ]);
+        if($recipe == null) {
+            // statusを持たせてレシピ一覧ページにリダイレクトさせた方が良さそうですが、現在当該ページが制作されていないため、abort処理。
+            abort(404, "ご指定のレシピが存在しません。");
+        } else {
+            return view('challenges.create',[
+                'recipe' => $recipe,
+            ]);
+        }
     }
 
-    public function store(Request $request, $recipe_id)
+    public function store(ChallengesStoreRequest $request)
     {
         
-        $request->validate([
-            'impression'=> 'required|max:3000',
-            'challenge_img' => 'required',
-        ],
-        [
-            'impression.required' => 'コメントを入力してください。',
-            'impression.max' => 'コメントは3000文字以内で入力してください。',
-            'challenge_img.required' => '写真を添付してください。',
-        ]);
-
         try {
 			// トランザクション開始
-			\DB::beginTransaction();
+            \DB::beginTransaction();
+            
+            
+            $recipe_id = $request->recipe_id;
 
 			$challenge = new Challenge;	
 			$challenge->user_id = \Auth::user()->id;
-			$challenge->recipe_id = $recipe_id;
+			$challenge->recipe_id = $request->recipe_id;
             $challenge->impression = $request->impression;
           
 
@@ -77,41 +76,42 @@ class ChallengesController extends Controller
 
     }
 
-    public function show($recipe_id, $challenge_id)
+    public function show($challenge_id)
     {
-        $recipe = Recipe::find($recipe_id);
+
         $challenge = Challenge::find($challenge_id);
+
+        if($challenge == null) {
+            // statusを持たせてレシピ一覧ページにリダイレクトさせた方が良さそうですが、現在当該ページが制作されていないため、abort処理。
+            abort(404, "ご指定の「作ってみた」が存在しません。");
+        }
         $user = User::find($challenge->user_id);
+        $recipe = Recipe::find($challenge->recipe_id);
         
+       
         return view('challenges.show', [
-            'recipe' => $recipe,
             'challenge' => $challenge,
             'user' => $user,
+            'recipe' => $recipe,
         ]);
     }
 
-    public function edit($recipe_id, $challenge_id)
+    public function edit($challenge_id)
     {
         $challenge = Challenge::find($challenge_id);
-        $recipe = Recipe::find($recipe_id);
-        $recipe_id = $recipe->id;
+
+        if($challenge == null) {
+            // statusを持たせてレシピ一覧ページにリダイレクトさせた方が良さそうですが、現在当該ページが制作されていないため、abort処理。
+            abort(404, "ご指定の「作ってみた」が存在しません。");
+        } 
 
         return view('challenges.edit', [
             'challenge' => $challenge,
-            'recipe_id' => $recipe_id,
         ]);
     }
 
-    public function update(Request $request, $recipe_id, $challenge_id)
+    public function update(ChallengesUpdateRequest $request, $challenge_id)
     {
-
-        $request->validate([
-            'impression'=> 'required|max:3000',
-        ],
-        [
-            'impression.required' => 'コメントを入力してください。',
-            'impression.max' => 'コメントは3000文字以内で入力してください。',
-        ]);
 
         try {
 			// トランザクション開始
@@ -144,7 +144,6 @@ class ChallengesController extends Controller
                 
             return redirect(route('challenges.show', [
                 'challenge_id' => $challenge->id,
-                'recipe_id' => $recipe_id,
             ]))->with('status', '「作ってみた」を更新しました');
 
             } catch (\Exception $e) {
