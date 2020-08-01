@@ -1,0 +1,40 @@
+.search_area {
+  background-color: #FFD41F;
+  height: 50px;
+}
+
+.search_form {
+  border: solid 4px #E2B840;
+  border-radius: 25px;
+}
+
+.search_button {
+  background-color: #FF8341;
+  color: #fff;
+  text-align: center;
+  width: 100px;
+  padding: 14px;
+  border-radius: 25px;
+  border: none;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.repsipe_details {
+  background-color: #fff;
+  border: solid 4px #FEEDB5;
+  border-radius: 35px;
+}
+
+.resipe_detail_image {
+  width: 50%;
+}
+
+.everyone_resipe {
+  background-color: #fff;
+  border: solid 4px #FEEDB5;
+  border-radius: 35px;
+}
+
+.other_image {
+  width: 80%;
+}
