@@ -8,17 +8,17 @@
 
           <h3 class="mb-5">作ってみた投稿</h3>
 
-          <form method="post" action="{{route('challenges.store',['recipe_id'=>$recipe->id])}}" enctype="multipart/form-data">
+          <form method="post" action="{{route('challenges.store')}}" enctype="multipart/form-data">
           @csrf
+            <input type="hidden" name="recipe_id" value="{{$recipe->id}}">
+
             <div id="form-group my-5">
               <label for="comment">コメント <span class="badge badge-danger">必須</span></label>
-              <!-- <button class="needbtn ml-4">必須</button> -->
               <textarea id="comment" name="impression" class="form-control" cols="10" rows="10" placeholder="作ってみた感想などをお書きください。"></textarea>
             </div>
 
             <div class="form-group my-5">
               <label for="file">この料理の完成写真 <span class="badge badge-danger">必須</span></label>
-              <!-- <button class="needbtn ml-4">必須</button> -->
               <input type="file" id="file" name="challenge_img" class="form-control-file">
             </div>
 

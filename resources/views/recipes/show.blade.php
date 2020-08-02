@@ -39,6 +39,11 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-sm-12">
+        <button onclick="location.href='{{ route('challenges.create', ['recipe_id' => $recipe->id]) }}'" class="btn btn-lg btn-info" style="width: 100%; color: #fff;">「作ってみた」の投稿はこちら</button>       
+        </div>
+      </div>
     </div>
   </div>
 @endsection

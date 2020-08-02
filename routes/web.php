@@ -20,11 +20,11 @@ Route::post('/recipes/store', 'RecipesController@store')->name('recipes.store');
 Route::get('/recipes/show/{id}', 'RecipesController@show')->name('recipes.show')->where('id', '[0-9]+');
 
 
-Route::get('recipes/{recipe_id}/challenges/create', 'ChallengesController@create');
-Route::post('recipes/{recipe_id}/challenges/store', 'ChallengesController@store')->name('challenges.store');
-Route::get('recipes/{recipe_id}/challenges/show/{challenge_id}', 'ChallengesController@show')->name('challenges.show');
-Route::get('recipes/{recipe_id}/challenges/edit/{challenge_id}', 'ChallengesController@edit');
-Route::post('recipes/{recipe_id}/challenges/update/{challenge_id}', 'ChallengesController@update')->name('challenges.update');
+Route::get('challenges/create', 'ChallengesController@create')->name('challenges.create');
+Route::post('challenges/store', 'ChallengesController@store')->name('challenges.store');
+Route::get('challenges/show/{challenge_id}', 'ChallengesController@show')->name('challenges.show');
+Route::get('challenges/edit/{challenge_id}', 'ChallengesController@edit');
+Route::post('challenges/update/{challenge_id}', 'ChallengesController@update')->name('challenges.update');
 
 
 Auth::routes();
