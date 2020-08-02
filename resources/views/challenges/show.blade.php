@@ -19,21 +19,16 @@
             <span class="mr-5">{{$user->name}}の</span><span>{{ $recipe->name }}</span>
           </h3>
 
-          <img class="mt-3" src="/storage/challenges_img/{{ $challenge->img }}" alt="NO IMAGE" style="width: 80%; height: 50%;">
+          <!-- !仮src -->
+          <img class="mt-3" src="/img/3416847_s.jpg" alt="NO IMAGE" style="width: 80%; height: 50%;">
           <p class="text-justify mt-4">
             <span class="comment">{{ $challenge->impression }}</span>
           </p>
 
           <div class="reaction text-right">
-            <span>
-              <img src="./img/good!.png" width="10%" height="10%">
-            </span>
-            <span style="font-size: 2em;" class="mx-2">
-              ３
-            </span>
-            <span>
-              <img src="./img/twitterシェア！.png" width="10%" height="10%">
-            </span>
+            <!-- 今見てるユーザーが良いねを押してるかどうか -->
+            <favorite :first-favorite="@json($challenge->isFavoritedBy(Auth::user()))" :first-count-favorites="@json($challenge->countFavorites())">
+            </favorite>
             <p class="text-left small font-weight-lighter">
               〇件のコメント▼
             </p>
@@ -51,7 +46,7 @@
       <div class="row justify-content-center">
         <div class="col-md-10 h-75 mt-4">
           <p>参考レシピ</p>
-          <img class="card-img-top" src="./img/3416847_s.jpg" alt="NO IMAGE" style="width: 100%; height: 60%;"  >
+          <img class="card-img-top" src="/img/3416847_s.jpg" alt="NO IMAGE" style="width: 100%; height: 60%;">
           <p class="text-center mt-4">〇〇〇</p>
         </div>
       </div>

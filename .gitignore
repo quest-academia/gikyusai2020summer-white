@@ -1,5 +1,8 @@
 /node_modules
+public/css/app.css
 /public/hot
+/stora/public/js  
+/public/mix-manifest.json
 /public/storage
 /storage/*.key
 /vendor

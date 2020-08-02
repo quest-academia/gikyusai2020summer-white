@@ -30,3 +30,7 @@ Route::post('recipes/{recipe_id}/challenges/update/{challenge_id}', 'ChallengesC
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+// //! 仮
+// Route::get('/iine', function () {
+//     return view('favorite_test.made');
+// });
