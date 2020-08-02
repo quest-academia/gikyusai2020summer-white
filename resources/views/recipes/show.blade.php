@@ -41,10 +41,7 @@
       </div>
       <div class="row">
         <div class="col-sm-12">
-          <form method="get" action="{{ route('challenges.create') }}">
-          <input type="hidden" name="recipe_id" value="{{$recipe->id}}">
-            <button type="submit" class="btn btn-lg btn-info" style="width: 100%; color: white;">自分の「作ってみた」を投稿する</button>
-          </form>
+        <button onclick="location.href='{{ route('challenges.create', ['recipe_id' => $recipe->id]) }}'" class="btn btn-lg btn-info" style="width: 100%; color: #fff;">「作ってみた」の投稿はこちら</button>       
         </div>
       </div>
     </div>

@@ -15,17 +15,18 @@ class ChallengesController extends Controller
     
     public function create(Request $request)
     {
-        $recipe_id = $request->query('recipe_id');
-        $recipe = Recipe::find($recipe_id);
+        $recipe = Recipe::find($request->recipe_id);
         if($recipe == null) {
             // statusを持たせてレシピ一覧ページにリダイレクトさせた方が良さそうですが、現在当該ページが制作されていないため、abort処理。
             abort(404, "ご指定のレシピが存在しません。");
-        } else {
+        }  
             return view('challenges.create',[
                 'recipe' => $recipe,
             ]);
-        }
+        
     }
+
+
 
     public function store(ChallengesStoreRequest $request)
     {
