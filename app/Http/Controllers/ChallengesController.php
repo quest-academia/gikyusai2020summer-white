@@ -8,6 +8,7 @@ use App\User;
 use App\Recipe;
 use App\Challenge;
 use Carbon\Carbon;
+use Illuminate\Foundation\Console\Presets\React;
 
 class ChallengesController extends Controller
 {
@@ -157,5 +158,27 @@ class ChallengesController extends Controller
 
 	public function destroy($challenge_id)
 	{
+	}
+
+	public function favorite(Request $request, Challenge $challenge)
+	{
+		$getchallenge = Challenge::where('id', $request->challenge_id);
+		$getchallenge->favorites()->detach($request->user()->id);
+		$getchallenge->favorites()->attach($request->user()->id);
+
+		return [
+			'id' => $getchallenge->id,
+			'countFavorites' => $getchallenge->countFavorites()
+		];
+	}
+	public function unfavorite(Request $request, Challenge $challenge)
+	{
+		$challenge = Challenge::where('id', $request->challenge_id);
+		$challenge->favorites()->detach($request->user()->id);
+
+		return [
+			'id' => $challenge->id,
+			'countFavorites' => $challenge->countFavorites()
+		];
 	}
 }
