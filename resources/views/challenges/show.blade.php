@@ -1,6 +1,7 @@
 @extends('layouts.challenges')
 
 @section('content')
+<hello></hello>
 <div class="container-fluid">
   <div class="row my-4 ml-3">
     <h4 class="whiteline font-weight-bold">みんなのつくってみた</h4>
@@ -31,8 +32,7 @@
             <!-- いいねの現在数   -->
             <!-- ログイン状態か -->
             <!-- チャレンジレシピのID -->
-            <!-- TODO :user-id="@json(Auth::id())"消す -->
-            <favorite :first-favorite="@json($challenge->isFavoritedBy(Auth::user()))" :first-count-favorites="@json($challenge->countFavorites())" :authorized="@json(Auth::check())" :challenge-id="@json($challenge->id)" :user-id="@json(Auth::id())">
+            <favorite :first-favorite="@json($challenge->isFavoritedBy(Auth::user()))" :first-count-favorites="@json($challenge->countFavorites())" :authorized="@json(Auth::check())" :challenge-id="@json($challenge->id)">
             </favorite>
             <p class="text-left small font-weight-lighter">
               〇件のコメント▼

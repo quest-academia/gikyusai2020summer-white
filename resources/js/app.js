@@ -1,5 +1,4 @@
 import './bootstrap'
-import axios from 'axios'
 import Vue from 'vue'
 import Favorite from './components/Favorite'
 

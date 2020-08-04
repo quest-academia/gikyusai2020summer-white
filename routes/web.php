@@ -32,8 +32,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
-//TODOいいね関係 Favoritecontoller追加
-Route::put('/favorite/{challenge}', 'ChallengesController@favorite')->name('favorite');
-Route::delete('/favorite/{challenge}', 'ChallengesController@unfavorite');
+//TODOいいね関係 
+Route::put('/favorite', 'FavoriteController@favorite')->name('favorite');
+Route::put('/unfavorite', 'FavoriteController@unfavorite');
 
-Route::get('/favorite/{challenge}', 'ChallengesController@get');
+Route::get('/favorite/{challenge}', 'FavoriteController@get');
