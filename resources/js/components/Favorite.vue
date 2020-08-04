@@ -1,20 +1,26 @@
 <template>
   <div>
     {{ challengeId }}
-        <!-- いいねつけるボタン-->
-    <button
+        <!-- いいね外すボタン-->
+    <input type="image" src="/img/good!.png" alt="外す" width="10%" height="10%" 
+    v-if="isFavoritedBy"
+    @click="removeFavorite">
+        <!-- いいねつけるボタン -->
+    <input type="image" src="/img/good.png" alt="外す" width="10%" height="10%" 
+    v-else
+    @click="addFavorite">
+    <!-- <button
     type="button"
     v-if="isFavoritedBy"
     @click="addFavorite">
       <img src="/img/good!.png"  width="10%" height="10%" >
-    </button>
-        <!-- いいね外すボタン -->
-    <button
+    </button> -->
+    <!-- <button
     type="button"
     v-else
     @click="addFavorite">
       <img src="/img/good.png" @click="removeFavorite" width="10%" height="10%" >
-    </button>
+    </button> --> 
     <!-- いいね数表示 -->
     <span style="font-size: 2em;" class="mx-2">
       {{ countFavorites }}
@@ -42,6 +48,9 @@ export default {
     },
     challengeId: {
       type: Number,
+    },
+    userId: {
+      type: Number,
     }
   },
   data(){
@@ -54,8 +63,13 @@ export default {
   methods: {
     // いいね追加メソッド
     addFavorite(){
-      axios.put('/favorite',{
-        challenge_id: this.challengeId
+      if(!this.autrhorized){
+        alert('ログインしてから推してね');
+        return
+      }
+      axios
+      .put('/favorite'+ this.challengeId ,{
+        user_id: this.userId
       })
       .then(response =>(this.countFavorites = response.data.countFavorites))
       .catch(error => console.log(error))
@@ -64,8 +78,13 @@ export default {
     },
     // いいね削除メソッド
     removeFavorite(){
-      axios.delete('/favorite',{
-        challenge_id: this.challengeId
+      if(!this.autrhorized){
+        alert('ログインしてから推してね');
+        return
+      }
+      axios
+      .delete('/favorite'+ this.challengeId,{
+        user_id: this.userId
       })
       .then(response =>(this.countFavorites = response.data.countFavorites))
       .catch(error => console.log(error))

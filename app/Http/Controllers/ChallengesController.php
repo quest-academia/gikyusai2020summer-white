@@ -160,22 +160,49 @@ class ChallengesController extends Controller
 	{
 	}
 
-	public function favorite(Request $request, Challenge $challenge)
-	{
-		$getchallenge = Challenge::where('id', $request->challenge_id);
-		$getchallenge->favorites()->detach($request->user()->id);
-		$getchallenge->favorites()->attach($request->user()->id);
+	// !iine関係  好き
+	// public function favorite(Request $request, Challenge $challenge)
+	// {
+	// 	$challenge->favorites()->detach($request->user()->id);
+	// 	$challenge->favorites()->attach($request->user()->id);
+	// 	return [
+	// 		'id' => $challenge->id,
+	// 		'countFavorites' => $challenge->countFavorites()
+	// 	];
+	// }
+	// //!イヤ
+	// public function unfavorite(Request $request, Challenge $challenge)
+	// {
+	// 	$challenge->favorites()->detach($request->user()->id);
 
+	// 	return [
+	// 		'id' => $challenge->id,
+	// 		'countFavorites' => $challenge->countFavorites()
+	// 	];
+	// }
+	//!試し
+	public function get(Challenge $challenge, User $user)
+	{
 		return [
-			'id' => $getchallenge->id,
-			'countFavorites' => $getchallenge->countFavorites()
+			'id' => $challenge->id,
+			'countFavorites' => $challenge->countFavorites()
 		];
 	}
-	public function unfavorite(Request $request, Challenge $challenge)
+	//!イヤ
+	public function unfavorite(Challenge $challenge, Request $request)
 	{
-		$challenge = Challenge::where('id', $request->challenge_id);
-		$challenge->favorites()->detach($request->user()->id);
+		$challenge->favorites()->detach($request->user_id);
 
+		return [
+			'id' => $challenge->id,
+			'countFavorites' => $challenge->countFavorites()
+		];
+	}
+	// !iine関係  好き
+	public function favorite(Request $request, Challenge $challenge)
+	{
+		$challenge->favorites()->detach($request->user_id);
+		$challenge->favorites()->attach($request->user_id);
 		return [
 			'id' => $challenge->id,
 			'countFavorites' => $challenge->countFavorites()
