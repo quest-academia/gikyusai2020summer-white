@@ -16,4 +16,14 @@ class Recipe extends Model
 	{
 		return $this->hasMany(Challenge::class);
 	}
+
+	public function ingredients()
+	{
+		return $this->hasMany(Ingredient::class);
+	}
+
+	public function proceses()
+	{
+		return $this->hasMany(Ingredient::class);
+	}
 }
