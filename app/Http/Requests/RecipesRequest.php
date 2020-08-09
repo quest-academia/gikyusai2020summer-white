@@ -29,8 +29,8 @@ class RecipesRequest extends FormRequest
 			'time'        => 'required|integer',
 			'liqueur'     => 'required|integer',
             'invention'   => 'nullable|string|max:255',
-            'name'     	  => 'required|string|max:255',
-            'quantity'    => 'required|string|max:255',
+            'ingredients.' => '[required|string|max:255]',
+            'quantities.' => '[required|string|max:255]',
 
             
         ];
