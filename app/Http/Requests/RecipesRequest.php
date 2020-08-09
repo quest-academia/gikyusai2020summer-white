@@ -28,7 +28,11 @@ class RecipesRequest extends FormRequest
 			'recipes_img' => 'required|mimes:jpg,jpeg,png,gif',
 			'time'        => 'required|integer',
 			'liqueur'     => 'required|integer',
-			'invention'   => 'nullable|string|max:255',
+            'invention'   => 'nullable|string|max:255',
+            'ingredients.' => '[required|string|max:255]',
+            'quantities.' => '[required|string|max:255]',
+
+            
         ];
     }
 }
