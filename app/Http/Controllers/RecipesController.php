@@ -5,15 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // フォームリクエストを宣言
 use App\Http\Requests\RecipesRequest;
+use App\Http\Requests\IngredientsRequest;
 
 use App\User;
 use App\Recipe;
+use App\Ingredient;
 
 class RecipesController extends Controller
 {
 	public function show($id)
     {
 		$recipe = Recipe::find($id);
+		$ingredient = Ingredient::find($id);
 
 		// レシピが存在しなかった場合
 		if (is_null($recipe)) {
@@ -22,6 +25,7 @@ class RecipesController extends Controller
 
         return view('recipes.show', [
 			'recipe' => $recipe,
+			'ingredient' => $ingredient
 		])->with('status', 'レシピを新規登録しました');
     }
 
@@ -59,9 +63,22 @@ class RecipesController extends Controller
 			// imgファイル自体を保存
 			$recipeImg->storeAs('public/recipes_img', $fileName);
 
+			
+			$request->ingredients = array_filter($request->ingredients, 'strlen');
+			$request->quantities = array_filter($request->quantities, 'strlen');
+			$max = count($request->ingredients);
+			for($i=0; $i<$max; $i++){						
+				$ingredient = new Ingredient;
+			  $ingredient->recipe_id = $recipe->id;	
+				$ingredient->name =   $request-> ingredients[$i] ;
+				$ingredient->quantity =   $request-> quantities[$i] ;
+				$ingredient->save();
+			}
+
 			// トランザクションの保存処理を実行
 			\DB::commit();
 
+			dd($ingredient);
 			return redirect(route('recipes.show', [
 				'id' => $recipe->id
 			]))->with('status', 'レシピを新規登録しました');
