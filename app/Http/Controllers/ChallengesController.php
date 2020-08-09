@@ -119,7 +119,7 @@ class ChallengesController extends Controller
 
             if(!isset($request->challenge_img)){
                 $challenge->img = $challenge->img;
-            }else{
+            }
                 $challengeImg = $request->challenge_img;
                 $extension = $challengeImg->guessExtension();
             
@@ -133,7 +133,7 @@ class ChallengesController extends Controller
 
                 // imgファイル自体を保存
                 $challengeImg->storeAs('public/challenges_img', $fileName);
-                }
+                
 
             $challenge->save();
 
