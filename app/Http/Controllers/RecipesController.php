@@ -10,6 +10,7 @@ use App\Http\Requests\IngredientsRequest;
 use App\User;
 use App\Recipe;
 use App\Ingredient;
+use App\Process;
 
 class RecipesController extends Controller
 {
@@ -17,6 +18,7 @@ class RecipesController extends Controller
     {
 		$recipe = Recipe::find($id);
 		$ingredient = Ingredient::find($id);
+		$process = Process::find($id);
 
 		// レシピが存在しなかった場合
 		if (is_null($recipe)) {
@@ -25,7 +27,8 @@ class RecipesController extends Controller
 
         return view('recipes.show', [
 			'recipe' => $recipe,
-			'ingredient' => $ingredient
+			'ingredient' => $ingredient,
+			'process' => $process,
 		])->with('status', 'レシピを新規登録しました');
     }
 
@@ -63,7 +66,7 @@ class RecipesController extends Controller
 			// imgファイル自体を保存
 			$recipeImg->storeAs('public/recipes_img', $fileName);
 
-			
+			//ingredient(材料の保存処理)
 			$request->ingredients = array_filter($request->ingredients, 'strlen');
 			$request->quantities = array_filter($request->quantities, 'strlen');
 			$max = count($request->ingredients);
@@ -75,10 +78,34 @@ class RecipesController extends Controller
 				$ingredient->save();
 			}
 
+			//prosesese(工程の保存処理)
+			$request->processes = array_filter($request->processes, 'strlen');
+			$request->prosesses_img = array_filter($request->prosesses_img, 'strlen');
+			$max2 = count($request->processes);
+			for($ii=0; $ii<$max2; $ii++){
+				$process = new Process;
+				$process->recipe_id = $recipe->id; 
+				$process->procedure = $request->processes[$ii];
+				$process->save();
+
+			// 一度保存して、$recipe->idを発行する
+				$prosessesImg = $request->prosesses_img[$ii];
+				$extension2 = $prosessesImg->guessExtension();
+			// 上記で発行した$recipe->idをここで利用
+				$fileName2 = "recipe_{$recipe->id}.{$extension2}";
+
+			// imgファイル名を保存
+				$process->img = $fileName2;
+				$process->save();
+
+				// imgファイル自体を保存
+				$recipeImg->storeAs('public/prosesses_img', $fileName2);
+
+			}
+
 			// トランザクションの保存処理を実行
 			\DB::commit();
 
-			dd($ingredient);
 			return redirect(route('recipes.show', [
 				'id' => $recipe->id
 			]))->with('status', 'レシピを新規登録しました');

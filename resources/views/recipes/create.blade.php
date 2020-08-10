@@ -209,92 +209,92 @@
 			
 			<div class="col-md-6 offset-md-1">
 			  <label for="count">1.　</label>
-			  <input type="text" size="52" name=" text1">
+			  <input type="text" size="52" name="processes[]">
 			</div>
 			<div class="col-md-5">
 			  <label for="filename">
-				<span class="browse_btn">ファイルを選択</span><input type="file" size="16" id="filename">
+				<span class="browse_btn">ファイルを選択</span><input type="file" name="prosesses_img[]" size="16" id="filename">
 			  </label>
 			</div>
 			<div class="col-md-6 offset-md-1">
 			  <label for="count">2.　</label>
-			  <input type="text" size="52" name=" text1">
+			  <input type="text" size="52" name="processes[]">
 			</div>
 			<div class="col-md-5">
 			  <label for="filename">
-				<span class="browse_btn">ファイルを選択</span><input type="file" size="16" id="filename">
+				<span class="browse_btn">ファイルを選択</span><input type="file" name="prosesses_img[]" size="16" id="filename">
 			  </label>
 			</div>
 			<div class="col-md-6 offset-md-1">
 			  <label for="count">3.　</label>
-			  <input type="text" size="52" name=" text1">
+			  <input type="text" size="52" name="processes[]">
 			</div>
 			<div class="col-md-5">
 			  <label for="filename">
-				<span class="browse_btn">ファイルを選択</span><input type="file" size="16" id="filename">
+				<span class="browse_btn">ファイルを選択</span><input type="file" name="prosesses_img[]" size="16" id="filename">
 			  </label>
 			</div>
 			<div class="col-md-6 offset-md-1">
 			  <label for="count">4.　</label>
-			  <input type="text" size="52" name=" text1">
+			  <input type="text" size="52" name="processes[]">
 			</div>
 			<div class="col-md-5">
 			  <label for="filename">
-				<span class="browse_btn">ファイルを選択</span><input type="file" size="16" id="filename">
+				<span class="browse_btn">ファイルを選択</span><input type="file" name="prosesses_img[]" size="16" id="filename">
 			  </label>
 			</div>
 			<div class="col-md-6 offset-md-1">
 			  <label for="count">5.　</label>
-			  <input type="text" size="52" name=" text1">
+			  <input type="text" size="52" name="processes[]">
 			</div>
 			<div class="col-md-5">
 			  <label for="filename">
-				<span class="browse_btn">ファイルを選択</span><input type="file" size="16" id="filename">
+				<span class="browse_btn">ファイルを選択</span><input type="file" name="prosesses_img[]" size="16" id="filename">
 			  </label>
 			</div>
 			<div class="col-md-6 offset-md-1">
 			  <label for="count">6.　</label>
-			  <input type="text" size="52" name=" text1">
+			  <input type="text" size="52" name="processes[]">
 			</div>
 			<div class="col-md-5">
 			  <label for="filename">
-				<span class="browse_btn">ファイルを選択</span><input type="file" size="16" id="filename">
+				<span class="browse_btn">ファイルを選択</span><input type="file" name="prosesses_img[]" size="16" id="filename">
 			  </label>
 			</div>
 			<div class="col-md-6 offset-md-1">
 			  <label for="count">7.　</label>
-			  <input type="text" size="52" name=" text1">
+			  <input type="text" size="52" name="processes[]">
 			</div>
 			<div class="col-md-5">
 			  <label for="filename">
-				<span class="browse_btn">ファイルを選択</span><input type="file" size="16" id="filename">
+				<span class="browse_btn">ファイルを選択</span><input type="file" name="prosesses_img[]" size="16" id="filename">
 			  </label>
 			</div>
 			<div class="col-md-6 offset-md-1">
 			  <label for="count">8.　</label>
-			  <input type="text" size="52" name=" text1">
+			  <input type="text" size="52" name="processes[]">
 			</div>
 			<div class="col-md-5">
 			  <label for="filename">
-				<span class="browse_btn">ファイルを選択</span><input type="file" size="16" id="filename">
+				<span class="browse_btn">ファイルを選択</span><input type="file" name="prosesses_img[]" size="16" id="filename">
 			  </label>
 			</div>
 			<div class="col-md-6 offset-md-1">
 			  <label for="count">9.　</label>
-			  <input type="text" size="52" name=" text1">
+			  <input type="text" size="52" name="processes[]">
 			</div>
 			<div class="col-md-5">
 			  <label for="filename">
-				<span class="browse_btn">ファイルを選択</span><input type="file" size="16" id="filename">
+				<span class="browse_btn">ファイルを選択</span><input type="file" name="prosesses_img[]" size="16" id="filename">
 			  </label>
 			</div>
 			<div class="col-md-6 offset-md-1">
 			  <label for="count">10.　</label>
-			  <input type="text" size="52" name=" text1">
+			  <input type="text" size="52" name="processes[]">
 			</div>
 			<div class="col-md-5">
 			  <label for="filename">
-				<span class="browse_btn">ファイルを選択</span><input type="file" size="16" id="filename">
+				<span class="browse_btn">ファイルを選択</span><input type="file" name="prosesses_img[]" size="16" id="filename">
 			  </label>
 			</div>
 
