@@ -72,7 +72,7 @@ class RecipesController extends Controller
 			$max = count($request->ingredients);
 			for($i=0; $i<$max; $i++){						
 				$ingredient = new Ingredient;
-			  $ingredient->recipe_id = $recipe->id;	
+			  $ingredient->recipe_id = $ingredient->id;	
 				$ingredient->name =   $request-> ingredients[$i] ;
 				$ingredient->quantity =   $request-> quantities[$i] ;
 				$ingredient->save();
@@ -81,25 +81,25 @@ class RecipesController extends Controller
 			//prosesese(工程の保存処理)
 			$request->processes = array_filter($request->processes, 'strlen');
 			$request->prosesses_img = array_filter($request->prosesses_img, 'strlen');
-			$max2 = count($request->processes);
-			for($ii=0; $ii<$max2; $ii++){
+			$max = count($request->processes);
+			for($i=0; $i<$max; $i++){
 				$process = new Process;
-				$process->recipe_id = $recipe->id; 
-				$process->procedure = $request->processes[$ii];
+				$process->recipe_id = $prosess->id; 
+				$process->procedure = $request->processes[$i];
 				$process->save();
 
-			// 一度保存して、$recipe->idを発行する
-				$prosessesImg = $request->prosesses_img[$ii];
-				$extension2 = $prosessesImg->guessExtension();
-			// 上記で発行した$recipe->idをここで利用
-				$fileName2 = "recipe_{$recipe->id}.{$extension2}";
+			// 一度保存して、$prosess->idを発行する
+				$prosessesImg = $request->prosesses_img[$i];
+				$extension = $prosessesImg->guessExtension();
+			// 上記で発行した$prosess->idをここで利用
+				$fileName = "prosess_{$prosess->id}.{$extension}";
 
 			// imgファイル名を保存
-				$process->img = $fileName2;
+				$process->img = $fileName;
 				$process->save();
 
 				// imgファイル自体を保存
-				$recipeImg->storeAs('public/prosesses_img', $fileName2);
+				$recipeImg->storeAs('public/prosesses_img', $fileName);
 
 			}
 
