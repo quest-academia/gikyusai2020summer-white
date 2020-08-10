@@ -114,12 +114,10 @@ class ChallengesController extends Controller
             // トランザクション開始
             \DB::beginTransaction();
             
-            $challenge = challenge::find($challenge_id);
+            $challenge = Challenge::find($challenge_id);
             $challenge->impression = $request->impression;
 
-            if(!isset($request->challenge_img)){
-                $challenge->img = $challenge->img;
-            }
+            if(isset($request->challenge_img)){
                 $challengeImg = $request->challenge_img;
                 $extension = $challengeImg->guessExtension();
             
@@ -133,7 +131,7 @@ class ChallengesController extends Controller
 
                 // imgファイル自体を保存
                 $challengeImg->storeAs('public/challenges_img', $fileName);
-                
+            }  
 
             $challenge->save();
 
