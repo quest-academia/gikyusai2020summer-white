@@ -23,8 +23,9 @@ Route::get('/recipes/show/{id}', 'RecipesController@show')->name('recipes.show')
 Route::get('challenges/create', 'ChallengesController@create')->name('challenges.create');
 Route::post('challenges/store', 'ChallengesController@store')->name('challenges.store');
 Route::get('challenges/show/{challenge_id}', 'ChallengesController@show')->name('challenges.show');
-Route::get('challenges/edit/{challenge_id}', 'ChallengesController@edit');
+Route::get('challenges/edit/{challenge_id}', 'ChallengesController@edit')->name('challenges.edit');
 Route::post('challenges/update/{challenge_id}', 'ChallengesController@update')->name('challenges.update');
+Route::post('challenges/delete/{challenge_id}', 'ChallengesController@destory')->name('challenges.delete');
 
 
 Auth::routes();
