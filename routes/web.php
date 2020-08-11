@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/recipes/create', 'RecipesController@create')->name('recipes.create');
 Route::post('/recipes/store', 'RecipesController@store')->name('recipes.store');
 Route::get('/recipes/show/{id}', 'RecipesController@show')->name('recipes.show')->where('id', '[0-9]+');
@@ -31,3 +27,9 @@ Route::post('challenges/delete/{challenge_id}', 'ChallengesController@destory')-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// トップページ（VueRouter使用）のルーティング 
+// ※ 他のルーティングに干渉しないように、このファイルの一番最後に記述すること
+Route::get('/{any}', function() {
+    return view('index');
+})->where('any', '.*');
