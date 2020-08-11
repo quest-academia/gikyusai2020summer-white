@@ -27,6 +27,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import VueRouter from 'vue-router';
 import TopPage from "./components/TopPage.vue";
 
 Vue.use(VueRouter);
@@ -38,7 +39,7 @@ const router = new VueRouter({
             path: '/',
             name: 'toppage',
             component: TopPage
-        }
+        },
     ]
 });
 
