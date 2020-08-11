@@ -31,3 +31,9 @@ Route::post('challenges/delete/{challenge_id}', 'ChallengesController@destory')-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// トップページ（VueRouter使用）のルーティング 
+// ※ 他のルーティングに干渉しないように、このファイルの一番最後に記述すること
+Route::get('/{any}', function() {
+    return view('app');
+})->where('any', '.*');
