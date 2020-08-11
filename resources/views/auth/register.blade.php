@@ -1,4 +1,4 @@
-@extends('layouts.login_register')
+@extends('layouts.user')
 
 @section('content')
 <div class="wrapper">

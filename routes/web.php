@@ -18,15 +18,16 @@ Route::get('/recipes/show/{id}', 'RecipesController@show')->name('recipes.show')
 
 Route::get('challenges/create', 'ChallengesController@create')->name('challenges.create');
 Route::post('challenges/store', 'ChallengesController@store')->name('challenges.store');
-Route::get('challenges/show/{challenge_id}', 'ChallengesController@show')->name('challenges.show');
-Route::get('challenges/edit/{challenge_id}', 'ChallengesController@edit')->name('challenges.edit');
-Route::post('challenges/update/{challenge_id}', 'ChallengesController@update')->name('challenges.update');
-Route::post('challenges/delete/{challenge_id}', 'ChallengesController@destory')->name('challenges.delete');
-
+Route::get('challenges/show/{id}', 'ChallengesController@show')->name('challenges.show')->where('id', '[0-9]+');
+Route::get('challenges/edit/{id}', 'ChallengesController@edit')->name('challenges.edit')->where('id', '[0-9]+');
+Route::post('challenges/update/{id}', 'ChallengesController@update')->name('challenges.update')->where('id', '[0-9]+');
+Route::post('challenges/delete/{id}', 'ChallengesController@destory')->name('challenges.delete')->where('id', '[0-9]+');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/mypage', function() {
+    return view('user.mypage');
+});
 
 // トップページ（VueRouter使用）のルーティング 
 // ※ 他のルーティングに干渉しないように、このファイルの一番最後に記述すること
