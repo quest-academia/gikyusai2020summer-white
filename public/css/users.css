@@ -1,0 +1,81 @@
+/* ここからユーザー登録ページ用 */
+.wrapper {
+  margin: 0 auto !important;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+.container {
+  margin-top: 2%;
+  padding-bottom: 4%;
+  background-color: #fff;
+}
+
+
+/* ここまでユーザー登録ページ用 */
+
+/* ここからマイページ用 */
+.background-color{
+  background-color: #fcfcdd!important;
+}
+
+img{
+  max-width:100%;
+  height: auto;
+}
+
+.repsipe_details {
+  background-color: #fff;
+  border: solid 4px #FEEDB5;
+  border-radius: 35px;
+}
+
+.everyone_resipe {
+  background-color: #fff;
+  border: solid 4px #FEEDB5;
+  border-radius: 35px;
+}
+
+/* .wrapper {
+  margin-top:5%;
+} */
+
+button {
+  background-color: #c6f281;
+    color: #5d5d5d;
+    margin: 0 auto;
+    width: 100px;
+    padding: 2px;
+    border-radius: 25px;
+    font-family: "Kosugi Maru", sans-serif;
+}
+
+.inline{
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+}
+
+.padding-top {
+  padding-top: 7%;
+  font-weight: bold;
+}
+
+.padding_left2 {
+  margin-left:20px;
+}
+
+@media screen and (max-width: 480px) {
+  .padding_left1 {
+    padding-left:6%;
+  }
+
+  .padding_left2 {
+    margin-left:0px;
+  }
+}
+/* ここまでマイページ用 */

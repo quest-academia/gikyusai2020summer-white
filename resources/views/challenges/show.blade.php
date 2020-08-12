@@ -58,5 +58,24 @@
     </div>
 
   </div>
+  @if(Auth::id() == $challenge->user_id)
+  <div class="row">
+    <!-- 編集ボタン -->
+    <div class="col-5 mr-2">
+    <button onclick="location.href='{{ route('challenges.edit', ['challenge_id' => $challenge->id]) }}'" class="btn btn-lg btn-info" style="width: 100%; color: #fff;">編集</button> 
+    </div>
+    <!-- 削除ボタン -->
+    <div class="col-5">
+      <form action="{{ route('challenges.delete', ['challenge_id' => $challenge->id]) }}" method="POST">
+        {{ csrf_field() }}
+          <button type="submit" class="btn btn-lg btn-info" style="width: 100%; color: #fff;">削除</button>
+      </form>
+    </div>
+  </div>
+  @endif
 </div>
 @endsection
+
+
+
+          

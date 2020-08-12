@@ -12,3 +12,5 @@ npm-debug.log
 yarn-error.log
 /.history
 .DS_Store
+/public/css/app.css
+/public/js/app.js
