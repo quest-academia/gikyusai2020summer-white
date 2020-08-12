@@ -27,11 +27,23 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import VueRouter from 'vue-router';
-import TopPage from "./components/TopPage.vue";
+import TopPage from "./components/TopPage.vue"
 
-Vue.use(VueRouter);
+// Vueルータの導入
+import VueRouter from 'vue-router'
+// Fontawesomeライブラリの導入
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(fas)
 
+// 各種ライブラリのコンポーネント登録
+Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.use(VueRouter)
+
+// Vueルータのルーティング設定
 const router = new VueRouter({
     mode: 'history',
     routes: [
