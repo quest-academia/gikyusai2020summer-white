@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RecipesRequest extends FormRequest
+class ChallengesUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,15 +24,15 @@ class RecipesRequest extends FormRequest
     public function rules()
     {
         return [
-			'name'     	  => 'required|string|max:255',
-			'recipes_img' => 'required|mimes:jpg,jpeg,png,gif',
-			'time'        => 'required|integer',
-			'liqueur'     => 'required|integer',
-            'invention'   => 'nullable|string|max:255',
-            'ingredients.' => '[required|string|max:255]',
-            'quantities.' => '[required|string|max:255]',
+            'impression'  => 'required|string|max:3000',
+        ];
+    }
 
-            
+    public function messages() 
+    {
+        return [
+            'impression.required' => 'コメントを入力してください',
+            'impression.max:3000' => '3000文字以下で入力してください',
         ];
     }
 }
