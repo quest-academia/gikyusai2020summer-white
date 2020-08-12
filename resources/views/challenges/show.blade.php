@@ -1,7 +1,6 @@
 @extends('layouts.challenges')
 
 @section('content')
-<hello></hello>
 <div class="container-fluid">
   <div class="row my-4 ml-3">
     <h4 class="whiteline font-weight-bold">みんなのつくってみた</h4>
@@ -21,7 +20,7 @@
           </h3>
 
           <!-- !仮src -->
-          <img class="mt-3" src="/img/3416847_s.jpg" alt="NO IMAGE" style="width: 80%; height: 50%;">
+          <img class="mt-3" src="/storage/challenges_img/{{ $challenge->img }}" alt="NO IMAGE" style="width: 80%; height: 50%;">
           <p class="text-justify mt-4">
             <span class="comment">{{ $challenge->impression }}</span>
           </p>
