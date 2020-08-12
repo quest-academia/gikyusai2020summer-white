@@ -31,8 +31,8 @@ class RecipesRequest extends FormRequest
             'invention'   => 'nullable|string|max:255',
             'ingredients.' => '[required|string|max:255]',
             'quantities.' => '[required|string|max:255]',
-
-            
+            'processes.' => '[required|text|max:255]',
+            'prosesses_img.' => '[required|string|max:255]',
         ];
     }
 }
