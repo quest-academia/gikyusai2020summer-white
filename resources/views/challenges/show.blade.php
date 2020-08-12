@@ -19,7 +19,6 @@
             <span class="mr-5">{{$user->name}}の</span><span>{{ $recipe->name }}</span>
           </h3>
 
-          <!-- !仮src -->
           <img class="mt-3" src="/storage/challenges_img/{{ $challenge->img }}" alt="NO IMAGE" style="width: 80%; height: 50%;">
           <p class="text-justify mt-4">
             <span class="comment">{{ $challenge->impression }}</span>
