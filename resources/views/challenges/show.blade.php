@@ -25,15 +25,13 @@
           </p>
 
           <div class="reaction text-right">
-            <span>
-              <img src="./img/good!.png" width="10%" height="10%">
-            </span>
-            <span style="font-size: 2em;" class="mx-2">
-              ３
-            </span>
-            <span>
-              <img src="./img/twitterシェア！.png" width="10%" height="10%">
-            </span>
+            <!-- Favoriteコンポーネントに渡しているもの -->
+            <!-- 今見てるユーザーが良いねを押してるかどうか -->
+            <!-- いいねの現在数   -->
+            <!-- ログイン状態か -->
+            <!-- チャレンジレシピのID -->
+            <favorite :first-favorite="@json($challenge->isFavoritedBy(Auth::user()))" :first-count-favorites="@json($challenge->countFavorites())" :authorized="@json(Auth::check())" :challenge-id="@json($challenge->id)">
+            </favorite>
             <p class="text-left small font-weight-lighter">
               〇件のコメント▼
             </p>
@@ -66,13 +64,13 @@
   <div class="row">
     <!-- 編集ボタン -->
     <div class="col-5 mr-2">
-    <button onclick="location.href='{{ route('challenges.edit', ['challenge_id' => $challenge->id]) }}'" class="btn btn-lg btn-info" style="width: 100%; color: #fff;">編集</button>
+      <button onclick="location.href='{{ route('challenges.edit', ['challenge_id' => $challenge->id]) }}'" class="btn btn-lg btn-info" style="width: 100%; color: #fff;">編集</button>
     </div>
     <!-- 削除ボタン -->
     <div class="col-5">
       <form action="{{ route('challenges.delete', ['challenge_id' => $challenge->id]) }}" method="POST">
         {{ csrf_field() }}
-          <button type="submit" class="btn btn-lg btn-info" style="width: 100%; color: #fff;">削除</button>
+        <button type="submit" class="btn btn-lg btn-info" style="width: 100%; color: #fff;">削除</button>
       </form>
     </div>
   </div>

@@ -25,12 +25,18 @@ Route::post('challenges/delete/{id}', 'ChallengesController@destory')->name('cha
 
 Auth::routes();
 
-Route::get('/mypage', function() {
+//いいね関係 
+Route::put('/favorite', 'FavoriteController@favorite')->name('favorite');
+Route::put('/unfavorite', 'FavoriteController@unfavorite');
+Route::get('/favorite/{challenge}', 'FavoriteController@get');
+//↑いいね関係
+
+Route::get('/mypage', function () {
     return view('user.mypage');
 });
 
 // トップページ（VueRouter使用）のルーティング 
 // ※ 他のルーティングに干渉しないように、このファイルの一番最後に記述すること
-Route::get('/{any}', function() {
+Route::get('/{any}', function () {
     return view('index');
 })->where('any', '.*');
