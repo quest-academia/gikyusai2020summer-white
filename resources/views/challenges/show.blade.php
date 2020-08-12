@@ -51,31 +51,31 @@
       <div class="row justify-content-center">
         <div class="col-md-10 h-75 mt-4">
           <p>参考レシピ</p>
-          <img class="card-img-top" src="/img/3416847_s.jpg" alt="NO IMAGE" style="width: 100%; height: 60%;">
-          <p class="text-center mt-4">〇〇〇</p>
+          <a href="{{ route('recipes.show', ['id' => $recipe->id])}}">
+            <img class="card-img-top" src="/storage/recipes_img/{{ $recipe->img }}" alt="NO IMAGE" style="width: 100%; height: 60%;">
+          </a>
+          <a href="{{ route('recipes.show', ['id' => $recipe->id])}}">
+            <p class="text-center mt-4">{{ $recipe->name }}</p>
+          </a>
         </div>
       </div>
     </div>
-
   </div>
+
   @if(Auth::id() == $challenge->user_id)
   <div class="row">
     <!-- 編集ボタン -->
     <div class="col-5 mr-2">
-    <button onclick="location.href='{{ route('challenges.edit', ['challenge_id' => $challenge->id]) }}'" class="btn btn-lg btn-info" style="width: 100%; color: #fff;">編集</button> 
+      <button onclick="location.href='{{ route('challenges.edit', ['challenge_id' => $challenge->id]) }}'" class="btn btn-lg btn-info" style="width: 100%; color: #fff;">編集</button>
     </div>
     <!-- 削除ボタン -->
     <div class="col-5">
       <form action="{{ route('challenges.delete', ['challenge_id' => $challenge->id]) }}" method="POST">
         {{ csrf_field() }}
-          <button type="submit" class="btn btn-lg btn-info" style="width: 100%; color: #fff;">削除</button>
+        <button type="submit" class="btn btn-lg btn-info" style="width: 100%; color: #fff;">削除</button>
       </form>
     </div>
   </div>
   @endif
 </div>
 @endsection
-
-
-
-          
