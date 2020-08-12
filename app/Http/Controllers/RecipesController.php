@@ -78,9 +78,9 @@ class RecipesController extends Controller
 				$ingredient->save();
 			}
 
-			//prosesese(工程の保存処理)
+			//process(工程の保存処理)
 			$request->processes= array_filter($request->processes, 'strlen');
-			$request->prosesses_img = array_filter($request->prosesses_img, 'strlen');
+			$request->processes_img = array_filter($request->processes_img, 'strlen');
 			$max = count($request->processes);
 			for($i=0; $i<$max; $i++){
 					$process = new Process;
@@ -88,17 +88,17 @@ class RecipesController extends Controller
 					$process->procedure = $request->processes[$i];
 					$process->save();
 
-				// 一度保存して、$prosess->idを発行する
-					$prosessesImg = $request->prosesses_img[$i];
-					$extension = $prosessesImg->guessExtension();
-				// 上記で発行した$prosess->idをここで利用
-					$fileName = "prosess_{$process->id}.{$extension}";
+				// 一度保存して、$process->idを発行する
+					$processesImg = $request->processes_img[$i];
+					$extension = $processesImg->guessExtension();
+				// 上記で発行した$process->idをここで利用
+					$fileName = "process_{$process->id}.{$extension}";
 
 				// imgファイル名を保存
 					$process->img = $fileName;
 					$process->save();
 					// imgファイル自体を保存
-					$prosessesImg->storeAs('public/prosesses_img', $fileName);
+					$processesImg->storeAs('public/processes_img', $fileName);
 			}
 
 			// トランザクションの保存処理を実行
