@@ -15,11 +15,16 @@ class Challenge extends Model
 	{
 		return $this->belongsTo(Recipe::class);
 	}
-
 	public function favorites()
 	{
 		return $this->belongsToMany(User::class, 'favorites')->withTimestamps();
 	}
+	public function comments()
+	{
+		return $this->hasMany(Comment::class);
+	}
+
+	//いいね関係↓
 	// そのユーザーが良いねを押してるかどうか判定
 	public function isFavoritedBy(?User $user)
 	{

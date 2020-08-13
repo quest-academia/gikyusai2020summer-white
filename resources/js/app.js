@@ -1,6 +1,7 @@
 import './bootstrap'
 import Vue from 'vue'
 import Favorite from './components/Favorite'
+import Comment from './components/Comment'
 
 import VueRouter from 'vue-router';
 import TopPage from "./components/TopPage.vue";
@@ -22,6 +23,6 @@ const app = new Vue({
     el: '#app',
     router,
     components: {
-        Favorite
+        Favorite,Comment,
     }
 });

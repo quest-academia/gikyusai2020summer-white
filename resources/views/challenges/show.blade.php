@@ -35,6 +35,7 @@
             <p class="text-left small font-weight-lighter">
               〇件のコメント▼
             </p>
+            <comment></comment>
           </div>
           <!-- ! Vue:slack風にしたい -->
 
