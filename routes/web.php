@@ -31,9 +31,11 @@ Route::put('/unfavorite', 'FavoriteController@unfavorite');
 Route::get('/favorite/{challenge}', 'FavoriteController@get');
 //↑いいね関係
 
-Route::get('/mypage', function () {
-    return view('user.mypage');
-});
+// マイページ関連
+Route::get('/mypage', 'UsersController@mypage')->name('mypage')->middleware('auth');
+// Route::get('/rename', 'UsersController@renameGet')->name('rename.get')->middleware('auth');
+Route::post('/rename', 'UsersController@renamePost')->name('rename.post')->middleware('auth');
+
 
 // トップページ（VueRouter使用）のルーティング 
 // ※ 他のルーティングに干渉しないように、このファイルの一番最後に記述すること
