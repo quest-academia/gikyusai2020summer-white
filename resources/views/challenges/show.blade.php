@@ -5,7 +5,6 @@
   <div class="row my-4 ml-3">
     <h4 class="whiteline font-weight-bold">みんなのつくってみた</h4>
   </div>
-
   <!-- 作ってみた下 -->
   <div class="row justify-content-around pb-5">
 
@@ -32,10 +31,8 @@
             <!-- チャレンジレシピのID -->
             <favorite :first-favorite="@json($challenge->isFavoritedBy(Auth::user()))" :first-count-favorites="@json($challenge->countFavorites())" :authorized="@json(Auth::check())" :challenge-id="@json($challenge->id)">
             </favorite>
-            <p class="text-left small font-weight-lighter">
-              〇件のコメント▼
-            </p>
-            <comment></comment>
+            <comment :challenge-id="@json($challenge->id)">
+            </comment>
           </div>
           <!-- ! Vue:slack風にしたい -->
 

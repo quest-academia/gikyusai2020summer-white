@@ -11,6 +11,8 @@
 |
 */
 
+use App\Http\Controllers\CommentController;
+
 Route::get('/recipes/create', 'RecipesController@create')->name('recipes.create');
 Route::post('/recipes/store', 'RecipesController@store')->name('recipes.store');
 Route::get('/recipes/show/{id}', 'RecipesController@show')->name('recipes.show')->where('id', '[0-9]+');
@@ -32,11 +34,16 @@ Route::get('/favorite/{challenge}', 'FavoriteController@get');
 //↑いいね関係
 
 Route::get('/mypage', function () {
-    return view('user.mypage');
+	return view('user.mypage');
 });
+
+//コメント関係↓
+Route::apiResource('/comments', 'CommentController');
+//チャレンジごとのコメント取得
+Route::get('/comments/challenge/{challenge_id}', 'CommentController@getChallengeComments');
 
 // トップページ（VueRouter使用）のルーティング 
 // ※ 他のルーティングに干渉しないように、このファイルの一番最後に記述すること
 Route::get('/{any}', function () {
-    return view('index');
+	return view('index');
 })->where('any', '.*');
