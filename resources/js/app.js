@@ -27,11 +27,17 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+// 通常コンポーネントの利用
 import TopPage from "./components/TopPage.vue"
+import Kekka from "./components/Kekka.vue"
 
-// Vueルータの導入
+// Vueルータコンポーネントの利用
 import VueRouter from 'vue-router'
-// Fontawesomeライブラリの導入
+// Vuex storeコンポーネントの利用
+import store from './store'
+import { mapState } from "vuex";                                              
+import { mapMutations } from "vuex";                                          
+// Fontawesomeコンポーネントの利用
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -50,12 +56,26 @@ const router = new VueRouter({
         {
             path: '/',
             name: 'toppage',
-            component: TopPage
+            component: TopPage,
+        },
+        {
+            path: '/kekka',
+            name: 'kekka',
+            component: Kekka,
+			beforeEnter: (to, from, next) => {
+				next();	
+			}
         },
     ]
 });
 
+router.beforeEach((to, from, next) => {
+	console.log('beforEach');
+	next();	
+})
+
 const app = new Vue({
     el: '#app',
-	router
+	router,
+	store,
 });

@@ -1,4 +1,4 @@
-@extends('layouts.challenges')
+@extends('layouts.index')
 
 @section('content')
 <div id="app">
