@@ -15,7 +15,7 @@
 				<div class="on-group1">
 					<div class="search_container">
 						<input type="text" size="25" placeholder="キーワード検索" v-model="searchWord">
-						<button class="search-button" type="submit" v-on:click="inputKeyword(searchWord); routerPush('/kekka')">
+						<button class="search-button" type="submit" v-on:click="inputKeyword(searchWord); routerPush('/search-result')">
 							<font-awesome-icon icon="search" size="lg"></font-awesome-icon>
 						</button>
 					</div>
@@ -64,22 +64,12 @@
 			</div>
 		</div>
 
-		<!--<div class="text-center">
-			<input type="text" v-model="keyword">
-			<button class="mb-2" v-on:click="callChildSearchMethod">検索</button>
-			<search-result v-show="isSearchResult" ref="result" v-bind:keyword="keyword"></search-result>
-			<top-title v-show="!isSearchResult"></top-title>
-		</div>-->
     </div>
 </template>
 
 <script>
     import { mapState } from "vuex";
     import { mapMutations } from "vuex";
-
-    //import Search from './Search.vue';
-    //import TopTitle from './TopTitle.vue';
-    //import SearchResult from './SearchResult.vue';
 
     export default {
         data () {
@@ -89,11 +79,6 @@
                 isSearchResult :false,
             }
         },
-       // components: {
-       //     Search,
-       //     TopTitle,
-       //     SearchResult
-       // },
 		created () {
 			console.log("TopPage");
 		},
@@ -109,10 +94,6 @@
 			routerPush (url) {	
 				this.$router.push(url);
 			},
-           // callChildSearchMethod () {
-           //     this.isSearchResult = true;
-           //     this.$refs.result.search();
-           // }
         }
     }
 </script>

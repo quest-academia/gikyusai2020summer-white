@@ -16167,10 +16167,10 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kekka.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Kekka.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SearchResult.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SearchResult.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -16360,16 +16360,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
- //import Search from './Search.vue';
-//import TopTitle from './TopTitle.vue';
-//import SearchResult from './SearchResult.vue';
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -16379,11 +16370,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       isSearchResult: false
     };
   },
-  // components: {
-  //     Search,
-  //     TopTitle,
-  //     SearchResult
-  // },
   created: function created() {
     console.log("TopPage");
   },
@@ -16393,11 +16379,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(['inputKeyword'])), {}, {
     routerPush: function routerPush(url) {
       this.$router.push(url);
-    } // callChildSearchMethod () {
-    //     this.isSearchResult = true;
-    //     this.$refs.result.search();
-    // }
-
+    }
   })
 });
 
@@ -20833,10 +20815,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kekka.vue?vue&type=style&index=0&id=c1d06ee8&scoped=true&lang=css&":
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Kekka.vue?vue&type=style&index=0&id=c1d06ee8&scoped=true&lang=css& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SearchResult.vue?vue&type=style&index=0&id=6cc59560&scoped=true&lang=css&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SearchResult.vue?vue&type=style&index=0&id=6cc59560&scoped=true&lang=css& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20845,7 +20827,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.main[data-v-c1d06ee8] {\n  color:#5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n.ranking[data-v-c1d06ee8] {\n  border-bottom: solid 10px;\n  border-color:  #FFA500;\n}\n.ranking a[data-v-c1d06ee8]{\n  color: black;\n}\n.ranking-title[data-v-c1d06ee8] {\n  font-size: 20px;\n}\nselect[data-v-c1d06ee8] {\n  width:  180px;\n  height: 30px;\n}\n.challenge-button[data-v-c1d06ee8] {\n  background-color: #C6F281;\n  color: #5d5d5d;\n  text-align: center;\n  padding: 14px;\n  border-radius: 25px;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n.details[data-v-c1d06ee8] {\n  width: 300px;\n}\n.pagenation[data-v-c1d06ee8] {\n  color:  #FFA500;\n}\n", ""]);
+exports.push([module.i, "\n.main[data-v-6cc59560] {\n  color:#5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n.ranking[data-v-6cc59560] {\n  border-bottom: solid 10px;\n  border-color:  #FFA500;\n}\n.ranking a[data-v-6cc59560]{\n  color: black;\n}\n.ranking-title[data-v-6cc59560] {\n  font-size: 20px;\n}\nselect[data-v-6cc59560] {\n  width:  180px;\n  height: 30px;\n}\n.challenge-button[data-v-6cc59560] {\n  background-color: #C6F281;\n  color: #5d5d5d;\n  text-align: center;\n  padding: 14px;\n  border-radius: 25px;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n.details[data-v-6cc59560] {\n  width: 300px;\n}\n.pagenation[data-v-6cc59560] {\n  color:  #FFA500;\n}\n", ""]);
 
 // exports
 
@@ -20864,7 +20846,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*調理時間*/\n.cooking-time[data-v-4ffbace9]{\n  background:#FFD41F;\n  height: auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cooking-time img[data-v-4ffbace9]{\n  margin: 5px;\n}\n.cooking-time a img[data-v-4ffbace9]{\n  width: 70%;\n  height: auto;\n  margin: 8px 0px;\n}\n\n/*トップページのグループ*/\n.otumami-img[data-v-4ffbace9]{\n  width: 100%;\n  height: auto;\n  vertical-align:top;\n}\n.backimg[data-v-4ffbace9]{\n  position: relative;\n}\n.on-group1[data-v-4ffbace9]{\n  position: absolute;\n  top:  50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n}\n.search-button[data-v-4ffbace9] {\n  background-color: initial;\n  border: initial;\n  width: initial;\n  padding: initial;\n  border-radius: initial;\n}\n.on-group2[data-v-4ffbace9]{\n  position: absolute;\n  top:  80%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n  background-color: #FFD41F;\n  border-radius: 20px;\n  text-align: center;\n  padding: 14px 40px;\n  color: #fff;\n  text-decoration: none;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 3.8em;\n  width: 300px;\n  background-color: #fff;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  font-size: 16px;\n  border: none;\n  height: 2.8em;\n  width: 240px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container button[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*メイン*/\n/*新発見おつまみ*/\n.main-section1[data-v-4ffbace9]{\n  //height: 400px;\n  background-color: #fff;\n  border-radius: 30px;\n  margin: 20px auto 20px auto;\n  width: 80%;\n  max-width: 400px;\n  padding: 16px;\n}\n.main-section1 h2[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-weight: normal;\n  position: relative;\n  margin-bottom: 1em;\n  font-size: 20px;\n  color:#5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  margin: 10px;\n  padding-bottom: 6px;\n}\n.main-section1 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 27%;\n  bottom: -8px;/*線の上下位置*/\n  display: inline-block;\n  width: 100px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color:#5D5D5E;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n.main-section1 p[data-v-4ffbace9]{\n  padding-top: 18px;\n  margin: 24px 8px 8px 15px;\n  text-align: center;\n  color:#5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  font-size: 16px;\n}\n.main-section1 p a[data-v-4ffbace9]{\n  color:#5D5D5E;\n  text-decoration: none;\n}\n.main-section1 p a[data-v-4ffbace9]:hover{\n  border-bottom:#5D5D5E solid 1px;\n}\n.main-section2[data-v-4ffbace9]{\n  //height: 400px;\n  background-color: #fff;\n  border-radius: 30px;\n  margin: 20px auto 10px auto;\n  width: 80%;\n  max-width: 400px;\n  padding: 16px;\n}\n.main-section2 h2[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-weight: normal;\n  position: relative;\n  font-size: 20px;\n  color: #5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  margin: 10px;\n  padding-bottom: 6px;\n}\n.main-section2 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 10%;\n  bottom: -8px;/*線の上下位置*/\n  display: inline-block;\n  width: 150px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: #5D5D5E;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n\n/*お酒に相性がいいおつまみ*/\n.main[data-v-4ffbace9]:after{\n content: \"\";\n clear: both;\n overflow: hidden;\n display: block;\n}\n.main-list1[data-v-4ffbace9]{\n  margin-top: 40px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.main-list1[data-v-4ffbace9]:after{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.alcohol001[data-v-4ffbace9]{\n  float: left;\n  margin-left: 10px;\n  margin-right: 50px;\n}\n.alcohol002[data-v-4ffbace9]{\n  float: left;\n}\n.main-list2[data-v-4ffbace9]{\n  margin-top: 30px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n}\n.main-list2[data-v-4ffbace9]:after{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.alcohol003[data-v-4ffbace9]{\n  float: left;\n  margin-left: 10px;\n  margin-right: 50px;\n}\n.alcohol004[data-v-4ffbace9]{\n  float: left;\n}\n.alcohol001 p[data-v-4ffbace9],.alcohol002 p[data-v-4ffbace9],.alcohol003 p[data-v-4ffbace9],.alcohol004 p[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  color: #5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n\n/*フッター*/\n.footer[data-v-4ffbace9]{\n  height: 100px;\n  background-color: #FFD41F;\n  text-align: right;\n}\n.footer p[data-v-4ffbace9]{\n  padding:20px;\n  color:#fff;\n  font-family: 'Quicksand', sans-serif;\n  font-size: 16px;\n}\n\n\n/*###########320px以下##############*/\n@media(max-width:320px){\n.cooking-time img[data-v-4ffbace9]{\n    margin: 5px 15px;\n    width:50px;\n    height: 50px;\n}\n.on-group1[data-v-4ffbace9]{\n    position: absolute;\n    top:  50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n      -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n    background-color: #FFD41F;\n    border-radius: 20px;\n    text-align: center;\n    padding: 10px 30px;\n    color: #fff;\n    text-decoration: none;\n    font-size: 12px;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 2.3em;\n  width: 260px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  border: none;\n  height: 2.0em;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container input[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*相性がいいおつまみ設定*/\n.alcohol001 img[data-v-4ffbace9],.alcohol002 img[data-v-4ffbace9],.alcohol003 img[data-v-4ffbace9],.alcohol004 img[data-v-4ffbace9]{\n  width: 90px;\n  height: 90px;\n}\n}\n\n\n/*########330px~450px#########*/\n@media (min-width:330px) and (max-width:450px){\n.cooking-time[data-v-4ffbace9]{\n    background:#FFD41F;\n    height: auto;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.cooking-time img[data-v-4ffbace9]{\n    margin: 5px 15px;\n    width:60px;\n    height: 60px;\n}\n.cooking-time a img[data-v-4ffbace9]{\n    width: 70%;\n    height: auto;\n    margin: 8px 0px;\n}\n.on-group1[data-v-4ffbace9]{\n    position: absolute;\n    top:  50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n      -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n    background-color: #FFD41F;\n    border-radius: 20px;\n    text-align: center;\n    padding: 10px 30px;\n    color: #fff;\n    text-decoration: none;\n    font-size: 13px;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 2.3em;\n  width: 260px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  border: none;\n  height: 2.0em;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container input[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*相性がいいおつまみ設定*/\n.alcohol001 img[data-v-4ffbace9],.alcohol002 img[data-v-4ffbace9],.alcohol003 img[data-v-4ffbace9],.alcohol004 img[data-v-4ffbace9]{\n  width: 100px;\n  height: 100px;\n}\n}\n\n/*########768px以上##########*/\n@media(min-width:768px){\n.cooking-time[data-v-4ffbace9]{\n    background:#FFD41F;\n    height: auto;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.cooking-time a img[data-v-4ffbace9]{\n    max-width: 100px;\n    max-height: 100px;\n    width: auto;\n    height: auto;\n    margin: 5px 30px;\n}\n/*メニューの横並び設定*/\n.main[data-v-4ffbace9]{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.main-box1[data-v-4ffbace9]{\n  float: left;\n  width: 50%;\n}\n.main-box2[data-v-4ffbace9]{\n  float: left;\n  width: 50%;\n}\n\n/*メイン*/\n.main-section1 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 30%;\n  bottom: -10px;/*線の上下位置*/\n  display: inline-block;\n  width: 100px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: black;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n.main-section2 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 17%;\n  bottom: -10px;/*線の上下位置*/\n  display: inline-block;\n  width: 150px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: black;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n}\n/*###############1140px以上###################*/\n@media(min-width:1140px){\n.main[data-v-4ffbace9]{\n  width:1100px;\n  margin-left: auto;\n  margin-right: auto;\n}\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*調理時間*/\n.cooking-time[data-v-4ffbace9]{\n  background:#FFD41F;\n  height: auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cooking-time img[data-v-4ffbace9]{\n  margin: 5px;\n}\n.cooking-time a img[data-v-4ffbace9]{\n  width: 70%;\n  height: auto;\n  margin: 8px 0px;\n}\n\n/*トップページのグループ*/\n.otumami-img[data-v-4ffbace9]{\n  width: 100%;\n  height: auto;\n  vertical-align:top;\n}\n.backimg[data-v-4ffbace9]{\n  position: relative;\n}\n.on-group1[data-v-4ffbace9]{\n  position: absolute;\n  top:  50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n}\n.search-button[data-v-4ffbace9] {\n  background-color: initial;\n  border: initial;\n  width: initial;\n  padding: initial;\n  border-radius: initial;\n}\n.on-group2[data-v-4ffbace9]{\n  position: absolute;\n  top:  80%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n  background-color: #FFD41F;\n  border-radius: 20px;\n  text-align: center;\n  padding: 14px 40px;\n  color: #fff;\n  text-decoration: none;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 3.8em;\n  width: 300px;\n  background-color: #fff;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  font-size: 16px;\n  border: none;\n  height: 2.8em;\n  width: 240px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container button[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*メイン*/\n/*新発見おつまみ*/\n.main-section1[data-v-4ffbace9]{\n  //height: 400px;\n  background-color: #fff;\n  border-radius: 30px;\n  margin: 20px auto 20px auto;\n  width: 80%;\n  max-width: 400px;\n  padding: 16px;\n}\n.main-section1 h2[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-weight: normal;\n  position: relative;\n  margin-bottom: 1em;\n  font-size: 20px;\n  color:#5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  margin: 10px;\n  padding-bottom: 6px;\n}\n.main-section1 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 27%;\n  bottom: -8px;/*線の上下位置*/\n  display: inline-block;\n  width: 100px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color:#5D5D5E;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n.main-section1 p[data-v-4ffbace9]{\n  padding-top: 18px;\n  margin: 24px 8px 8px 15px;\n  text-align: center;\n  color:#5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  font-size: 16px;\n}\n.main-section1 p a[data-v-4ffbace9]{\n  color:#5D5D5E;\n  text-decoration: none;\n}\n.main-section1 p a[data-v-4ffbace9]:hover{\n  border-bottom:#5D5D5E solid 1px;\n}\n.main-section2[data-v-4ffbace9]{\n  //height: 400px;\n  background-color: #fff;\n  border-radius: 30px;\n  margin: 20px auto 10px auto;\n  width: 80%;\n  max-width: 400px;\n  padding: 16px;\n}\n.main-section2 h2[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-weight: normal;\n  position: relative;\n  font-size: 20px;\n  color: #5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  margin: 10px;\n  padding-bottom: 6px;\n}\n.main-section2 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 10%;\n  bottom: -8px;/*線の上下位置*/\n  display: inline-block;\n  width: 150px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: #5D5D5E;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n\n/*お酒に相性がいいおつまみ*/\n.main[data-v-4ffbace9]:after{\n content: \"\";\n clear: both;\n overflow: hidden;\n display: block;\n}\n.main-list1[data-v-4ffbace9]{\n  margin-top: 40px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.main-list1[data-v-4ffbace9]:after{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.alcohol001[data-v-4ffbace9]{\n  float: left;\n  margin-left: 10px;\n  margin-right: 50px;\n}\n.alcohol002[data-v-4ffbace9]{\n  float: left;\n}\n.main-list2[data-v-4ffbace9]{\n  margin-top: 30px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n}\n.main-list2[data-v-4ffbace9]:after{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.alcohol003[data-v-4ffbace9]{\n  float: left;\n  margin-left: 10px;\n  margin-right: 50px;\n}\n.alcohol004[data-v-4ffbace9]{\n  float: left;\n}\n.alcohol001 p[data-v-4ffbace9],.alcohol002 p[data-v-4ffbace9],.alcohol003 p[data-v-4ffbace9],.alcohol004 p[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  color: #5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n\n/*フッター*/\n.footer[data-v-4ffbace9]{\n  height: 100px;\n  background-color: #FFD41F;\n  text-align: right;\n}\n.footer p[data-v-4ffbace9]{\n  padding:20px;\n  color:#fff;\n  font-family: 'Quicksand', sans-serif;\n  font-size: 16px;\n}\n\n\n/*###########320px以下##############*/\n@media(max-width:320px){\n.cooking-time img[data-v-4ffbace9]{\n    margin: 5px 15px;\n    width:50px;\n    height: 50px;\n}\n.on-group1[data-v-4ffbace9]{\n    position: absolute;\n    top:  50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n      -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n    background-color: #FFD41F;\n    border-radius: 20px;\n    text-align: center;\n    padding: 10px 30px;\n    color: #fff;\n    text-decoration: none;\n    font-size: 12px;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 2.3em;\n  width: 260px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  border: none;\n  height: 2.0em;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container input[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*相性がいいおつまみ設定*/\n.alcohol001 img[data-v-4ffbace9],.alcohol002 img[data-v-4ffbace9],.alcohol003 img[data-v-4ffbace9],.alcohol004 img[data-v-4ffbace9]{\n  width: 90px;\n  height: 90px;\n}\n}\n\n\n/*########330px~450px#########*/\n@media (min-width:330px) and (max-width:450px){\n.cooking-time[data-v-4ffbace9]{\n    background:#FFD41F;\n    height: auto;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.cooking-time img[data-v-4ffbace9]{\n    margin: 5px 15px;\n    width:60px;\n    height: 60px;\n}\n.cooking-time a img[data-v-4ffbace9]{\n    width: 70%;\n    height: auto;\n    margin: 8px 0px;\n}\n.on-group1[data-v-4ffbace9]{\n    position: absolute;\n    top:  50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n      -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n    background-color: #FFD41F;\n    border-radius: 20px;\n    text-align: center;\n    padding: 10px 30px;\n    color: #fff;\n    text-decoration: none;\n    font-size: 13px;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 2.3em;\n  width: 260px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  border: none;\n  height: 2.0em;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container input[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*相性がいいおつまみ設定*/\n.alcohol001 img[data-v-4ffbace9],.alcohol002 img[data-v-4ffbace9],.alcohol003 img[data-v-4ffbace9],.alcohol004 img[data-v-4ffbace9]{\n  width: 100px;\n  height: 100px;\n}\n}\n\n/*########768px以上##########*/\n@media(min-width:768px){\n.cooking-time[data-v-4ffbace9]{\n    background:#FFD41F;\n    height: auto;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.cooking-time a img[data-v-4ffbace9]{\n    max-width: 100px;\n    max-height: 100px;\n    width: auto;\n    height: auto;\n    margin: 5px 30px;\n}\n/*メニューの横並び設定*/\n.main[data-v-4ffbace9]{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.main-box1[data-v-4ffbace9]{\n  float: left;\n  width: 50%;\n}\n.main-box2[data-v-4ffbace9]{\n  float: left;\n  width: 50%;\n}\n\n/*メイン*/\n.main-section1 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 30%;\n  bottom: -10px;/*線の上下位置*/\n  display: inline-block;\n  width: 100px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: black;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n.main-section2 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 17%;\n  bottom: -10px;/*線の上下位置*/\n  display: inline-block;\n  width: 150px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: black;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n}\n/*###############1140px以上###################*/\n@media(min-width:1140px){\n.main[data-v-4ffbace9]{\n  width:1100px;\n  margin-left: auto;\n  margin-right: auto;\n}\n}\n", ""]);
 
 // exports
 
@@ -52030,15 +52012,15 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kekka.vue?vue&type=style&index=0&id=c1d06ee8&scoped=true&lang=css&":
-/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Kekka.vue?vue&type=style&index=0&id=c1d06ee8&scoped=true&lang=css& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SearchResult.vue?vue&type=style&index=0&id=6cc59560&scoped=true&lang=css&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SearchResult.vue?vue&type=style&index=0&id=6cc59560&scoped=true&lang=css& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Kekka.vue?vue&type=style&index=0&id=c1d06ee8&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kekka.vue?vue&type=style&index=0&id=c1d06ee8&scoped=true&lang=css&");
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./SearchResult.vue?vue&type=style&index=0&id=6cc59560&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SearchResult.vue?vue&type=style&index=0&id=6cc59560&scoped=true&lang=css&");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -52674,10 +52656,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kekka.vue?vue&type=template&id=c1d06ee8&scoped=true&":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Kekka.vue?vue&type=template&id=c1d06ee8&scoped=true& ***!
-  \********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SearchResult.vue?vue&type=template&id=6cc59560&scoped=true&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/SearchResult.vue?vue&type=template&id=6cc59560&scoped=true& ***!
+  \***************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -52897,7 +52879,7 @@ var render = function() {
                 on: {
                   click: function($event) {
                     _vm.inputKeyword(_vm.searchWord)
-                    _vm.routerPush("/kekka")
+                    _vm.routerPush("/search-result")
                   }
                 }
               },
@@ -69607,7 +69589,7 @@ module.exports = function(module) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_TopPage_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/TopPage.vue */ "./resources/js/components/TopPage.vue");
-/* harmony import */ var _components_Kekka_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/Kekka.vue */ "./resources/js/components/Kekka.vue");
+/* harmony import */ var _components_SearchResult_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/SearchResult.vue */ "./resources/js/components/SearchResult.vue");
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store */ "./resources/js/store.js");
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
@@ -69668,17 +69650,10 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
     name: 'toppage',
     component: _components_TopPage_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   }, {
-    path: '/kekka',
-    name: 'kekka',
-    component: _components_Kekka_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    beforeEnter: function beforeEnter(to, from, next) {
-      next();
-    }
+    path: '/search-result',
+    name: 'search-result',
+    component: _components_SearchResult_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }]
-});
-router.beforeEach(function (to, from, next) {
-  console.log('beforEach');
-  next();
 });
 var app = new Vue({
   el: '#app',
@@ -69733,18 +69708,18 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
-/***/ "./resources/js/components/Kekka.vue":
-/*!*******************************************!*\
-  !*** ./resources/js/components/Kekka.vue ***!
-  \*******************************************/
+/***/ "./resources/js/components/SearchResult.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/components/SearchResult.vue ***!
+  \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Kekka_vue_vue_type_template_id_c1d06ee8_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Kekka.vue?vue&type=template&id=c1d06ee8&scoped=true& */ "./resources/js/components/Kekka.vue?vue&type=template&id=c1d06ee8&scoped=true&");
-/* harmony import */ var _Kekka_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Kekka.vue?vue&type=script&lang=js& */ "./resources/js/components/Kekka.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _Kekka_vue_vue_type_style_index_0_id_c1d06ee8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Kekka.vue?vue&type=style&index=0&id=c1d06ee8&scoped=true&lang=css& */ "./resources/js/components/Kekka.vue?vue&type=style&index=0&id=c1d06ee8&scoped=true&lang=css&");
+/* harmony import */ var _SearchResult_vue_vue_type_template_id_6cc59560_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SearchResult.vue?vue&type=template&id=6cc59560&scoped=true& */ "./resources/js/components/SearchResult.vue?vue&type=template&id=6cc59560&scoped=true&");
+/* harmony import */ var _SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SearchResult.vue?vue&type=script&lang=js& */ "./resources/js/components/SearchResult.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _SearchResult_vue_vue_type_style_index_0_id_6cc59560_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SearchResult.vue?vue&type=style&index=0&id=6cc59560&scoped=true&lang=css& */ "./resources/js/components/SearchResult.vue?vue&type=style&index=0&id=6cc59560&scoped=true&lang=css&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -69755,66 +69730,66 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _Kekka_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Kekka_vue_vue_type_template_id_c1d06ee8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Kekka_vue_vue_type_template_id_c1d06ee8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SearchResult_vue_vue_type_template_id_6cc59560_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SearchResult_vue_vue_type_template_id_6cc59560_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "c1d06ee8",
+  "6cc59560",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/Kekka.vue"
+component.options.__file = "resources/js/components/SearchResult.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/Kekka.vue?vue&type=script&lang=js&":
-/*!********************************************************************!*\
-  !*** ./resources/js/components/Kekka.vue?vue&type=script&lang=js& ***!
-  \********************************************************************/
+/***/ "./resources/js/components/SearchResult.vue?vue&type=script&lang=js&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/SearchResult.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Kekka_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Kekka.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kekka.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Kekka_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./SearchResult.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SearchResult.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/Kekka.vue?vue&type=style&index=0&id=c1d06ee8&scoped=true&lang=css&":
-/*!****************************************************************************************************!*\
-  !*** ./resources/js/components/Kekka.vue?vue&type=style&index=0&id=c1d06ee8&scoped=true&lang=css& ***!
-  \****************************************************************************************************/
+/***/ "./resources/js/components/SearchResult.vue?vue&type=style&index=0&id=6cc59560&scoped=true&lang=css&":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/components/SearchResult.vue?vue&type=style&index=0&id=6cc59560&scoped=true&lang=css& ***!
+  \***********************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Kekka_vue_vue_type_style_index_0_id_c1d06ee8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./Kekka.vue?vue&type=style&index=0&id=c1d06ee8&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kekka.vue?vue&type=style&index=0&id=c1d06ee8&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Kekka_vue_vue_type_style_index_0_id_c1d06ee8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Kekka_vue_vue_type_style_index_0_id_c1d06ee8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Kekka_vue_vue_type_style_index_0_id_c1d06ee8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Kekka_vue_vue_type_style_index_0_id_c1d06ee8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Kekka_vue_vue_type_style_index_0_id_c1d06ee8_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_style_index_0_id_6cc59560_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./SearchResult.vue?vue&type=style&index=0&id=6cc59560&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SearchResult.vue?vue&type=style&index=0&id=6cc59560&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_style_index_0_id_6cc59560_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_style_index_0_id_6cc59560_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_style_index_0_id_6cc59560_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_style_index_0_id_6cc59560_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_style_index_0_id_6cc59560_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
-/***/ "./resources/js/components/Kekka.vue?vue&type=template&id=c1d06ee8&scoped=true&":
-/*!**************************************************************************************!*\
-  !*** ./resources/js/components/Kekka.vue?vue&type=template&id=c1d06ee8&scoped=true& ***!
-  \**************************************************************************************/
+/***/ "./resources/js/components/SearchResult.vue?vue&type=template&id=6cc59560&scoped=true&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/SearchResult.vue?vue&type=template&id=6cc59560&scoped=true& ***!
+  \*********************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Kekka_vue_vue_type_template_id_c1d06ee8_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Kekka.vue?vue&type=template&id=c1d06ee8&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Kekka.vue?vue&type=template&id=c1d06ee8&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Kekka_vue_vue_type_template_id_c1d06ee8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_template_id_6cc59560_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./SearchResult.vue?vue&type=template&id=6cc59560&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/SearchResult.vue?vue&type=template&id=6cc59560&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_template_id_6cc59560_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Kekka_vue_vue_type_template_id_c1d06ee8_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SearchResult_vue_vue_type_template_id_6cc59560_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
