@@ -55,18 +55,18 @@
 						</div>
 					</template>
 				</div>
-					<div class="mt-5 text-center">
-						<nav>
-							<ul class="pagination">
-								<li v-for="page in pageRange"
-									v-bind:key="page"
-									v-on:click="changePage(page)"
-									v-bind:class="(isCurrent(page)) ? 'active' : 'inactive'">
-									{{ page }}
-								</li>
-							</ul>
-						</nav>
-					</div>
+				<div class="mt-5 text-center">
+					<nav>
+						<ul class="pagination">
+							<li v-for="page in pageRange"
+								v-bind:key="page"
+								v-on:click="changePage(page)"
+								v-bind:class="(isCurrent(page)) ? 'active' : 'inactive'">
+								{{ page }}
+							</li>
+						</ul>
+					</nav>
+				</div>
 			</div>
 		</div>
 	</div>
