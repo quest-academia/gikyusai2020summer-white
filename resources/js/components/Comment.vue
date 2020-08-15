@@ -8,8 +8,16 @@
       <ul>
         <li v-for="post in comments" :key="post.id">
           {{ post.user.name}}/{{post.comment}}/{{post.updated_at}}
+          <button @click="displayUpdate(post.id,post.comment)">編集</button>
+          <button @click="deleteComment(post.id)">削除</button>
         </li>
       </ul>
+    </div>
+
+    <!-- 編集フォーム -->
+    <div v-if="updateForm">
+      <input type="text" v-model="renewComment" />
+      <button @click="updateComment">編集する</button>
     </div>
 
     <!-- コメント入力欄 -->
@@ -32,6 +40,10 @@ export default {
       comment: "",
       countComment: 0, 
       comments: [],
+      renewComment: "",
+      updateForm: false,
+      updateId: "",
+
     }
   },
   created(){
@@ -46,7 +58,7 @@ export default {
         this.countComment = response.data.countComment;
         console.log(response.data);
       })
-      .catch(error=> {
+      .catch(error => {
         console.log(error)
       })
     },
@@ -61,7 +73,35 @@ export default {
         this.getComments();
         this.comment = '';
       })
-      .catch(error=>console.log(error))
+      .catch(error => {
+        console.log(error)
+      })
+    },
+    // 編集フォームの表示
+    displayUpdate(id,comment){
+      this.updateForm = true;
+      this.updateId = id;
+      this.renewComment = comment;
+    },
+    updateComment(){
+      axios
+      .put('/comments/' + this.updateId,{
+        comment: this.renewComment
+      })
+      .then(response => {
+        this.getComments();
+        this.updateForm = false
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    },
+    deleteComment(id){
+      axios
+      .delete('/comments/' + id)
+      .then(response => {
+        this.getComments();
+      })
     },
   }
 }
