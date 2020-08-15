@@ -36,6 +36,11 @@ Route::get('/favorite/{challenge}', 'FavoriteController@get');
 Route::get('/mypage', function () {
 	return view('user.mypage');
 });
+// マイページ関連
+Route::get('/mypage', 'UsersController@mypage')->name('mypage')->middleware('auth');
+// Route::get('/rename', 'UsersController@renameGet')->name('rename.get')->middleware('auth');
+Route::post('/rename', 'UsersController@renamePost')->name('rename.post')->middleware('auth');
+
 
 //コメント関係↓
 Route::apiResource('/comments', 'CommentController');
