@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 // フォームリクエストを宣言
 use App\Http\Requests\RecipesRequest;
@@ -114,4 +115,30 @@ class RecipesController extends Controller
 			throw $e;
 		}
     }
+
+	public function search(Request $request)
+	{
+		$keywords = $request->keyword;
+
+		// ワイルドカードを文字列に変換
+        $keywords = str_replace('%','\%',$keywords);
+        $keywords = str_replace('_','\_',$keywords);
+		$keywords = str_replace("　", " ", $keywords);
+		$keywords = trim($keywords);
+        // エスケープ文字を文字列に変換
+        $keywords = str_replace('\\','\\\\',$keywords);
+		$keywords = preg_replace("/\s+/", " ", $keywords);
+		$keywords = explode(" ", $keywords);
+
+		// レシピテーブルのクエリビルダーを取得
+		$query = Recipe::with('user');
+
+		// 各キーワードでレシピ名を検索
+		foreach ($keywords as $keyword) {
+			$query->where('name', 'like', "%".$keyword."%");
+		}
+		$recipes = $query->orderBy('id', 'desc')->paginate(5);
+
+		return $recipes;
+	}	
 }

@@ -11,11 +11,12 @@
 |
 */
 
+// レシピ
 Route::get('/recipes/create', 'RecipesController@create')->name('recipes.create');
 Route::post('/recipes/store', 'RecipesController@store')->name('recipes.store');
 Route::get('/recipes/show/{id}', 'RecipesController@show')->name('recipes.show')->where('id', '[0-9]+');
 
-
+// 作ってみた
 Route::get('challenges/create', 'ChallengesController@create')->name('challenges.create');
 Route::post('challenges/store', 'ChallengesController@store')->name('challenges.store');
 Route::get('challenges/show/{id}', 'ChallengesController@show')->name('challenges.show')->where('id', '[0-9]+');
@@ -23,19 +24,21 @@ Route::get('challenges/edit/{id}', 'ChallengesController@edit')->name('challenge
 Route::post('challenges/update/{id}', 'ChallengesController@update')->name('challenges.update')->where('id', '[0-9]+');
 Route::post('challenges/delete/{id}', 'ChallengesController@destory')->name('challenges.delete')->where('id', '[0-9]+');
 
+// ユーザ関連
 Auth::routes();
-
-//いいね関係 
-Route::put('/favorite', 'FavoriteController@favorite')->name('favorite');
-Route::put('/unfavorite', 'FavoriteController@unfavorite');
-Route::get('/favorite/{challenge}', 'FavoriteController@get');
-//↑いいね関係
 
 // マイページ関連
 Route::get('/mypage', 'UsersController@mypage')->name('mypage')->middleware('auth');
 // Route::get('/rename', 'UsersController@renameGet')->name('rename.get')->middleware('auth');
 Route::post('/rename', 'UsersController@renamePost')->name('rename.post')->middleware('auth');
 
+// いいねAPI
+Route::put('/favorite', 'FavoriteController@favorite')->name('favorite');
+Route::put('/unfavorite', 'FavoriteController@unfavorite');
+Route::get('/favorite/{challenge}', 'FavoriteController@get');
+
+// レシピAPI
+Route::post('/recipes/search', 'RecipesController@search');
 
 // トップページ（VueRouter使用）のルーティング 
 // ※ 他のルーティングに干渉しないように、このファイルの一番最後に記述すること
