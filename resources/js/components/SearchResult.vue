@@ -104,12 +104,13 @@
 			]),
 			// 検索メソッド
 			search (word) {
+				// 初期検索時は、必ず１ページ目を表示するように検索をかける
 				axios
 					.post(
 						'/recipes/search',
 						{
 							keyword: word,
-							page: this.current_page
+							page: 1
 						}
 					)
 					.then(response => {
@@ -134,7 +135,24 @@
 			changePage (page) {
 				if (page > 0 && page <= this.last_page) {
 					this.current_page = page;
-					this.search(this.keyword);
+					// そのページ数で検索をかける
+					axios
+						.post(
+							'/recipes/search',
+							{
+								keyword: this.keyword,
+								page: this.current_page
+							}
+						)
+						.then(response => {
+							console.log(response);
+							this.recipes = response.data.data;
+							this.current_page = response.data.current_page;
+							this.last_page = response.data.last_page;
+						})
+						.catch(error => {
+							console.log(error);
+						});
 				}
 			},
 			// ページネーション現在ページの色変更メソッド
