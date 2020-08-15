@@ -1,12 +1,14 @@
 <template>
   <div>
     <p class="text-left small font-weight-lighter">
-      〇件のコメント▼
+      {{ countComment }}件のコメント▼
     </p>
     <!-- コメント一覧 -->
     <div>
       <ul>
-        <li></li>
+        <li v-for="post in comments" :key="post.id">
+          {{ post.user.name}}/{{post.comment}}/{{post.updated_at}}
+        </li>
       </ul>
     </div>
 
@@ -27,29 +29,37 @@ export default {
   },
   data(){
     return{
-      comment: '',
+      comment: "",
+      countComment: 0, 
       comments: [],
-      
     }
   },
   created(){
-    axios
-    .get('/comments/challneges'+ challengeId)
-    .then(response =>{
-    this.comments = response.data.comments
-   	console.log(response.data.comments);
-    })
-    .catch(error=>console.log(error))
+    this.getComments();
   },
-  
   methods:{
+    getComments(){
+      axios
+      .get('/comments/challenge/'+ this.challengeId)
+      .then(response => {
+        this.comments = response.data.comments;
+        this.countComment = response.data.countComment;
+        console.log(response.data);
+      })
+      .catch(error=> {
+        console.log(error)
+      })
+    },
     addComment(){
       axios
-      .post('/comments',{
+      .post('/comments',
+        {
         comment: this.comment,
-        challenge_id: this.challengeId})
-      .then(response=>{
-        console.log(response)
+        challenge_id: this.challengeId
+        })
+      .then(response => {
+        this.getComments();
+        this.comment = '';
       })
       .catch(error=>console.log(error))
     },

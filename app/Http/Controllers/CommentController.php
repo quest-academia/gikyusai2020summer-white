@@ -24,13 +24,13 @@ class CommentController extends Controller
 		], 200, [], JSON_UNESCAPED_UNICODE);
 	}
 	//チャレンジごとのコメントとコメント数取得
-	public function getChallengeComments($challenge_id)
+	public function getChallengeComments(int $challenge_id)
 	{
 		// !目標：コメント、ユーザー名、update日、カウントを返す
 		$challengeComments = Comment::where('challenge_id', $challenge_id)->with('user:id,name')->orderBy('updated_at', 'desc')->get();
 		return [
 			'comments' => $challengeComments,
-			'commentCount' => $challengeComments->count()
+			'countComment' => $challengeComments->count()
 		];
 	}
 	/**
@@ -42,7 +42,7 @@ class CommentController extends Controller
 	public function store(Request $request)
 	{
 		$comment = new Comment;
-		$comment->user_id = $request->user_id;
+		$comment->user_id = $request->user()->id;
 		$comment->challenge_id = $request->challenge_id;
 		$comment->comment = $request->comment;
 		$comment->save();
