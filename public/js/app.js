@@ -16378,9 +16378,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     search: function search(word) {
       var _this = this;
 
+      // 初期検索時は、必ず１ページ目を表示するように検索をかける
       axios.post('/recipes/search', {
         keyword: word,
-        page: this.current_page
+        page: 1
       }).then(function (response) {
         console.log(response);
         _this.recipes = response.data.data;
@@ -16402,9 +16403,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     // ページ移動メソッド
     changePage: function changePage(page) {
+      var _this2 = this;
+
       if (page > 0 && page <= this.last_page) {
-        this.current_page = page;
-        this.search(this.keyword);
+        this.current_page = page; // そのページ数で検索をかける
+
+        axios.post('/recipes/search', {
+          keyword: this.keyword,
+          page: this.current_page
+        }).then(function (response) {
+          console.log(response);
+          _this2.recipes = response.data.data;
+          _this2.current_page = response.data.current_page;
+          _this2.last_page = response.data.last_page;
+        })["catch"](function (error) {
+          console.log(error);
+        });
       }
     },
     // ページネーション現在ページの色変更メソッド
