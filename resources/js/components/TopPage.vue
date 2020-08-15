@@ -75,22 +75,20 @@
         data () {
             return {
                 searchWord :'',
-                keyword :'',
-                isSearchResult :false,
             }
         },
-		created () {
-			console.log("TopPage");
-		},
         computed: {
+			// store.jsにある検索ワードを持ってくる
             ...mapState({
                 keyword: 'keyword',
             })
         },
         methods: {
+			// store.jsにある検索ワード変換メソッドを持ってくる
             ...mapMutations([
                 'inputKeyword',
             ]),
+			// ルーティングを切り替えるメソッド
 			routerPush (url) {	
 				this.$router.push(url);
 			},

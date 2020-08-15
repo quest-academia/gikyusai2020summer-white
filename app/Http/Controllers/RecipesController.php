@@ -106,13 +106,13 @@ class RecipesController extends Controller
 		$keywords = explode(" ", $keywords);
 
 		// レシピテーブルのクエリビルダーを取得
-		$query = DB::table('recipes');
+		$query = Recipe::with('user');
 
 		// 各キーワードでレシピ名を検索
 		foreach ($keywords as $keyword) {
 			$query->where('name', 'like', "%".$keyword."%");
 		}
-		$recipes = $query->orderBy('id', 'desc')->get();
+		$recipes = $query->orderBy('id', 'desc')->paginate(5);
 
 		return $recipes;
 	}	
