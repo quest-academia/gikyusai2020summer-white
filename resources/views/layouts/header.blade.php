@@ -12,7 +12,7 @@
   <div class="navigation">
     <nav class="menu-navigation">
       <ul>
-      <!-- ここからログイン／ログアウト、会員登録ボタン -->
+      <!-- ここからログイン／ログアウト、各ページへのリンク、会員登録ボタン -->
         @guest
           <li><a href="{{ route('login') }}">ログイン</a></li>
           @if(Route::has('register'))
@@ -24,7 +24,9 @@
               {{ Auth::user()->name }} <span class="caret"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{{ url('mypage') }}">{{ __('マイページ') }}</a>
+              <a class="dropdown-item" href="{{ url('/') }}">{{ __('トップページ') }}</a>
+              <a class="dropdown-item" href="{{ route('mypage') }}">{{ __('マイページ') }}</a>
+              <a class="dropdown-item" href="#">{{ __('レシピ一覧') }}</a>
               <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
@@ -36,25 +38,7 @@
             </div>
           </li>
         @endguest
-      <!-- ここまでログイン／ログアウト、会員登録ボタン -->
-        <!-- ここから左の飛び出すメニュー部分 -->
-        <li>
-          <div class="header-logo-menu">
-            <div id="nav-drawer">
-              <input id="nav-input" type="checkbox" class="nav-unshown">
-              <label id="nav-open" for="nav-input"><span></span></label>
-              <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-              <div id="nav-content">
-                <ul>
-                  <li><a href="#01">マイページ</a></li>
-                  <li><a href="#02">TOP</a></li>
-                  <li><a href="#02">レシピ一覧</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </li>
-        <!-- ここまで左の飛び出すメニュー部分 -->
+      <!-- ここまでログイン／ログアウト、各ページへのリンク、会員登録ボタン -->
       </ul>
     </nav>
   </div>

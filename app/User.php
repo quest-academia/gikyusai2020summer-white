@@ -37,14 +37,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-	// ユーザが所有するレシピを取得しやすいように関数で１対多の関係を定義
-	public function recipes()
-	{
-		return $this->hasMany(Recipe::class);
+    // ユーザが所有するレシピを取得しやすいように関数で１対多の関係を定義
+    public function recipes()
+    {
+        return $this->hasMany(Recipe::class);
     }
-    
-	public function challenges()
+
+    public function challenges()
+    {
+        return $this->hasMany(Challenge::class);
+    }
+
+    public function favors()
 	{
-		return $this->hasMany(Challenge::class);
+		return $this->belongsToMany(Challenge::class, 'favorites')->withTimestamps();
 	}
 }

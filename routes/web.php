@@ -26,15 +26,22 @@ Route::post('challenges/delete/{id}', 'ChallengesController@destory')->name('cha
 
 // ユーザ関連
 Auth::routes();
-Route::get('/mypage', function() {
-    return view('user.mypage');
-});
+
+// マイページ関連
+Route::get('/mypage', 'UsersController@mypage')->name('mypage')->middleware('auth');
+// Route::get('/rename', 'UsersController@renameGet')->name('rename.get')->middleware('auth');
+Route::post('/rename', 'UsersController@renamePost')->name('rename.post')->middleware('auth');
+
+// いいねAPI
+Route::put('/favorite', 'FavoriteController@favorite')->name('favorite');
+Route::put('/unfavorite', 'FavoriteController@unfavorite');
+Route::get('/favorite/{challenge}', 'FavoriteController@get');
 
 // レシピAPI
 Route::post('/recipes/search', 'RecipesController@search');
 
 // トップページ（VueRouter使用）のルーティング 
 // ※ 他のルーティングに干渉しないように、このファイルの一番最後に記述すること
-Route::get('/{any}', function() {
+Route::get('/{any}', function () {
     return view('index');
 })->where('any', '.*');
