@@ -67,7 +67,7 @@ class RecipesController extends Controller
 			// imgファイル自体を保存
 			$recipeImg->storeAs('public/recipes_img', $fileName);
 
-			//ingredient(材料の保存処理)
+			// ingredient(材料の保存処理)	
 			$request->ingredients = array_filter($request->ingredients, 'strlen');
 			$request->quantities = array_filter($request->quantities, 'strlen');
 			$max = count($request->ingredients);
@@ -116,7 +116,7 @@ class RecipesController extends Controller
 		}
     }
 
-	public function search(Request $request)
+	public function searchByWord(Request $request)
 	{
 		$keywords = $request->keyword;
 

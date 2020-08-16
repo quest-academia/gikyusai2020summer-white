@@ -5,7 +5,7 @@
 		<div id="form1" class="text-center">
 		  <div class="py-2">
 			<input type="text" placeholder="キーワード検索" v-model="newKeyword">
-			<button type="submit" class="btn" v-on:click="inputKeyword(newKeyword); search(newKeyword)">検索</button>
+			<button type="submit" class="btn" v-on:click="inputKeyword(newKeyword); searchByWord(newKeyword)">検索</button>
 		  </div>
 		</div>
 		<h2 class="mt-3 ml-3">レシピ検索結果：{{ keyword }}</h2>
@@ -91,6 +91,7 @@
 			// store.jsにある検索ワードを持ってくる
 			...mapState({
 				keyword: 'searchKeyword',
+				time: 'searchTime',
 			}),
 			// ページの範囲を決める
 			pageRange () {
@@ -101,13 +102,14 @@
 			// store.jsにある検索ワード変換メソッドを持ってくる
 			...mapMutations([
 				'inputKeyword',
+				'inputTime',
 			]),
-			// 検索メソッド
-			search (word) {
+			// キーワード検索メソッド
+			searchByWord (word) {
 				// 初期検索時は、必ず１ページ目を表示するように検索をかける
 				axios
 					.post(
-						'/recipes/search',
+						'/recipes/searchByWord',
 						{
 							keyword: word,
 							page: 1
@@ -122,6 +124,10 @@
 					.catch(error => {
 						console.log(error);
 					});
+			},
+			// 時間による検索メソッド
+			searchByTime (time) {
+				console.log("時間による検索を実行:時間の種類は" + time);
 			},
 			// ページネーションの配列作成メソッド
 			callRange (start, end) {
@@ -138,7 +144,7 @@
 					// そのページ数で検索をかける
 					axios
 						.post(
-							'/recipes/search',
+							'/recipes/searchByWord',
 							{
 								keyword: this.keyword,
 								page: this.current_page
@@ -162,11 +168,18 @@
 		},
 		// 検索結果コンポーネントの表示と同時に検索を強制で実行
 		created () {
-			this.search(this.keyword);
+			// 時間のプロパティが存在しない場合はキーワード検索実行
+			if (this.time == "") {
+				this.searchByWord(this.keyword);
+			// 時間のプロパティが存在する場合は時間による検索実行
+			} else {
+				this.searchByTime(this.time);
+			}
 		},
 		// 上記強制実行のために、ルーティングを監視する
 		watch: {
-			'$route': 'search'
+			'$route': 'searchByWord',
+			'$route': 'searchByTime',
 		}
 	}	
 </script>
