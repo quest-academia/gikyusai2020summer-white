@@ -5,8 +5,8 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
 	state: {
-		searchKeyword: "",
-		searchTime: "",
+		searchKeyword: null,
+		searchTime: null,
 	},
 	mutations: {
 		inputKeyword (state, word) {
