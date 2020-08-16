@@ -3,10 +3,10 @@
 		<div class="time">
 			<div class="cooking-time">
 				<img src="img/time1.png" width="70" height="70">
-				<a href="#"><img src="img/time001.png" width="70" height="70" alt="秒"></a>
-				<a href="#"><img src="img/time002.png" width="70" height="70" alt="3分"></a>
-				<a href="#"><img src="img/time003.png" width="70" height="70" alt="5分"></a>
-			    <a href="#"><img src="img/time004.png" width="70" height="70" alt="10分"></a>
+				<span class="time-kind" v-on:click="inputTime(1); routerPush('/search-result')"><img src="img/time001.png" width="70" height="70" alt="秒"></span>
+				<span class="time-kind" v-on:click="inputTime(2); routerPush('/search-result')"><img src="img/time002.png" width="70" height="70" alt="3分"></span>
+				<span class="time-kind" v-on:click="inputTime(3); routerPush('/search-result')"><img src="img/time003.png" width="70" height="70" alt="5分"></span>
+			    <span class="time-kind" v-on:click="inputTime(4); routerPush('/search-result')"><img src="img/time004.png" width="70" height="70" alt="10分"></span>
 			</div>
 		</div>
 		<div class="top-group">
@@ -77,16 +77,11 @@
                 searchWord :'',
             }
         },
-        computed: {
-			// store.jsにある検索ワードを持ってくる
-            ...mapState({
-                keyword: 'keyword',
-            })
-        },
         methods: {
 			// store.jsにある検索ワード変換メソッドを持ってくる
             ...mapMutations([
                 'inputKeyword',
+                'inputTime',
             ]),
 			// ルーティングを切り替えるメソッド
 			routerPush (url) {	
@@ -520,8 +515,11 @@
     width: auto;
     height: auto;
     margin: 5px 30px;
-    
   }
+  .time-kind {
+	cursor: pointer;
+  }
+
 /*メニューの横並び設定*/
   
 .main{

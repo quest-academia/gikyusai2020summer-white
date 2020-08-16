@@ -16366,20 +16366,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
-    keyword: 'searchKeyword'
+    keyword: 'searchKeyword',
+    time: 'searchTime'
   })), {}, {
     // ページの範囲を決める
     pageRange: function pageRange() {
       return this.callRange(1, this.last_page);
     }
   }),
-  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(['inputKeyword'])), {}, {
-    // 検索メソッド
-    search: function search(word) {
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(['inputKeyword', 'inputTime'])), {}, {
+    // キーワード検索メソッド
+    searchByWord: function searchByWord(word) {
       var _this = this;
 
       // 初期検索時は、必ず１ページ目を表示するように検索をかける
-      axios.post('/recipes/search', {
+      axios.post('/recipes/searchByWord', {
         keyword: word,
         page: 1
       }).then(function (response) {
@@ -16390,6 +16391,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       })["catch"](function (error) {
         console.log(error);
       });
+    },
+    // 時間による検索メソッド
+    searchByTime: function searchByTime(time) {
+      console.log("時間による検索を実行:時間の種類は" + time);
     },
     // ページネーションの配列作成メソッド
     callRange: function callRange(start, end) {
@@ -16408,7 +16413,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (page > 0 && page <= this.last_page) {
         this.current_page = page; // そのページ数で検索をかける
 
-        axios.post('/recipes/search', {
+        axios.post('/recipes/searchByWord', {
           keyword: this.keyword,
           page: this.current_page
         }).then(function (response) {
@@ -16428,12 +16433,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }),
   // 検索結果コンポーネントの表示と同時に検索を強制で実行
   created: function created() {
-    this.search(this.keyword);
+    // 時間のプロパティが存在しない場合はキーワード検索実行
+    if (this.time == "") {
+      this.searchByWord(this.keyword); // 時間のプロパティが存在する場合は時間による検索実行
+    } else {
+      this.searchByTime(this.time);
+    }
   },
   // 上記強制実行のために、ルーティングを監視する
-  watch: {
-    '$route': 'search'
-  }
+  watch: _defineProperty({
+    '$route': 'searchByWord'
+  }, "$route", 'searchByTime')
 });
 
 /***/ }),
@@ -16531,10 +16541,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       searchWord: ''
     };
   },
-  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
-    keyword: 'keyword'
-  })),
-  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(['inputKeyword'])), {}, {
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(['inputKeyword', 'inputTime'])), {}, {
     // ルーティングを切り替えるメソッド
     routerPush: function routerPush(url) {
       this.$router.push(url);
@@ -21005,7 +21012,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*調理時間*/\n.cooking-time[data-v-4ffbace9]{\n  background:#FFD41F;\n  height: auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cooking-time img[data-v-4ffbace9]{\n  margin: 5px;\n}\n.cooking-time a img[data-v-4ffbace9]{\n  width: 70%;\n  height: auto;\n  margin: 8px 0px;\n}\n\n/*トップページのグループ*/\n.otumami-img[data-v-4ffbace9]{\n  width: 100%;\n  height: auto;\n  vertical-align:top;\n}\n.backimg[data-v-4ffbace9]{\n  position: relative;\n}\n.on-group1[data-v-4ffbace9]{\n  position: absolute;\n  top:  50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n}\n.search-button[data-v-4ffbace9] {\n  background-color: initial;\n  border: initial;\n  width: initial;\n  padding: initial;\n  border-radius: initial;\n}\n.on-group2[data-v-4ffbace9]{\n  position: absolute;\n  top:  80%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n  background-color: #FFD41F;\n  border-radius: 20px;\n  text-align: center;\n  padding: 14px 40px;\n  color: #fff;\n  text-decoration: none;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 3.8em;\n  width: 300px;\n  background-color: #fff;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  font-size: 16px;\n  border: none;\n  height: 2.8em;\n  width: 240px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container button[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*メイン*/\n/*新発見おつまみ*/\n.main-section1[data-v-4ffbace9]{\n  //height: 400px;\n  background-color: #fff;\n  border-radius: 30px;\n  margin: 20px auto 20px auto;\n  width: 80%;\n  max-width: 400px;\n  padding: 16px;\n}\n.main-section1 h2[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-weight: normal;\n  position: relative;\n  margin-bottom: 1em;\n  font-size: 20px;\n  color:#5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  margin: 10px;\n  padding-bottom: 6px;\n}\n.main-section1 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 27%;\n  bottom: -8px;/*線の上下位置*/\n  display: inline-block;\n  width: 100px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color:#5D5D5E;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n.main-section1 p[data-v-4ffbace9]{\n  padding-top: 18px;\n  margin: 24px 8px 8px 15px;\n  text-align: center;\n  color:#5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  font-size: 16px;\n}\n.main-section1 p a[data-v-4ffbace9]{\n  color:#5D5D5E;\n  text-decoration: none;\n}\n.main-section1 p a[data-v-4ffbace9]:hover{\n  border-bottom:#5D5D5E solid 1px;\n}\n.main-section2[data-v-4ffbace9]{\n  //height: 400px;\n  background-color: #fff;\n  border-radius: 30px;\n  margin: 20px auto 10px auto;\n  width: 80%;\n  max-width: 400px;\n  padding: 16px;\n}\n.main-section2 h2[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-weight: normal;\n  position: relative;\n  font-size: 20px;\n  color: #5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  margin: 10px;\n  padding-bottom: 6px;\n}\n.main-section2 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 10%;\n  bottom: -8px;/*線の上下位置*/\n  display: inline-block;\n  width: 150px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: #5D5D5E;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n\n/*お酒に相性がいいおつまみ*/\n.main[data-v-4ffbace9]:after{\n content: \"\";\n clear: both;\n overflow: hidden;\n display: block;\n}\n.main-list1[data-v-4ffbace9]{\n  margin-top: 40px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.main-list1[data-v-4ffbace9]:after{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.alcohol001[data-v-4ffbace9]{\n  float: left;\n  margin-left: 10px;\n  margin-right: 50px;\n}\n.alcohol002[data-v-4ffbace9]{\n  float: left;\n}\n.main-list2[data-v-4ffbace9]{\n  margin-top: 30px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n}\n.main-list2[data-v-4ffbace9]:after{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.alcohol003[data-v-4ffbace9]{\n  float: left;\n  margin-left: 10px;\n  margin-right: 50px;\n}\n.alcohol004[data-v-4ffbace9]{\n  float: left;\n}\n.alcohol001 p[data-v-4ffbace9],.alcohol002 p[data-v-4ffbace9],.alcohol003 p[data-v-4ffbace9],.alcohol004 p[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  color: #5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n\n/*フッター*/\n.footer[data-v-4ffbace9]{\n  height: 100px;\n  background-color: #FFD41F;\n  text-align: right;\n}\n.footer p[data-v-4ffbace9]{\n  padding:20px;\n  color:#fff;\n  font-family: 'Quicksand', sans-serif;\n  font-size: 16px;\n}\n\n\n/*###########320px以下##############*/\n@media(max-width:320px){\n.cooking-time img[data-v-4ffbace9]{\n    margin: 5px 15px;\n    width:50px;\n    height: 50px;\n}\n.on-group1[data-v-4ffbace9]{\n    position: absolute;\n    top:  50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n      -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n    background-color: #FFD41F;\n    border-radius: 20px;\n    text-align: center;\n    padding: 10px 30px;\n    color: #fff;\n    text-decoration: none;\n    font-size: 12px;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 2.3em;\n  width: 260px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  border: none;\n  height: 2.0em;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container input[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*相性がいいおつまみ設定*/\n.alcohol001 img[data-v-4ffbace9],.alcohol002 img[data-v-4ffbace9],.alcohol003 img[data-v-4ffbace9],.alcohol004 img[data-v-4ffbace9]{\n  width: 90px;\n  height: 90px;\n}\n}\n\n\n/*########330px~450px#########*/\n@media (min-width:330px) and (max-width:450px){\n.cooking-time[data-v-4ffbace9]{\n    background:#FFD41F;\n    height: auto;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.cooking-time img[data-v-4ffbace9]{\n    margin: 5px 15px;\n    width:60px;\n    height: 60px;\n}\n.cooking-time a img[data-v-4ffbace9]{\n    width: 70%;\n    height: auto;\n    margin: 8px 0px;\n}\n.on-group1[data-v-4ffbace9]{\n    position: absolute;\n    top:  50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n      -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n    background-color: #FFD41F;\n    border-radius: 20px;\n    text-align: center;\n    padding: 10px 30px;\n    color: #fff;\n    text-decoration: none;\n    font-size: 13px;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 2.3em;\n  width: 260px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  border: none;\n  height: 2.0em;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container input[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*相性がいいおつまみ設定*/\n.alcohol001 img[data-v-4ffbace9],.alcohol002 img[data-v-4ffbace9],.alcohol003 img[data-v-4ffbace9],.alcohol004 img[data-v-4ffbace9]{\n  width: 100px;\n  height: 100px;\n}\n}\n\n/*########768px以上##########*/\n@media(min-width:768px){\n.cooking-time[data-v-4ffbace9]{\n    background:#FFD41F;\n    height: auto;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.cooking-time a img[data-v-4ffbace9]{\n    max-width: 100px;\n    max-height: 100px;\n    width: auto;\n    height: auto;\n    margin: 5px 30px;\n}\n/*メニューの横並び設定*/\n.main[data-v-4ffbace9]{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.main-box1[data-v-4ffbace9]{\n  float: left;\n  width: 50%;\n}\n.main-box2[data-v-4ffbace9]{\n  float: left;\n  width: 50%;\n}\n\n/*メイン*/\n.main-section1 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 30%;\n  bottom: -10px;/*線の上下位置*/\n  display: inline-block;\n  width: 100px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: black;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n.main-section2 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 17%;\n  bottom: -10px;/*線の上下位置*/\n  display: inline-block;\n  width: 150px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: black;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n}\n/*###############1140px以上###################*/\n@media(min-width:1140px){\n.main[data-v-4ffbace9]{\n  width:1100px;\n  margin-left: auto;\n  margin-right: auto;\n}\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*調理時間*/\n.cooking-time[data-v-4ffbace9]{\n  background:#FFD41F;\n  height: auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cooking-time img[data-v-4ffbace9]{\n  margin: 5px;\n}\n.cooking-time a img[data-v-4ffbace9]{\n  width: 70%;\n  height: auto;\n  margin: 8px 0px;\n}\n\n/*トップページのグループ*/\n.otumami-img[data-v-4ffbace9]{\n  width: 100%;\n  height: auto;\n  vertical-align:top;\n}\n.backimg[data-v-4ffbace9]{\n  position: relative;\n}\n.on-group1[data-v-4ffbace9]{\n  position: absolute;\n  top:  50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n}\n.search-button[data-v-4ffbace9] {\n  background-color: initial;\n  border: initial;\n  width: initial;\n  padding: initial;\n  border-radius: initial;\n}\n.on-group2[data-v-4ffbace9]{\n  position: absolute;\n  top:  80%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n  background-color: #FFD41F;\n  border-radius: 20px;\n  text-align: center;\n  padding: 14px 40px;\n  color: #fff;\n  text-decoration: none;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 3.8em;\n  width: 300px;\n  background-color: #fff;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  font-size: 16px;\n  border: none;\n  height: 2.8em;\n  width: 240px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container button[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*メイン*/\n/*新発見おつまみ*/\n.main-section1[data-v-4ffbace9]{\n  //height: 400px;\n  background-color: #fff;\n  border-radius: 30px;\n  margin: 20px auto 20px auto;\n  width: 80%;\n  max-width: 400px;\n  padding: 16px;\n}\n.main-section1 h2[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-weight: normal;\n  position: relative;\n  margin-bottom: 1em;\n  font-size: 20px;\n  color:#5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  margin: 10px;\n  padding-bottom: 6px;\n}\n.main-section1 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 27%;\n  bottom: -8px;/*線の上下位置*/\n  display: inline-block;\n  width: 100px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color:#5D5D5E;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n.main-section1 p[data-v-4ffbace9]{\n  padding-top: 18px;\n  margin: 24px 8px 8px 15px;\n  text-align: center;\n  color:#5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  font-size: 16px;\n}\n.main-section1 p a[data-v-4ffbace9]{\n  color:#5D5D5E;\n  text-decoration: none;\n}\n.main-section1 p a[data-v-4ffbace9]:hover{\n  border-bottom:#5D5D5E solid 1px;\n}\n.main-section2[data-v-4ffbace9]{\n  //height: 400px;\n  background-color: #fff;\n  border-radius: 30px;\n  margin: 20px auto 10px auto;\n  width: 80%;\n  max-width: 400px;\n  padding: 16px;\n}\n.main-section2 h2[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-weight: normal;\n  position: relative;\n  font-size: 20px;\n  color: #5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  margin: 10px;\n  padding-bottom: 6px;\n}\n.main-section2 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 10%;\n  bottom: -8px;/*線の上下位置*/\n  display: inline-block;\n  width: 150px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: #5D5D5E;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n\n/*お酒に相性がいいおつまみ*/\n.main[data-v-4ffbace9]:after{\n content: \"\";\n clear: both;\n overflow: hidden;\n display: block;\n}\n.main-list1[data-v-4ffbace9]{\n  margin-top: 40px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.main-list1[data-v-4ffbace9]:after{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.alcohol001[data-v-4ffbace9]{\n  float: left;\n  margin-left: 10px;\n  margin-right: 50px;\n}\n.alcohol002[data-v-4ffbace9]{\n  float: left;\n}\n.main-list2[data-v-4ffbace9]{\n  margin-top: 30px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n}\n.main-list2[data-v-4ffbace9]:after{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.alcohol003[data-v-4ffbace9]{\n  float: left;\n  margin-left: 10px;\n  margin-right: 50px;\n}\n.alcohol004[data-v-4ffbace9]{\n  float: left;\n}\n.alcohol001 p[data-v-4ffbace9],.alcohol002 p[data-v-4ffbace9],.alcohol003 p[data-v-4ffbace9],.alcohol004 p[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  color: #5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n\n/*フッター*/\n.footer[data-v-4ffbace9]{\n  height: 100px;\n  background-color: #FFD41F;\n  text-align: right;\n}\n.footer p[data-v-4ffbace9]{\n  padding:20px;\n  color:#fff;\n  font-family: 'Quicksand', sans-serif;\n  font-size: 16px;\n}\n\n\n/*###########320px以下##############*/\n@media(max-width:320px){\n.cooking-time img[data-v-4ffbace9]{\n    margin: 5px 15px;\n    width:50px;\n    height: 50px;\n}\n.on-group1[data-v-4ffbace9]{\n    position: absolute;\n    top:  50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n      -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n    background-color: #FFD41F;\n    border-radius: 20px;\n    text-align: center;\n    padding: 10px 30px;\n    color: #fff;\n    text-decoration: none;\n    font-size: 12px;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 2.3em;\n  width: 260px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  border: none;\n  height: 2.0em;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container input[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*相性がいいおつまみ設定*/\n.alcohol001 img[data-v-4ffbace9],.alcohol002 img[data-v-4ffbace9],.alcohol003 img[data-v-4ffbace9],.alcohol004 img[data-v-4ffbace9]{\n  width: 90px;\n  height: 90px;\n}\n}\n\n\n/*########330px~450px#########*/\n@media (min-width:330px) and (max-width:450px){\n.cooking-time[data-v-4ffbace9]{\n    background:#FFD41F;\n    height: auto;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.cooking-time img[data-v-4ffbace9]{\n    margin: 5px 15px;\n    width:60px;\n    height: 60px;\n}\n.cooking-time a img[data-v-4ffbace9]{\n    width: 70%;\n    height: auto;\n    margin: 8px 0px;\n}\n.on-group1[data-v-4ffbace9]{\n    position: absolute;\n    top:  50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n      -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n    background-color: #FFD41F;\n    border-radius: 20px;\n    text-align: center;\n    padding: 10px 30px;\n    color: #fff;\n    text-decoration: none;\n    font-size: 13px;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 2.3em;\n  width: 260px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  border: none;\n  height: 2.0em;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container input[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*相性がいいおつまみ設定*/\n.alcohol001 img[data-v-4ffbace9],.alcohol002 img[data-v-4ffbace9],.alcohol003 img[data-v-4ffbace9],.alcohol004 img[data-v-4ffbace9]{\n  width: 100px;\n  height: 100px;\n}\n}\n\n/*########768px以上##########*/\n@media(min-width:768px){\n.cooking-time[data-v-4ffbace9]{\n    background:#FFD41F;\n    height: auto;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.cooking-time a img[data-v-4ffbace9]{\n    max-width: 100px;\n    max-height: 100px;\n    width: auto;\n    height: auto;\n    margin: 5px 30px;\n}\n.time-kind[data-v-4ffbace9] {\n\tcursor: pointer;\n}\n\n/*メニューの横並び設定*/\n.main[data-v-4ffbace9]{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.main-box1[data-v-4ffbace9]{\n  float: left;\n  width: 50%;\n}\n.main-box2[data-v-4ffbace9]{\n  float: left;\n  width: 50%;\n}\n\n/*メイン*/\n.main-section1 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 30%;\n  bottom: -10px;/*線の上下位置*/\n  display: inline-block;\n  width: 100px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: black;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n.main-section2 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 17%;\n  bottom: -10px;/*線の上下位置*/\n  display: inline-block;\n  width: 150px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: black;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n}\n/*###############1140px以上###################*/\n@media(min-width:1140px){\n.main[data-v-4ffbace9]{\n  width:1100px;\n  margin-left: auto;\n  margin-right: auto;\n}\n}\n", ""]);
 
 // exports
 
@@ -52925,7 +52932,7 @@ var render = function() {
             on: {
               click: function($event) {
                 _vm.inputKeyword(_vm.newKeyword)
-                _vm.search(_vm.newKeyword)
+                _vm.searchByWord(_vm.newKeyword)
               }
             }
           },
@@ -53087,7 +53094,105 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _vm._m(0),
+    _c("div", { staticClass: "time" }, [
+      _c("div", { staticClass: "cooking-time" }, [
+        _c("img", {
+          attrs: { src: "img/time1.png", width: "70", height: "70" }
+        }),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            staticClass: "time-kind",
+            on: {
+              click: function($event) {
+                _vm.inputTime(1)
+                _vm.routerPush("/search-result")
+              }
+            }
+          },
+          [
+            _c("img", {
+              attrs: {
+                src: "img/time001.png",
+                width: "70",
+                height: "70",
+                alt: "秒"
+              }
+            })
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            staticClass: "time-kind",
+            on: {
+              click: function($event) {
+                _vm.inputTime(2)
+                _vm.routerPush("/search-result")
+              }
+            }
+          },
+          [
+            _c("img", {
+              attrs: {
+                src: "img/time002.png",
+                width: "70",
+                height: "70",
+                alt: "3分"
+              }
+            })
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            staticClass: "time-kind",
+            on: {
+              click: function($event) {
+                _vm.inputTime(3)
+                _vm.routerPush("/search-result")
+              }
+            }
+          },
+          [
+            _c("img", {
+              attrs: {
+                src: "img/time003.png",
+                width: "70",
+                height: "70",
+                alt: "5分"
+              }
+            })
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "span",
+          {
+            staticClass: "time-kind",
+            on: {
+              click: function($event) {
+                _vm.inputTime(4)
+                _vm.routerPush("/search-result")
+              }
+            }
+          },
+          [
+            _c("img", {
+              attrs: {
+                src: "img/time004.png",
+                width: "70",
+                height: "70",
+                alt: "10分"
+              }
+            })
+          ]
+        )
+      ])
+    ]),
     _vm._v(" "),
     _c("div", { staticClass: "top-group" }, [
       _c("div", { staticClass: "backimg" }, [
@@ -53150,70 +53255,14 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(1)
+        _vm._m(0)
       ])
     ]),
     _vm._v(" "),
-    _vm._m(2)
+    _vm._m(1)
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "time" }, [
-      _c("div", { staticClass: "cooking-time" }, [
-        _c("img", {
-          attrs: { src: "img/time1.png", width: "70", height: "70" }
-        }),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [
-          _c("img", {
-            attrs: {
-              src: "img/time001.png",
-              width: "70",
-              height: "70",
-              alt: "秒"
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [
-          _c("img", {
-            attrs: {
-              src: "img/time002.png",
-              width: "70",
-              height: "70",
-              alt: "3分"
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [
-          _c("img", {
-            attrs: {
-              src: "img/time003.png",
-              width: "70",
-              height: "70",
-              alt: "5分"
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("a", { attrs: { href: "#" } }, [
-          _c("img", {
-            attrs: {
-              src: "img/time004.png",
-              width: "70",
-              height: "70",
-              alt: "10分"
-            }
-          })
-        ])
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -70211,11 +70260,15 @@ __webpack_require__.r(__webpack_exports__);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
 /* harmony default export */ __webpack_exports__["default"] = (new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   state: {
-    searchKeyword: ""
+    searchKeyword: "",
+    searchTime: ""
   },
   mutations: {
-    inputKeyword: function inputKeyword(state, searchWord) {
-      state.searchKeyword = searchWord;
+    inputKeyword: function inputKeyword(state, word) {
+      state.searchKeyword = word;
+    },
+    inputTime: function inputTime(state, time) {
+      state.searchTime = time;
     }
   }
 }));

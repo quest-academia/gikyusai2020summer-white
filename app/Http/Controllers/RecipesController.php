@@ -11,7 +11,6 @@ use App\Http\Requests\IngredientsRequest;
 use App\User;
 use App\Recipe;
 use App\Ingredient;
-use App\Process;
 
 class RecipesController extends Controller
 {
@@ -19,7 +18,6 @@ class RecipesController extends Controller
     {
 		$recipe = Recipe::find($id);
 		$ingredient = Ingredient::find($id);
-		$process = Process::find($id);
 
 		// レシピが存在しなかった場合
 		if (is_null($recipe)) {
@@ -28,8 +26,7 @@ class RecipesController extends Controller
 
         return view('recipes.show', [
 			'recipe' => $recipe,
-			'ingredient' => $ingredient,
-			'process' => $process,
+			'ingredient' => $ingredient
 		])->with('status', 'レシピを新規登録しました');
     }
 
@@ -67,7 +64,7 @@ class RecipesController extends Controller
 			// imgファイル自体を保存
 			$recipeImg->storeAs('public/recipes_img', $fileName);
 
-			//ingredient(材料の保存処理)
+			
 			$request->ingredients = array_filter($request->ingredients, 'strlen');
 			$request->quantities = array_filter($request->quantities, 'strlen');
 			$max = count($request->ingredients);
@@ -79,32 +76,10 @@ class RecipesController extends Controller
 				$ingredient->save();
 			}
 
-			//process(工程の保存処理)
-			$request->processes= array_filter($request->processes, 'strlen');
-			$request->processes_img = array_filter($request->processes_img, 'strlen');
-			$max = count($request->processes);
-			for($i=0; $i<$max; $i++){
-					$process = new Process;
-					$process->recipe_id = $recipe->id; 
-					$process->procedure = $request->processes[$i];
-					$process->save();
-
-				// 一度保存して、$process->idを発行する
-					$processesImg = $request->processes_img[$i];
-					$extension = $processesImg->guessExtension();
-				// 上記で発行した$process->idをここで利用
-					$fileName = "process_{$process->id}.{$extension}";
-
-				// imgファイル名を保存
-					$process->img = $fileName;
-					$process->save();
-					// imgファイル自体を保存
-					$processesImg->storeAs('public/processes_img', $fileName);
-			}
-
 			// トランザクションの保存処理を実行
 			\DB::commit();
 
+			dd($ingredient);
 			return redirect(route('recipes.show', [
 				'id' => $recipe->id
 			]))->with('status', 'レシピを新規登録しました');
@@ -116,7 +91,7 @@ class RecipesController extends Controller
 		}
     }
 
-	public function search(Request $request)
+	public function searchByWord(Request $request)
 	{
 		$keywords = $request->keyword;
 

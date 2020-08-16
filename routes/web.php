@@ -38,7 +38,7 @@ Route::put('/unfavorite', 'FavoriteController@unfavorite');
 Route::get('/favorite/{challenge}', 'FavoriteController@get');
 
 // レシピAPI
-Route::post('/recipes/search', 'RecipesController@search');
+Route::post('/recipes/searchByWord', 'RecipesController@searchByWord');
 
 // トップページ（VueRouter使用）のルーティング 
 // ※ 他のルーティングに干渉しないように、このファイルの一番最後に記述すること
