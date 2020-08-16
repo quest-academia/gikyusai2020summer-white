@@ -13,6 +13,6 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
+    'failed' => 'ログイン情報が登録されていません。',
     'throttle' => 'ログイン試行が規定回数を超えました。:seconds秒後に再開できます',
 ];
