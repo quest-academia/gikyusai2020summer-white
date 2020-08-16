@@ -87,7 +87,17 @@
 			routerPush (url) {	
 				this.$router.push(url);
 			},
-        }
+        },
+		// トップページコンポーネントの表示と同時にstore.jsの変数を初期化
+		created () {
+			this.inputKeyword(null);
+			this.inputTime(null);
+		},
+		// 上記初期化のために、ルーティングを監視する
+		watch: {
+			'$route': 'searchByWord',
+			'$route': 'searchByTime',
+		}
     }
 </script>
 

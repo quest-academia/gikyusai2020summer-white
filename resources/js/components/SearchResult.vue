@@ -169,7 +169,7 @@
 		// 検索結果コンポーネントの表示と同時に検索を強制で実行
 		created () {
 			// 時間のプロパティが存在しない場合はキーワード検索実行
-			if (this.time == "") {
+			if (this.time == null) {
 				this.searchByWord(this.keyword);
 			// 時間のプロパティが存在する場合は時間による検索実行
 			} else {
