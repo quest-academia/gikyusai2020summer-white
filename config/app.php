@@ -175,6 +175,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        // ビューコンポーザー用に追加
+        App\Providers\ComposerServiceProvider::class,
+
+
     ],
 
     /*

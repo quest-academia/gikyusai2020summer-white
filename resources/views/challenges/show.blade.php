@@ -16,7 +16,7 @@
 
           <!-- ! データ -->
           <h3>
-            <span class="mr-5">{{$user->name}}の</span><span>{{ $recipe->name }}</span>
+            <span class="mr-5">{{$user->name}}さんの</span><span>{{ $recipe->name }}</span>
           </h3>
 
           <img class="mt-3" src="/storage/challenges_img/{{ $challenge->img }}" alt="NO IMAGE" style="width: 80%; height: 50%;">

@@ -7,15 +7,15 @@
     </li>
     <li class="nav-item">
       <img src="{{ asset('img/king1.png') }}" width="10%" alt="">
-      <a href="#">1位〇〇</a>
+      <a href="{{ route('challenges.show', ['id' => $rankings[0]->id]) }}">1位：{{ $rankings[0]->user->name }}さんの{{ $rankings[0]->recipe->name }}</a>
     </li>
     <li class="nav-item d-none d-sm-block">
       <img src="{{ asset('img/king2.png') }}" width="10%" alt="">
-      <a href="#">2位〇〇</a>
+      <a href="{{ route('challenges.show', ['id' => $rankings[1]->id]) }}">2位：{{ $rankings[1]->user->name }}さんの{{ $rankings[1]->recipe->name }}</a>
     </li>
     <li class="nav-item d-none d-sm-block">
       <img src="{{ asset('img/king3.png') }}" width="10%" alt="">
-      <a href="#">3位〇〇</a>
+      <a href="{{ route('challenges.show', ['id' => $rankings[2]->id]) }}">3位：{{ $rankings[2]->user->name }}さんの{{ $rankings[2]->recipe->name }}</a>
     </li>
   </ul>
 </nav>

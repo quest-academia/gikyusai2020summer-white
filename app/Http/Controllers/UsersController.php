@@ -21,21 +21,15 @@ class UsersController extends Controller
         // 自分がイイねされてる数の取得
         //// ユーザの所有するつくってみたIDをすべて取得
         $challengeIds = $user->challenges()->pluck("id");
-        //// すべてつくってみたIDに一致するイイねを取得
-        $followers = \DB::table('favorites')->whereIn('challenge_id', $challengeIds)->get();
-        //// イイねの数を集計
-        $followersCounts = count($followers);
+        //// すべてつくってみたIDに一致するイイねの数を集計
+        $followers = \DB::table('favorites')->whereIn('challenge_id', $challengeIds)->count();
 
         return view('user.mypage', [
             'challenges' => $challenges,
             'myFavors' => $myFavors,
-            'followersCounts' => $followersCounts,
+            'followers' => $followers,
         ]);
     }
-
-    // public function renameGet () {
-    //     return view('user.rename');
-    // }
 
     public function renamePost (Request $request) {
         $user = \Auth::User();
