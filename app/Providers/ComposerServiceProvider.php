@@ -24,6 +24,6 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('layouts.ranking', 'App\Http\ViewComposers\RankingComposer');
+        View::composer('*', 'App\Http\ViewComposers\RankingComposer');
     }
 }
