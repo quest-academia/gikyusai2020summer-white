@@ -21,7 +21,7 @@
         </p>
         <p>他の方にイイねされている数</p>
         <p class="inline padding_left2">イイね<img src="{{ asset('img/favorite.png') }}" width="30" height="30"alt=""></p>
-        <p class="inline">合計：{{ $followersCounts }}</p>
+        <p class="inline">合計：{{ $followers }}</p>
       </div>
     </div>
 
