@@ -18,20 +18,20 @@ class RecipesController extends Controller
 	public function show($id)
     {
 		$recipe = Recipe::find($id);
-		$ingredient = Ingredient::find($id);
-		$process = Process::find($id);
+		$ingredients = Ingredient::all();
+		$processes = Process::all();
 
 		// レシピが存在しなかった場合
 		if (is_null($recipe)) {
 			abort(404, "ご指定のレシピは存在しません");
 		}
 
-        return view('recipes.show', [
+		return view('recipes.show', [
 			'recipe' => $recipe,
-			'ingredient' => $ingredient,
-			'process' => $process,
+			'ingredients' => $ingredients,
+			'processes' => $processes
 		])->with('status', 'レシピを新規登録しました');
-    }
+		}
 
 	public function create()
     {
