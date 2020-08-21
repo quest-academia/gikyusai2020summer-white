@@ -34,7 +34,6 @@
             <comment :challenge-id="@json($challenge->id)">
             </comment>
           </div>
-          <!-- ! Vue:slack風にしたい -->
 
         </div>
       </div>

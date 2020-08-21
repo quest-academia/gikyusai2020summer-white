@@ -24,10 +24,11 @@ class CommentController extends Controller
 		], 200, [], JSON_UNESCAPED_UNICODE);
 	}
 
-	//チャレンジごとのコメントとコメント数取得
+	//チャレンジごとのコメント・コメント数・投稿したユーザー名を取得
 	public function getChallengeComments(int $challenge_id)
 	{
-		$challengeComments = Comment::where('challenge_id', $challenge_id)->with('user:id,name')->orderBy('updated_at', 'desc')->get();
+		$challengeComments = Comment::where('challenge_id', $challenge_id)
+			->with('user:id,name')->orderBy('updated_at', 'desc')->get();
 		return [
 			'comments' => $challengeComments,
 			'countComment' => $challengeComments->count()

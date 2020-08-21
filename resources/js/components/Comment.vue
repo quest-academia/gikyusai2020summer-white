@@ -43,7 +43,6 @@ export default {
       renewComment: "",
       updateForm: false,
       updateId: "",
-
     }
   },
   created(){
