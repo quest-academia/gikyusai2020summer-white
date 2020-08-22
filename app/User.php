@@ -47,4 +47,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Challenge::class);
     }
+
+    public function favors()
+	{
+		return $this->belongsToMany(Challenge::class, 'favorites')->withTimestamps();
+	}
 }

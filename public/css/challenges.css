@@ -1,11 +1,7 @@
-html{
-  font-family: 'Kosugi Maru', sans-serif;
-}
-
 /* showページ関連 */
-main {
+/* main {
   background-color: #fcfddb;
-}
+} */
 
 #form1 {
   height: 5rem;
@@ -82,10 +78,10 @@ button {
 }
 
 .needbtn {
-  background-color:#F00808; 
-  color: #fff; 
-  text-align: center; 
-  width: 100px; 
-  padding: 3px; 
-  border-radius: 25px; 
+  background-color:#F00808;
+  color: #fff;
+  text-align: center;
+  width: 100px;
+  padding: 3px;
+  border-radius: 25px;
 }
