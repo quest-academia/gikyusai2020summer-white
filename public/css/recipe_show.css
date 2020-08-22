@@ -29,6 +29,9 @@
   border: none;
   margin: 0 5%;
 }
+.material_content {
+  border-bottom: solid 3px #E5E5E5;
+}
 
 .repsipe_details {
   background-color: #fff;
@@ -72,11 +75,12 @@ p{
 }
 .material_name {
   font-size: 18px;
+  border-bottom: solid 2px #E5E5E5;
 }
 
-.material_amount {
+/* .material_amount {
    margin-right: 5%; 
-} 
+}  */
 
 .process_img {
   width: 50px;
@@ -86,17 +90,18 @@ p{
   font-size: 18px;
 }
 
-.material_content{
+/* .material_content{
   border-bottom: solid 2px #E5E5E5;
-}
+} */
 table {
   text-align: left;
-  
   width: 50%;
 }
 tr{
   text-align: center;
+  border-bottom: solid 2px #E5E5E5;
 }
+
 .process_detail_image {
   width: 60%;
 }
@@ -124,4 +129,8 @@ tr{
   font-family: 'Kosugi Maru', sans-serif;
   border: none;
   margin: 0 5%;
+}
+.process_img_img{
+  width: 50px;
+  text-align: center;
 }

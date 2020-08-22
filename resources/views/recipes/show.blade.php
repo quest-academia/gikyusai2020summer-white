@@ -20,7 +20,7 @@
       <div class="row mt-4">
         <div class="col-sm-8">
           <div class="repsipe_details mb-5">
-              <p class="resipe_title  pt-4 mt-3 ">
+              <p class="resipe_title  pt-4 mt-3 ml-4 ">
               {{ $recipe->name }}</p>
               <div class="text-center">
                 <img class="resipe_detail_image mb-5" 
@@ -60,10 +60,8 @@
                     <span>
                       <img class="cooking_time_icon" src="/img/asset67.png" alt="合うお酒">
                     </span>
-                <!-- @elseif( $recipe->liqueur == 5 ) -->
-                    <!-- <span> -->
-                      <!-- <img class="cooking_time_icon" src="/img/アセット 67.png" alt="合うお酒"> -->
-                    <!-- </span> -->
+                @elseif( $recipe->liqueur == 5 )
+                      <span>その他</span>
                 @endif
                     <span>
                       <button type="button" class="create_button mt-1 py-2">投稿</button>
@@ -71,28 +69,28 @@
               </div>
               <div class="mb-5">
                   <p class="content_bar">材料</p>
-                    <div>
-                    <!-- mt-4 pb-sm-2 d-flex justify-content-between -->
-                        @foreach($ingredients as $ingredient)  
-                        <table class="material_content mt-3 pb-1 ">
-                          <tr>
-                            <th>{{ $ingredient->name }} </th>
-                            <th>{{ $ingredient->quantity }}</th>
-                            <br>
-                          </tr>
-                        </table>
-                        @endforeach
+                  <div class="material_content">
+                  <!-- mt-4 pb-2 d-flex justify-content-between -->
+                      @foreach($ingredients as $ingredient ) 
+                      <table>
+                        <tr>
+                          <th><span class="material_name"></span>{{ $ingredient->name }} </th>
+                          <th><span class="material_amount"></span>{{ $ingredient->quantity }}</th>
+                          <br>
+                        </tr>
+                      </table>
+                      @endforeach
                     </div>
                   </div>
                   <div class="mb-5">
                     <p class="content_bar">つくり方</p>
                     <div class="process_content align-items-center mt-4 pb-2 ">
-                      <?php $i=1; ?>
-                      @foreach($processes as $process) 
+                      <?php $i=1;  ?>
+                      @foreach($processes as $process ) 
                       <table>
                         <tr>
                           <td class="process_img mr-4">
-                            <td>{{ <?=$i ?> }}</td> 
+                            <td><img src="/img/<?=$i ?>.png" alt="<?=$i ?>" class="process_img"></td>
                             <td>{{ $process->procedure }}</td>
                             <td>
                                 <img class="process_detail_image"  src="/storage/processes_img/{{ $process->img }}">
@@ -120,8 +118,8 @@
                 </div>
               </div>
             </div>
-          <!-- </div>
-        </div> -->
+           </div>
+        </div> 
       </div>    
       <div class="row">
         <div class="col-sm-12">
