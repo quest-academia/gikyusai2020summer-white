@@ -91,6 +91,7 @@
             </table>
           </div>
         </div>
+       
       </div>
         <div class="col-sm-4">
           <div class="everyone_resipe text-center pt-5">
@@ -104,6 +105,14 @@
           </div>
         </div> 
       </div>    
+  </div>
+  <!-- row終わり。ここまでレシピ詳細とみんなの作ってみた -->
+
+  <div class="row">
+    <div class="col-sm-12 mb-4 pt-2">
+      <button onclick="location.href='{{ route('challenges.create', ['recipe_id' => $recipe->id]) }}'" class="btn btn-lg btn-info mx-auto d-block"style="width: 90%; color: #fff;">「作ってみた」の投稿はこちら</button>
+    </div>
+
   </div>
   <!-- row終わり。ここまでレシピ詳細とみんなの作ってみた -->
 
