@@ -1,0 +1,136 @@
+.search_area {
+  background-color: #FFD41F;
+  height: 50px;
+}
+
+.search_form {
+  border: solid 4px #E2B840;
+  border-radius: 25px;
+}
+
+.search_button {
+  background-color: #FF8341;
+  color: #fff;
+  text-align: center;
+  width: 100px;
+  padding: 14px;
+  border-radius: 25px;
+  border: none;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+.create_button {
+  background-color: #A0FBBB;
+  text-align: center;
+  width: 5px;
+  padding: 14px;
+  border-radius: 25px;
+  font-family: 'Kosugi Maru', sans-serif;
+  border: none;
+  margin: 0 5%;
+}
+.material_content {
+  border-bottom: solid 3px #E5E5E5;
+}
+
+.repsipe_details {
+  background-color: #fff;
+  border: solid 4px #FEEDB5;
+  border-radius: 35px;
+}
+
+.resipe_title {
+  font-size: 30px;
+  font-weight: bold;
+  
+}
+p{
+  text-align: center;
+}
+
+.resipe_detail_image {
+  width: 50%;
+}
+
+.everyone_resipe {
+  background-color: #fff;
+  border: solid 4px #FEEDB5;
+  border-radius: 35px;
+}
+
+.other_image {
+  width: 80%;
+}
+
+.content_bar {
+  background-color: #FFD41F;
+  text-align: center;
+  width: 60%;
+  padding: 4px 14px;
+  border-radius: 25px;
+  font-family: 'Kosugi Maru', sans-serif;
+  border: none;
+  font-size: 20px;
+  margin: 0 auto;
+}
+.material_name {
+  font-size: 18px;
+  border-bottom: solid 2px #E5E5E5;
+}
+
+/* .material_amount {
+   margin-right: 5%; 
+}  */
+
+.process_img {
+  width: 50px;
+}
+
+.process_content {
+  font-size: 18px;
+}
+
+/* .material_content{
+  border-bottom: solid 2px #E5E5E5;
+} */
+table {
+  text-align: left;
+  width: 50%;
+}
+tr{
+  text-align: center;
+  border-bottom: solid 2px #E5E5E5;
+}
+
+.process_detail_image {
+  width: 60%;
+}
+.cooking_time_icon {
+  text-align: center;
+  max-width: 100px;
+  max-height: 100px;
+  padding: 0 20px;
+  margin: 0 30px;
+  -ms-interpolation-mode: bicubic;
+
+}
+
+.liquor_icon {
+  width: 10%;
+  margin: 0 10%;
+}
+
+.create_button {
+  background-color: #A0FBBB;
+  text-align: center;
+  width: 100px;
+  padding: 14px;
+  border-radius: 25px;
+  font-family: 'Kosugi Maru', sans-serif;
+  border: none;
+  margin: 0 5%;
+}
+.process_img_img{
+  width: 50px;
+  text-align: center;
+}

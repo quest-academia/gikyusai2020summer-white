@@ -91,29 +91,26 @@
             </table>
           </div>
         </div>
-
+       
       </div>
-    </div>
-  <!-- ここまでレシピ詳細 -->
+        <div class="col-sm-4">
+          <div class="everyone_resipe text-center pt-5">
+            <p>みんなの作ってみた</p>
+            <img class="other_image" src="img/3416847_s.jpg" alt="アスパラのベーコン巻き">
+            <p>投稿者名</p>
+            <img class="other_image" src="img/3416847_s.jpg" alt="アスパラのベーコン巻き">
+            <p>投稿者名</p>
+            <img class="other_image" src="img/3416847_s.jpg" alt="アスパラのベーコン巻き">
+            <p>投稿者名</p>
+          </div>
+        </div> 
+      </div>    
+  </div>
+  <!-- row終わり。ここまでレシピ詳細とみんなの作ってみた -->
 
-  <!-- ここから右側の「みんなの作ってみた」 -->
-    <div class="col-sm-4">
-      <div class="everyone_recipe text-center pt-5">
-        <h5 class="mb-3">みんなの作ってみた</h5>
-        @if(count($recipe->challenges)>0)
-          @foreach($recipe->challenges as $challenge)
-            <div>
-              <img class="other_image img-fluid" src="/storage/challenges_img/{{ $challenge->img }}" alt="アスパラのベーコン巻き">
-              <p>{{ $challenge->user->name }}</p>
-            </div>
-          @endforeach
-        @else
-        <div>
-          <p>現在投稿されているものはありません。
-          </p>
-        </div>
-        @endif
-      </div>
+  <div class="row">
+    <div class="col-sm-12 mb-4 pt-2">
+      <button onclick="location.href='{{ route('challenges.create', ['recipe_id' => $recipe->id]) }}'" class="btn btn-lg btn-info mx-auto d-block"style="width: 90%; color: #fff;">「作ってみた」の投稿はこちら</button>
     </div>
 
   </div>

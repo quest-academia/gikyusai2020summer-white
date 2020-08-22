@@ -26,4 +26,5 @@ class Recipe extends Model
 	{
 		return $this->hasMany(Process::class);
 	}
+
 }
