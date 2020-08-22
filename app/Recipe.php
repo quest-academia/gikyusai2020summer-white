@@ -22,8 +22,8 @@ class Recipe extends Model
 		return $this->hasMany(Ingredient::class);
 	}
 
-	public function proceses()
+	public function processes()
 	{
-		return $this->hasMany(Ingredient::class);
+		return $this->hasMany(Process::class);
 	}
 }
