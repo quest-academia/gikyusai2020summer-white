@@ -39,16 +39,16 @@
               <img class="cooking_time_icon img-fluid" src="/img/asset65.png" alt="合うお酒">
             @elseif( $recipe->liqueur == 3)
               <img class="cooking_time_icon img-fluid" src="/img/asset66.png" alt="合うお酒">
-            @elseif( $recipe->liqueur == 4 )
+            @elseif( $recipe->liqueur == 4)
               <img class="cooking_time_icon img-fluid" src="/img/asset67.png" alt="合うお酒">
-            <!-- @elseif( $recipe->liqueur == 5 ) -->
-              <!-- <img class="cooking_time_icon" src="/img/アセット 67.png" alt="合うお酒"> -->
+            @elseif( $recipe->liqueur == 5)
+              <p style="font-size: 18px; font-weight: bold; padding-top: 10px">その他</p>
             @endif
           </div>
 
           <div>
             <!-- 投稿ボタン -->
-            <button type="button" class="create_button">作ってみた投稿</button>
+            <button type="button" class="create_button" onclick="location.href='{{ route('challenges.create', ['recipe_id' => $recipe->id]) }}'">作ってみた投稿</button>
           </div>
         </div>
 
@@ -91,28 +91,29 @@
             </table>
           </div>
         </div>
-       
       </div>
-        <div class="col-sm-4">
-          <div class="everyone_resipe text-center pt-5">
-            <p>みんなの作ってみた</p>
-            <img class="other_image" src="img/3416847_s.jpg" alt="アスパラのベーコン巻き">
-            <p>投稿者名</p>
-            <img class="other_image" src="img/3416847_s.jpg" alt="アスパラのベーコン巻き">
-            <p>投稿者名</p>
-            <img class="other_image" src="img/3416847_s.jpg" alt="アスパラのベーコン巻き">
-            <p>投稿者名</p>
-          </div>
-        </div> 
-      </div>    
-  </div>
-  <!-- row終わり。ここまでレシピ詳細とみんなの作ってみた -->
-
-  <div class="row">
-    <div class="col-sm-12 mb-4 pt-2">
-      <button onclick="location.href='{{ route('challenges.create', ['recipe_id' => $recipe->id]) }}'" class="btn btn-lg btn-info mx-auto d-block"style="width: 90%; color: #fff;">「作ってみた」の投稿はこちら</button>
     </div>
+  <!-- ここまでレシピ詳細 -->
 
+  <!-- ここから右側の「みんなの作ってみた」 -->
+    <div class="col-sm-4">
+      <div class="everyone_recipe text-center pt-5">
+        <h4 class="mb-3">みんなの作ってみた</h4>
+        @if(count($recipe->challenges)>0)
+          @foreach($recipe->challenges as $challenge)
+            <div>
+              <a href="{{ route('challenges.show', ['id' => $challenge->id]) }}"><img class="other_image img-fluid" src="/storage/challenges_img/{{ $challenge->img }}" alt="アスパラのベーコン巻き"></a>
+              <p><a href="{{ route('challenges.show', ['id' => $challenge->id]) }}">{{ $challenge->user->name }}</a></p>
+            </div>
+          @endforeach
+        @else
+        <div>
+          <p>現在投稿されているものはありません。
+          </p>
+        </div>
+        @endif
+      </div>
+    </div>
   </div>
   <!-- row終わり。ここまでレシピ詳細とみんなの作ってみた -->
 
