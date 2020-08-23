@@ -16,15 +16,16 @@ class Rankings
      * @param  \Closure  $next
      * @return mixed
      */
+
     public function __construct()
     {
-        $this->rankings = Challenge::withCount('favorites')
-        ->orderBy('favorites_count', 'desc')->take(3)->get();
+        $this->challenge = new Challenge;
     }
 
     public function handle($request, Closure $next)
     {
-        View::share(['rankings' => $this->rankings]);
+        View::share(['rankings' => $this->challenge->withCount('favorites')
+        ->orderBy('favorites_count', 'desc')->take(3)->get()]);
 
         return $next($request);
     }
