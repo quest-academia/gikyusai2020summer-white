@@ -1,10 +1,11 @@
 @extends('layouts.user')
   
 @section('content')
-<div class="wrapper">
+<div class="loginbackground">
+<div class="wrapper login_wrapper">
   <div class="container">
     <div class="row mb-3 text-center">
-      <div class="offset-md-3 col-sm-6 transparent">
+      <div class="offset-md-8 col-sm-4 transparent">
         <h3 class="blue">ログイン</h3>
         <form method="POST" action="{{ route('login') }}">
          @csrf
@@ -12,7 +13,7 @@
         <div class="form-group">
             <div class="text-left">
                 <label for="email">メールアドレス</label>
-                <input type="email" id="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" aria-describedby="emailHelp" placeholder="ご登録のメールアドレスをご入力ください。"/>
+                <input type="email" id="email" class="form-control @error('email') is-invalid @enderror login_form" name="email" value="{{ old('email') }}" required autocomplete="email" aria-describedby="emailHelp" placeholder="ご登録のメールアドレスをご入力ください。"/>
 
                 @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -25,7 +26,7 @@
         <div class="form-group">
             <div class="text-left">
                 <label for="password">パスワード</label>
-                <input type="password" id="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="パスワードをご入力ください。"/>
+                <input type="password" id="password" class="form-control @error('password') is-invalid @enderror login_form" name="password" placeholder="パスワードをご入力ください。"/>
 
                 @error('password')
                 <span class="invalid-feedback" role="alert">
@@ -43,5 +44,6 @@
 　    </div>
     </div>
   </div>
+</div>
 </div>
 @endsection
