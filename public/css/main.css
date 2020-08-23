@@ -69,37 +69,36 @@ body {
   display: block;
 }
 
+.nav-item a {
+  color: black;
+}
+
 /* ここまでheader */
 
-/*ここからfooter*/
-.footer {
-  height: 100px;
-  background-color: #FFD41F;
-  text-align: right;
+/* ここから各ページの検索フォーム */
+
+#form1 {
+  height: 5rem;
+  background-color: #ffd401;
 }
 
-.footer p {
-  padding: 20px;
-  color: #fff;
-  font-family: 'Quicksand', sans-serif;
+#form1 input[type=text] {
+  height: 3rem;
+  border-radius:2rem;
+  border: solid #ff7a28;
+  width: 15rem;
 }
 
-/*ここまでfooter*/
-
-/* ここから共通パーツ */
-/*送信ボタン*/
-button {
-  background-color: #C6F281;
+.search_btn {
+  background-color: #FF8341;
   color: #5d5d5d;
-  margin: 0 auto;
-  width: 200px;
+  text-align: center;
+  width: 100px;
   padding: 14px;
   border-radius: 25px;
-  font-family: 'Kosugi Maru', sans-serif;
 }
 
-/* 各ページの検索フォーム */
-.search_area {
+/* .search_area {
   background-color: #FFD41F;
   height: 50px;
 }
@@ -118,4 +117,50 @@ button {
   border-radius: 25px;
   border: none;
   font-family: 'Kosugi Maru', sans-serif;
+} */
+
+/* ここまで各ページの検索フォーム */
+
+/* ランキング下のオレンジのライン */
+.navbar {
+  border-bottom: inset 0.5em #fba50b;
 }
+
+/*ここからfooter*/
+.footer {
+  height: 100px;
+  background-color: #FFD41F;
+  text-align: right;
+}
+
+.footer p {
+  padding: 20px;
+  color: #fff;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/*ここまでfooter*/
+
+/* ここから共通パーツ */
+/*送信ボタン*/
+/* 投稿ボタン */
+.create_button {
+  background-color: #A0FBBB;
+  color: #000000;
+  text-align: center;
+  width: auto;
+  padding: 14px;
+  border-radius: 25px;
+  border: none;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+/* button {
+  background-color: #C6F281;
+  color: #5d5d5d;
+  margin: 0 auto;
+  width: 200px;
+  padding: 14px;
+  border-radius: 25px;
+  font-family: 'Kosugi Maru', sans-serif;
+} */
