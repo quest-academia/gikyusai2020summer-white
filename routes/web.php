@@ -15,6 +15,9 @@
 Route::get('/recipes/create', 'RecipesController@create')->name('recipes.create');
 Route::post('/recipes/store', 'RecipesController@store')->name('recipes.store');
 Route::get('/recipes/show/{id}', 'RecipesController@show')->name('recipes.show')->where('id', '[0-9]+');
+Route::get('/recipes/edit/{id}', 'RecipesController@edit')->name('recipes.edit')->where('id', '[0-9]+');
+Route::post('/recipes/update/{id}', 'RecipesController@update')->name('recipes.update')->where('id', '[0-9]+');
+Route::post('/recipes/delete/{id}', 'RecipesController@destory')->name('recipes.delete')->where('id', '[0-9]+');
 
 // 作ってみた
 Route::get('challenges/create', 'ChallengesController@create')->name('challenges.create');
