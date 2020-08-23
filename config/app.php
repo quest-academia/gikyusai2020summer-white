@@ -176,7 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         // ビューコンポーザー用に追加
-        App\Providers\ComposerServiceProvider::class,
+        // App\Providers\ComposerServiceProvider::class,
 
 
     ],
