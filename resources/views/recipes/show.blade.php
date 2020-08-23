@@ -89,6 +89,7 @@
                 <?php $i++ ?>
               @endforeach
             </table>
+			<a href="{{ route('recipes.edit', ['id' => $recipe->id]) }}">編集</a>
           </div>
         </div>
       </div>

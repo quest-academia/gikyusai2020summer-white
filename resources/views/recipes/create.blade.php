@@ -67,7 +67,7 @@
       </div>
 
       <div class="form-group">
-        <label>材料と分類 <span class="badge badge-danger">必須</span></label>
+        <label>材料と分量 <span class="badge badge-danger">必須</span></label>
       </div>
 
       <div class="form-group container">
@@ -196,7 +196,7 @@
       </div>
 
       <div class="form-group">
-        <label>料理の作り方 <span class="badge badge-danger">必須</span></label>　※写真は必須ではありません
+        <label>料理の作り方 <span class="badge badge-danger">必須</span></label>
       </div>
 
       <div class="form-group container">
