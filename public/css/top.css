@@ -1,0 +1,114 @@
+/*調理時間*/
+.cooking-time{
+  background:#FFD41F;
+}
+
+.cooking-time img{
+  margin: 10px;
+  max-width: 70px;
+}
+
+@media (max-width: 576px) {
+  .cooking-time img {
+    margin: 5px;
+    max-width: 50px;
+  }
+}
+
+/*ここからトップの画像と検索フォーム*/
+.otumami-img{
+  /* width: 100%;
+  height: auto; */
+  vertical-align: top;
+}
+
+.backimg{
+  position: relative;
+}
+
+.on-group1{
+  position: absolute;
+  top:  50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.search-button {
+  background-color: initial;
+  border: initial;
+  width: initial;
+  padding: initial;
+  border-radius: initial;
+}
+
+.on-group2{
+  position: absolute;
+  top:  80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.on-group2 a{
+  background-color: #FFD41F;
+  border-radius: 20px;
+  text-align: center;
+  padding: 14px 40px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+/*ここまでトップの画像と検索フォーム*/
+
+/*ここから検索欄*/
+.search_container{
+  box-sizing: border-box;
+  position: relative;
+  border: 1px solid #999;
+  padding: 3px 10px;
+  border-radius: 20px;
+  height: 3.8em;
+  width: 300px;
+  background-color: #fff;
+}
+
+.search_container input[type="text"]{
+  font-size: 16px;
+  border: none;
+  height: 2.8em;
+  width: 240px;
+}
+
+.search_container input[type="text"]:focus {
+  outline: 0;
+}
+
+.search_container button[type="submit"]{
+  cursor: pointer;
+  font-family: FontAwesome;
+  border: none;
+  border-radius: 20%;
+  background: #FF8341;
+  color: #fff;
+  outline : none;
+  width: 2.0em;
+  height: 2.0em;
+}
+  /*ここまで検索欄*/
+
+.main-box1, .main-box2 {
+  width: 90%;
+  border-radius: 15px;
+}
+
+.main-box1 h3, .main-box2 h3 {
+  border-bottom: 2px solid #5D5D5E;
+}
+
+.main a {
+  text-decoration: none;
+  color: #5d5d5d;
+}

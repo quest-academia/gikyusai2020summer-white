@@ -6,6 +6,8 @@ body {
   margin: 0;
   padding: 0;
   background-color: #FCFCDD;
+  color: #5d5d5d;
+  font-family: 'Kosugi Maru', sans-serif;
 }
 
 /* ここからheader */
@@ -122,7 +124,7 @@ body {
 /* ここまで各ページの検索フォーム */
 
 /* ランキング下のオレンジのライン */
-.navbar {
+.navbar, .rankings {
   border-bottom: inset 0.5em #fba50b;
 }
 
