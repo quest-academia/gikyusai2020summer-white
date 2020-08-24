@@ -1,99 +1,20 @@
-/* ここからユーザー登録ページ用 */
-.wrapper_register {
-  margin: 0 auto !important;
-}
-
-.form-group {
-  margin: 40px auto 0;
-}
-
-.container_register {
-  margin-top: 2%;
-  padding-bottom: 4%;
-  background-color: #fff;
-  width: 700px;
-  height: 700px;
-  border-radius: 60px;
-}
-
-
-
-/* ここまでユーザー登録ページ用 */
-
-/* ここからマイページ用 */
-.background-color{
-  background-color: #fcfcdd!important;
-}
-
-img{
-  max-width:100%;
-  height: auto;
-}
-
-.repsipe_details {
-  background-color: #fff;
-  border: solid 4px #FEEDB5;
-  border-radius: 35px;
-}
-
-.everyone_resipe {
-  background-color: #fff;
-  border: solid 4px #FEEDB5;
-  border-radius: 35px;
-}
-
-/* .wrapper {
-  margin-top:5%;
-} */
-
-button {
-  background-color: #c6f281;
-    color: #5d5d5d;
-    margin: 0 auto;
-    width: 100px;
-    padding: 2px;
-    border-radius: 25px;
-    font-family: "Kosugi Maru", sans-serif;
-}
-
-.inline{
-  display: inline-block;
-}
-
-ul {
-  list-style: none;
-}
-
-.padding-top {
-  padding-top: 7%;
-  font-weight: bold;
-}
-
-.padding_left2 {
-  margin-left:20px;
-}
-
-@media screen and (max-width: 480px) {
-  .padding_left1 {
-    padding-left:6%;
-  }
-
-  .padding_left2 {
-    margin-left:0px;
-  }
-}
-/* ここまでマイページ用 */
-
-
 /* ここからログイン用 */
-
 .transparent {
   margin-top: 2%;
-  padding-bottom: 15%;
+  padding-top: 5%;
+  padding-bottom: 10%;
   background-color: #fff;
-  opacity: 0.5;
+  opacity: 0.7;
   border-radius: 25px;
 }
+
+@media (max-width: 576px) {
+  .transparent {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
 .wrapper {
   min-height: 100vh;
   position: relative; /*←相対位置*/
@@ -149,6 +70,64 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-
 /* ここまでログイン用 */
+
+/* ここからマイページ用 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.recipe_details {
+  background-color: #fff;
+  border: solid 4px #FEEDB5;
+  border-radius: 35px;
+}
+
+.everyone_recipe {
+  background-color: #fff;
+  border: solid 4px #FEEDB5;
+  border-radius: 35px;
+}
+
+/* .wrapper {
+  margin-top:5%;
+} */
+
+button {
+  background-color: #c6f281;
+    color: #5d5d5d;
+    margin: 0 auto;
+    width: 100px;
+    padding: 2px;
+    border-radius: 25px;
+    font-family: "Kosugi Maru", sans-serif;
+}
+
+.inline{
+  display: inline-block;
+}
+
+ul {
+  list-style: none;
+}
+
+.padding-top {
+  padding-top: 7%;
+  font-weight: bold;
+}
+
+.padding_left2 {
+  margin-left:20px;
+}
+
+@media screen and (max-width: 480px) {
+  .padding_left1 {
+    padding-left:6%;
+  }
+
+  .padding_left2 {
+    margin-left:0px;
+  }
+}
+/* ここまでマイページ用 */
