@@ -97,8 +97,9 @@
   width: 2.0em;
   height: 2.0em;
 }
-  /*ここまで検索欄*/
+/*ここまで検索欄*/
 
+/* ここから新発見とお酒に合う… */
 .main-box1, .main-box2 {
   width: 90%;
   border-radius: 15px;
@@ -112,3 +113,4 @@
   text-decoration: none;
   color: #5d5d5d;
 }
+/* ここまで新発見とお酒に合う… */

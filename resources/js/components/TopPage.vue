@@ -39,9 +39,9 @@
 			</div>
 		</div>
 
-		<div class="main mx-auto p-3 d-flex flex-wrap flex-sm-nowrap justify-content-around text-center" style="font-size: 16px;">
+		<div class="main mx-auto p-3 d-flex flex-wrap flex-sm-nowrap justify-content-around text-center" style="font-size: 1.2rem;">
 			<div class="main-box1 m-3 p-3 bg-white">
-				<h3 class="p-3 mb-3">新発見おつまみ</h3>
+				<h3 class="p-3 mb-4 ml-sm-2 mr-sm-2">新発見おつまみ</h3>
 				<p class="p-3"><a href="#">■  まさかの〇〇と□□で△△！？</a></p>
 				<p class="p-3"><a href="#">■  まさかの〇〇と□□で△△！？</a></p>
 				<p class="p-3"><a href="#">■  まさかの〇〇と□□で△△！？</a></p>
@@ -51,25 +51,25 @@
 			</div>
 
 			<div class="main-box2 m-3 p-3 bg-white">
-				<h3 class="p-3 mb-3">お酒に相性の良いおつまみ</h3>
+				<h3 class="p-3 mb-3 ml-sm-2 mr-sm-2">お酒に相性の良いおつまみ</h3>
 				<div class="main-list1 d-flex justify-content-around">
-					<div class="alcohol001 p-2">
-						<a href="#"><img src="img/beer.png" width="120" height="120" alt="ビール"></a>
-						<p>ビール</p>
+					<div class="alcohol001 p-3 w-75">
+						<a href="#"><img src="img/beer.png" class="img-fluid" alt="ビール"></a>
+						<p class="p-2">ビール</p>
 					</div>
-					<div class="alcohol002 p-2">
-						<a href="#"><img src="img/syoutyuu.png" width="120" height="120" alt="焼酎"></a>
-						<p>焼酎</p>
+					<div class="alcohol002 p-3 w-75">
+						<a href="#"><img src="img/syoutyuu.png" class="img-fluid" alt="焼酎"></a>
+						<p class="p-2">焼酎</p>
 					</div>
 				</div>
 				<div class="main-list2 d-flex justify-content-around">
-					<div class="alcohol003 p-2">
-						<a href="#"><img src="img/wain.png" width="120" height="120" alt="ワイン"></a>
-						<p>ワイン</p>
+					<div class="alcohol003 p-3 w-75">
+						<a href="#"><img src="img/wain.png" class="img-fluid" alt="ワイン"></a>
+						<p class="p-2">ワイン</p>
 					</div>
-					<div class="alcohol004 p-2">
-						<a href="#"><img src="img/kakuteru.png" width="120" height="120" alt="カクテル"></a>
-						<p>カクテル</p>
+					<div class="alcohol004 p-3 w-75">
+						<a href="#"><img src="img/kakuteru.png" class="img-fluid" alt="カクテル"></a>
+						<p class="p-2">カクテル</p>
 					</div>
 				</div>
 			</div>
