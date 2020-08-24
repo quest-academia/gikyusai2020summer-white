@@ -1,31 +1,53 @@
 <template>
   <div>
     <p class="text-left small font-weight-lighter">
-      {{ countComment }}件のコメント▼
+      {{ countComment }}件のコメント
+      <a data-toggle="collapse" href="#comment">▼</a>
     </p>
     <!-- コメント一覧 -->
-    <div>
-      <ul>
-        <li v-for="post in comments" :key="post.id">
-          {{ post.user.name}}/{{post.comment}}/{{post.updated_at}}
-          <button @click="displayUpdate(post.id,post.comment)">編集</button>
-          <button @click="deleteComment(post.id)">削除</button>
-        </li>
-      </ul>
-    </div>
+    <div class="collapse" id="comment">
+      <!-- !ログインしてたら -->
+      <!-- コメント入力欄 -->
+      <div>
+        <input type="text" v-model="comment" />
+        <button @click="addComment">コメント</button>
+      </div>
 
-    <!-- 編集フォーム -->
-    <div v-if="updateForm">
-      <input type="text" v-model="renewComment" />
-      <button @click="updateComment">編集する</button>
+      <div class="comment text-left" v-for="post in comments" :key="post.id">
+        <div class="user_date">
+          <span>{{ post.user.name}}</span>
+          <span class="font-weight-lighter">{{post.updated_at}}</span>
+        </div>
+        <p class="content">
+          {{post.comment}}
+          <!-- !userだったら -->
+          <a class="ml-3 text-success" @click="displayUpdate(post.id,post.comment)">編集</a>
+          <a class="text-danger" data-toggle="modal" data-target="#deleteModal" >削除</a>
+        </p>
+        <!-- modal -->
+        <div class="modal fade" id="deleteModal" tabindex="-1"
+        role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <p>{{post.comment}}を削除してもよろしいですか？</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" @click="deleteComment(post.id)">削除</button>
+              </div>
+            </div> 
+          </div>
+        </div>
+      <!-- modal -->
+      </div>
+      <!-- 編集フォーム -->
+      <div v-if="updateForm">
+        <input type="text" v-model="renewComment" />
+        <button @click="updateComment">編集する</button>
+      </div>
     </div>
-
-    <!-- コメント入力欄 -->
-    <div>
-      <input type="text" v-model="comment" />
-      <button @click="addComment">コメント</button>
-    </div>
-  </div>
+  </div>  
 </template>
 
 <script>
@@ -43,6 +65,7 @@ export default {
       renewComment: "",
       updateForm: false,
       updateId: "",
+      deleteId: "",
     }
   },
   created(){
