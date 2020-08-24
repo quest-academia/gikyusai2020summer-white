@@ -39,7 +39,7 @@
 			</div>
 		</div>
 
-		<div class="main mx-auto p-3 d-flex flex-wrap flex-sm-nowrap justify-content-around text-center" style="font-size: 1.2rem;">
+		<div class="main mx-auto p-3 d-flex flex-wrap flex-md-nowrap justify-content-around text-center" style="font-size: 1.2rem;">
 			<div class="main-box1 m-3 p-3 bg-white">
 				<h3 class="p-3 mb-4 ml-sm-2 mr-sm-2">新発見おつまみ</h3>
 				<p class="p-3"><a href="#">■  まさかの〇〇と□□で△△！？</a></p>
