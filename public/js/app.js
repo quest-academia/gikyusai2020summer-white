@@ -16352,6 +16352,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -16359,28 +16366,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       newKeyword: "",
       recipes: [],
-      imgPath: 'storage/recipes_img/',
+      imgPath: "storage/recipes_img/",
       current_page: 1,
       last_page: "",
       range: 5
     };
   },
   computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
-    keyword: 'searchKeyword',
-    time: 'searchTime'
+    keyword: "searchKeyword",
+    time: "searchTime"
   })), {}, {
     // ページの範囲を決める
     pageRange: function pageRange() {
       return this.callRange(1, this.last_page);
     }
   }),
-  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(['inputKeyword', 'inputTime'])), {}, {
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])(["inputKeyword", "inputTime"])), {}, {
     // キーワード検索メソッド
     searchByWord: function searchByWord(word) {
       var _this = this;
 
       // 初期検索時は、必ず１ページ目を表示するように検索をかける
-      axios.post('/recipes/searchByWord', {
+      axios.post("/recipes/searchByWord", {
         keyword: word,
         page: 1
       }).then(function (response) {
@@ -16413,7 +16420,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       if (page > 0 && page <= this.last_page) {
         this.current_page = page; // そのページ数で検索をかける
 
-        axios.post('/recipes/searchByWord', {
+        axios.post("/recipes/searchByWord", {
           keyword: this.keyword,
           page: this.current_page
         }).then(function (response) {
@@ -16442,8 +16449,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   // 上記強制実行のために、ルーティングを監視する
   watch: _defineProperty({
-    '$route': 'searchByWord'
-  }, "$route", 'searchByTime')
+    $route: "searchByWord"
+  }, "$route", "searchByTime")
 });
 
 /***/ }),
@@ -16464,6 +16471,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -21002,26 +21020,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.main[data-v-6cc59560] {\n  color:#5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n.ranking[data-v-6cc59560] {\n  border-bottom: solid 10px;\n  border-color:  #FFA500;\n}\n.ranking a[data-v-6cc59560]{\n  color: black;\n}\n.ranking-title[data-v-6cc59560] {\n  font-size: 20px;\n}\nselect[data-v-6cc59560] {\n  width:  180px;\n  height: 30px;\n}\n.challenge-button[data-v-6cc59560] {\n  background-color: #C6F281;\n  color: #5d5d5d;\n  text-align: center;\n  padding: 14px;\n  border-radius: 25px;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n.details[data-v-6cc59560] {\n  width: 300px;\n}\n.pagination[data-v-6cc59560] {\n  display: flex;\n  list-style-type: none;\n  color:  #FFA500;\n}\n.pagination li[data-v-6cc59560] {\n  border: 1px solid #ddd;\n  padding: 6px 12px;\n  text-align: center;\n  cursor: pointer;\n}\n.pagination li + li[data-v-6cc59560] {\n  border-left: none;\n}\n.active[data-v-6cc59560] {\n  color: white;\n  background-color: orange;\n}\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TopPage.vue?vue&type=style&index=0&id=4ffbace9&scoped=true&lang=css&":
-/*!*************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TopPage.vue?vue&type=style&index=0&id=4ffbace9&scoped=true&lang=css& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*調理時間*/\n.cooking-time[data-v-4ffbace9]{\n  background:#FFD41F;\n  height: auto;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.cooking-time img[data-v-4ffbace9]{\n  margin: 5px;\n}\n.cooking-time a img[data-v-4ffbace9]{\n  width: 70%;\n  height: auto;\n  margin: 8px 0px;\n}\n\n/*トップページのグループ*/\n.otumami-img[data-v-4ffbace9]{\n  width: 100%;\n  height: auto;\n  vertical-align:top;\n}\n.backimg[data-v-4ffbace9]{\n  position: relative;\n}\n.on-group1[data-v-4ffbace9]{\n  position: absolute;\n  top:  50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n}\n.search-button[data-v-4ffbace9] {\n  background-color: initial;\n  border: initial;\n  width: initial;\n  padding: initial;\n  border-radius: initial;\n}\n.on-group2[data-v-4ffbace9]{\n  position: absolute;\n  top:  80%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n    -webkit-transform: translate(-50%, -50%);\n    -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n  background-color: #FFD41F;\n  border-radius: 20px;\n  text-align: center;\n  padding: 14px 40px;\n  color: #fff;\n  text-decoration: none;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 3.8em;\n  width: 300px;\n  background-color: #fff;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  font-size: 16px;\n  border: none;\n  height: 2.8em;\n  width: 240px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container button[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*メイン*/\n/*新発見おつまみ*/\n.main-section1[data-v-4ffbace9]{\n  //height: 400px;\n  background-color: #fff;\n  border-radius: 30px;\n  margin: 20px auto 20px auto;\n  width: 80%;\n  max-width: 400px;\n  padding: 16px;\n}\n.main-section1 h2[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-weight: normal;\n  position: relative;\n  margin-bottom: 1em;\n  font-size: 20px;\n  color:#5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  margin: 10px;\n  padding-bottom: 6px;\n}\n.main-section1 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 27%;\n  bottom: -8px;/*線の上下位置*/\n  display: inline-block;\n  width: 100px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color:#5D5D5E;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n.main-section1 p[data-v-4ffbace9]{\n  padding-top: 18px;\n  margin: 24px 8px 8px 15px;\n  text-align: center;\n  color:#5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  font-size: 16px;\n}\n.main-section1 p a[data-v-4ffbace9]{\n  color:#5D5D5E;\n  text-decoration: none;\n}\n.main-section1 p a[data-v-4ffbace9]:hover{\n  border-bottom:#5D5D5E solid 1px;\n}\n.main-section2[data-v-4ffbace9]{\n  //height: 400px;\n  background-color: #fff;\n  border-radius: 30px;\n  margin: 20px auto 10px auto;\n  width: 80%;\n  max-width: 400px;\n  padding: 16px;\n}\n.main-section2 h2[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  font-weight: normal;\n  position: relative;\n  font-size: 20px;\n  color: #5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n  margin: 10px;\n  padding-bottom: 6px;\n}\n.main-section2 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 10%;\n  bottom: -8px;/*線の上下位置*/\n  display: inline-block;\n  width: 150px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: #5D5D5E;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n\n/*お酒に相性がいいおつまみ*/\n.main[data-v-4ffbace9]:after{\n content: \"\";\n clear: both;\n overflow: hidden;\n display: block;\n}\n.main-list1[data-v-4ffbace9]{\n  margin-top: 40px;\n  text-align: center;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.main-list1[data-v-4ffbace9]:after{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.alcohol001[data-v-4ffbace9]{\n  float: left;\n  margin-left: 10px;\n  margin-right: 50px;\n}\n.alcohol002[data-v-4ffbace9]{\n  float: left;\n}\n.main-list2[data-v-4ffbace9]{\n  margin-top: 30px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  text-align: center;\n}\n.main-list2[data-v-4ffbace9]:after{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.alcohol003[data-v-4ffbace9]{\n  float: left;\n  margin-left: 10px;\n  margin-right: 50px;\n}\n.alcohol004[data-v-4ffbace9]{\n  float: left;\n}\n.alcohol001 p[data-v-4ffbace9],.alcohol002 p[data-v-4ffbace9],.alcohol003 p[data-v-4ffbace9],.alcohol004 p[data-v-4ffbace9]{\n  margin: 0;\n  padding: 0;\n  color: #5D5D5E;\n  font-family: 'Kosugi Maru', sans-serif;\n}\n\n/*フッター*/\n.footer[data-v-4ffbace9]{\n  height: 100px;\n  background-color: #FFD41F;\n  text-align: right;\n}\n.footer p[data-v-4ffbace9]{\n  padding:20px;\n  color:#fff;\n  font-family: 'Quicksand', sans-serif;\n  font-size: 16px;\n}\n\n\n/*###########320px以下##############*/\n@media(max-width:320px){\n.cooking-time img[data-v-4ffbace9]{\n    margin: 5px 15px;\n    width:50px;\n    height: 50px;\n}\n.on-group1[data-v-4ffbace9]{\n    position: absolute;\n    top:  50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n      -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n    background-color: #FFD41F;\n    border-radius: 20px;\n    text-align: center;\n    padding: 10px 30px;\n    color: #fff;\n    text-decoration: none;\n    font-size: 12px;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 2.3em;\n  width: 260px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  border: none;\n  height: 2.0em;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container input[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*相性がいいおつまみ設定*/\n.alcohol001 img[data-v-4ffbace9],.alcohol002 img[data-v-4ffbace9],.alcohol003 img[data-v-4ffbace9],.alcohol004 img[data-v-4ffbace9]{\n  width: 90px;\n  height: 90px;\n}\n}\n\n\n/*########330px~450px#########*/\n@media (min-width:330px) and (max-width:450px){\n.cooking-time[data-v-4ffbace9]{\n    background:#FFD41F;\n    height: auto;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.cooking-time img[data-v-4ffbace9]{\n    margin: 5px 15px;\n    width:60px;\n    height: 60px;\n}\n.cooking-time a img[data-v-4ffbace9]{\n    width: 70%;\n    height: auto;\n    margin: 8px 0px;\n}\n.on-group1[data-v-4ffbace9]{\n    position: absolute;\n    top:  50%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n      -webkit-transform: translate(-50%, -50%);\n      -ms-transform: translate(-50%, -50%);\n}\n.on-group2 a[data-v-4ffbace9]{\n    background-color: #FFD41F;\n    border-radius: 20px;\n    text-align: center;\n    padding: 10px 30px;\n    color: #fff;\n    text-decoration: none;\n    font-size: 13px;\n}\n\n/*検索欄*/\n.search_container[data-v-4ffbace9]{\n  box-sizing: border-box;\n  position: relative;\n  border: 1px solid #999;\n  padding: 3px 10px;\n  border-radius: 20px;\n  height: 2.3em;\n  width: 260px;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]{\n  border: none;\n  height: 2.0em;\n}\n.search_container input[type=\"text\"][data-v-4ffbace9]:focus {\n  outline: 0;\n}\n.search_container input[type=\"submit\"][data-v-4ffbace9]{\n  cursor: pointer;\n  font-family: FontAwesome;\n  border: none;\n  border-radius: 20%;\n  background: #FF8341;\n  color: #fff;\n  outline : none;\n  width: 2.0em;\n  height: 2.0em;\n}\n/*相性がいいおつまみ設定*/\n.alcohol001 img[data-v-4ffbace9],.alcohol002 img[data-v-4ffbace9],.alcohol003 img[data-v-4ffbace9],.alcohol004 img[data-v-4ffbace9]{\n  width: 100px;\n  height: 100px;\n}\n}\n\n/*########768px以上##########*/\n@media(min-width:768px){\n.cooking-time[data-v-4ffbace9]{\n    background:#FFD41F;\n    height: auto;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n.cooking-time a img[data-v-4ffbace9]{\n    max-width: 100px;\n    max-height: 100px;\n    width: auto;\n    height: auto;\n    margin: 5px 30px;\n}\n.time-kind[data-v-4ffbace9] {\n\tcursor: pointer;\n}\n\n/*メニューの横並び設定*/\n.main[data-v-4ffbace9]{\n  content: \"\";\n  clear: both;\n  display: block;\n}\n.main-box1[data-v-4ffbace9]{\n  float: left;\n  width: 50%;\n}\n.main-box2[data-v-4ffbace9]{\n  float: left;\n  width: 50%;\n}\n\n/*メイン*/\n.main-section1 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 30%;\n  bottom: -10px;/*線の上下位置*/\n  display: inline-block;\n  width: 100px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: black;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n.main-section2 h2[data-v-4ffbace9]:before{\n  content: '';\n  position: absolute;\n  left: 17%;\n  bottom: -10px;/*線の上下位置*/\n  display: inline-block;\n  width: 150px;/*線の長さ*/\n  height: 2px;/*線の太さ*/\n  background-color: black;/*線の色*/\n  border-radius: 2px;/*線の丸み*/\n}\n}\n/*###############1140px以上###################*/\n@media(min-width:1140px){\n.main[data-v-4ffbace9]{\n  width:1100px;\n  margin-left: auto;\n  margin-right: auto;\n}\n}\n", ""]);
+exports.push([module.i, "\n.main[data-v-6cc59560] {\n  color: #5d5d5e;\n  font-family: \"Kosugi Maru\", sans-serif;\n}\n.ranking[data-v-6cc59560] {\n  border-bottom: solid 10px;\n  border-color: #ffa500;\n}\n.ranking a[data-v-6cc59560] {\n  color: black;\n}\n.ranking-title[data-v-6cc59560] {\n  font-size: 20px;\n}\nselect[data-v-6cc59560] {\n  width: 180px;\n  height: 30px;\n}\n.challenge-button[data-v-6cc59560] {\n  background-color: #c6f281;\n  color: #5d5d5d;\n  text-align: center;\n  padding: 14px;\n  border-radius: 25px;\n  font-family: \"Kosugi Maru\", sans-serif;\n}\n.details[data-v-6cc59560] {\n  width: 300px;\n}\n.pagination[data-v-6cc59560] {\n  display: flex;\n  list-style-type: none;\n  color: #ffa500;\n}\n.pagination li[data-v-6cc59560] {\n  border: 1px solid #ddd;\n  padding: 6px 12px;\n  text-align: center;\n  cursor: pointer;\n}\n.pagination li + li[data-v-6cc59560] {\n  border-left: none;\n}\n.active[data-v-6cc59560] {\n  color: white;\n  background-color: orange;\n}\n", ""]);
 
 // exports
 
@@ -52217,36 +52216,6 @@ if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TopPage.vue?vue&type=style&index=0&id=4ffbace9&scoped=true&lang=css&":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TopPage.vue?vue&type=style&index=0&id=4ffbace9&scoped=true&lang=css& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./TopPage.vue?vue&type=style&index=0&id=4ffbace9&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TopPage.vue?vue&type=style&index=0&id=4ffbace9&scoped=true&lang=css&");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -52909,141 +52878,148 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "main" }, [
-    _c("div", { staticClass: "text-center", attrs: { id: "form1" } }, [
-      _c("div", { staticClass: "py-2" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.newKeyword,
-              expression: "newKeyword"
-            }
-          ],
-          attrs: { type: "text", placeholder: "キーワード検索" },
-          domProps: { value: _vm.newKeyword },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+  return _c(
+    "div",
+    { staticClass: "main", staticStyle: { "font-size": "16px" } },
+    [
+      _c("div", { staticClass: "text-center", attrs: { id: "form1" } }, [
+        _c("div", { staticClass: "py-2" }, [
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.newKeyword,
+                expression: "newKeyword"
               }
-              _vm.newKeyword = $event.target.value
-            }
-          }
-        }),
-        _vm._v(" "),
-        _c(
-          "button",
-          {
-            staticClass: "btn",
-            attrs: { type: "submit" },
+            ],
+            staticClass: "text-center",
+            attrs: { type: "text", placeholder: "キーワード検索" },
+            domProps: { value: _vm.newKeyword },
             on: {
-              click: function($event) {
-                _vm.inputKeyword(_vm.newKeyword)
-                _vm.searchByWord(_vm.newKeyword)
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.newKeyword = $event.target.value
               }
             }
-          },
-          [_vm._v("検索")]
-        )
-      ])
-    ]),
-    _vm._v(" "),
-    _c("h2", { staticClass: "mt-3 ml-3" }, [
-      _vm._v("レシピ検索結果：" + _vm._s(_vm.keyword))
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "card mb-5 mx-3 border-white" }, [
-      _c("div", { staticClass: "card-body" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "row no-gutters" },
-          [
-            _vm._l(_vm.recipes, function(recipe) {
-              return [
-                _c("div", { staticClass: "col-sm-6" }, [
-                  _c("img", {
-                    attrs: {
-                      src: _vm.imgPath + recipe.img,
-                      width: "100%",
-                      alt: "レシピ画像"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-sm-4 mt-3 mx-auto" }, [
-                  _c("h2", { domProps: { textContent: _vm._s(recipe.name) } }),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("投稿者：" + _vm._s(recipe.user.name))]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v("調理時間：\n\t\t\t\t\t\t\t"),
-                    recipe.time == 1
-                      ? _c("span", [_vm._v("秒")])
-                      : recipe.time == 2
-                      ? _c("span", [_vm._v("3分")])
-                      : recipe.time == 3
-                      ? _c("span", [_vm._v("5分")])
-                      : recipe.time == 4
-                      ? _c("span", [_vm._v("10分")])
-                      : _vm._e()
-                  ]),
-                  _vm._v(" "),
-                  _c("p", [
-                    _vm._v("合うお酒：\n\t\t\t\t\t\t\t"),
-                    recipe.liqueur == 1
-                      ? _c("span", [_vm._v("ビール")])
-                      : recipe.liqueur == 2
-                      ? _c("span", [_vm._v("焼酎")])
-                      : recipe.liqueur == 3
-                      ? _c("span", [_vm._v("カクテル")])
-                      : _c("span", [_vm._v("その他")])
-                  ]),
-                  _vm._v(" "),
-                  _c("button", { staticClass: "challenge-button" }, [
-                    _vm._v("みんなの作ってみた")
-                  ])
-                ])
-              ]
-            })
-          ],
-          2
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "mt-5 text-center" }, [
-          _c("nav", [
-            _c(
-              "ul",
-              { staticClass: "pagination" },
-              _vm._l(_vm.pageRange, function(page) {
-                return _c(
-                  "li",
-                  {
-                    key: page,
-                    class: _vm.isCurrent(page) ? "active" : "inactive",
-                    on: {
-                      click: function($event) {
-                        return _vm.changePage(page)
+          }),
+          _vm._v(" "),
+          _c(
+            "button",
+            {
+              staticClass: "btn search_btn",
+              attrs: { type: "submit" },
+              on: {
+                click: function($event) {
+                  _vm.inputKeyword(_vm.newKeyword)
+                  _vm.searchByWord(_vm.newKeyword)
+                }
+              }
+            },
+            [_vm._v("検索")]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("h2", { staticClass: "my-4 ml-3" }, [
+        _vm._v("レシピ検索結果：" + _vm._s(_vm.keyword))
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "card mb-5 mx-sm-5 mx-4 p-4 border-white" }, [
+        _c("div", { staticClass: "card-body" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row no-gutters" },
+            [
+              _vm._l(_vm.recipes, function(recipe) {
+                return [
+                  _c("div", { staticClass: "col-sm-6 p-4" }, [
+                    _c("img", {
+                      attrs: {
+                        src: _vm.imgPath + recipe.img,
+                        width: "100%",
+                        alt: "レシピ画像"
                       }
-                    }
-                  },
-                  [
-                    _vm._v(
-                      "\n\t\t\t\t\t\t\t\t" + _vm._s(page) + "\n\t\t\t\t\t\t\t"
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-sm-5 mt-3 mx-auto p-4" }, [
+                    _c("h2", {
+                      staticClass: "mb-3",
+                      domProps: { textContent: _vm._s(recipe.name) }
+                    }),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("投稿者：" + _vm._s(recipe.user.name))]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v("\n              調理時間：\n              "),
+                      recipe.time == 1
+                        ? _c("span", [_vm._v("秒")])
+                        : recipe.time == 2
+                        ? _c("span", [_vm._v("3分")])
+                        : recipe.time == 3
+                        ? _c("span", [_vm._v("5分")])
+                        : recipe.time == 4
+                        ? _c("span", [_vm._v("10分")])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v("\n              合うお酒：\n              "),
+                      recipe.liqueur == 1
+                        ? _c("span", [_vm._v("ビール")])
+                        : recipe.liqueur == 2
+                        ? _c("span", [_vm._v("焼酎")])
+                        : recipe.liqueur == 3
+                        ? _c("span", [_vm._v("カクテル")])
+                        : _c("span", [_vm._v("その他")])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      { staticClass: "challenge-button d-block mx-auto mt-4" },
+                      [_vm._v("みんなの作ってみた")]
                     )
-                  ]
-                )
-              }),
-              0
-            )
+                  ])
+                ]
+              })
+            ],
+            2
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "mt-5 text-center" }, [
+            _c("nav", [
+              _c(
+                "ul",
+                { staticClass: "pagination" },
+                _vm._l(_vm.pageRange, function(page) {
+                  return _c(
+                    "li",
+                    {
+                      key: page,
+                      staticClass: "mx-auto",
+                      class: _vm.isCurrent(page) ? "active" : "inactive",
+                      on: {
+                        click: function($event) {
+                          return _vm.changePage(page)
+                        }
+                      }
+                    },
+                    [_vm._v(_vm._s(page))]
+                  )
+                }),
+                0
+              )
+            ])
           ])
         ])
       ])
-    ])
-  ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -53052,7 +53028,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row mb-3" }, [
       _c("div", { staticClass: "col-sm-6 text-center" }, [
-        _c("label", [_vm._v("お酒:")]),
+        _c("label", { staticClass: "font-weight-bold" }, [_vm._v("お酒:")]),
         _vm._v(" "),
         _c("select", [
           _c("option", [_vm._v("ビール")]),
@@ -53066,7 +53042,7 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "col-sm-6 text-center" }, [
-        _c("label", [_vm._v("時間:")]),
+        _c("label", { staticClass: "font-weight-bold" }, [_vm._v("時間:")]),
         _vm._v(" "),
         _c("select", [
           _c("option", [_vm._v("秒")]),
@@ -53087,10 +53063,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TopPage.vue?vue&type=template&id=4ffbace9&scoped=true&":
-/*!**********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TopPage.vue?vue&type=template&id=4ffbace9&scoped=true& ***!
-  \**********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TopPage.vue?vue&type=template&id=4ffbace9&":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TopPage.vue?vue&type=template&id=4ffbace9& ***!
+  \**********************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -53104,115 +53080,107 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "time" }, [
-      _c("div", { staticClass: "cooking-time" }, [
-        _c("img", {
-          attrs: { src: "img/time1.png", width: "70", height: "70" }
-        }),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "time-kind",
-            on: {
-              click: function($event) {
-                _vm.inputTime(1)
-                _vm.routerPush("/search-result")
-              }
-            }
-          },
-          [
-            _c("img", {
-              attrs: {
-                src: "img/time001.png",
-                width: "70",
-                height: "70",
-                alt: "秒"
-              }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "time-kind",
-            on: {
-              click: function($event) {
-                _vm.inputTime(2)
-                _vm.routerPush("/search-result")
-              }
-            }
-          },
-          [
-            _c("img", {
-              attrs: {
-                src: "img/time002.png",
-                width: "70",
-                height: "70",
-                alt: "3分"
-              }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "time-kind",
-            on: {
-              click: function($event) {
-                _vm.inputTime(3)
-                _vm.routerPush("/search-result")
-              }
-            }
-          },
-          [
-            _c("img", {
-              attrs: {
-                src: "img/time003.png",
-                width: "70",
-                height: "70",
-                alt: "5分"
-              }
-            })
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "span",
-          {
-            staticClass: "time-kind",
-            on: {
-              click: function($event) {
-                _vm.inputTime(4)
-                _vm.routerPush("/search-result")
-              }
-            }
-          },
-          [
-            _c("img", {
-              attrs: {
-                src: "img/time004.png",
-                width: "70",
-                height: "70",
-                alt: "10分"
-              }
-            })
-          ]
-        )
-      ])
+      _c(
+        "div",
+        {
+          staticClass:
+            "cooking-time d-flex justify-content-center align-items-center"
+        },
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "span",
+              {
+                staticClass: "time-kind",
+                on: {
+                  click: function($event) {
+                    _vm.inputTime(1)
+                    _vm.routerPush("/search-result")
+                  }
+                }
+              },
+              [
+                _c("img", {
+                  staticClass: "img-fluid",
+                  attrs: { src: "img/time001.png", alt: "秒" }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "span",
+              {
+                staticClass: "time-kind",
+                on: {
+                  click: function($event) {
+                    _vm.inputTime(2)
+                    _vm.routerPush("/search-result")
+                  }
+                }
+              },
+              [
+                _c("img", {
+                  staticClass: "img-fluid",
+                  attrs: { src: "img/time002.png", alt: "3分" }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "span",
+              {
+                staticClass: "time-kind",
+                on: {
+                  click: function($event) {
+                    _vm.inputTime(3)
+                    _vm.routerPush("/search-result")
+                  }
+                }
+              },
+              [
+                _c("img", {
+                  staticClass: "img-fluid",
+                  attrs: { src: "img/time003.png", alt: "5分" }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", [
+            _c(
+              "span",
+              {
+                staticClass: "time-kind",
+                on: {
+                  click: function($event) {
+                    _vm.inputTime(4)
+                    _vm.routerPush("/search-result")
+                  }
+                }
+              },
+              [
+                _c("img", {
+                  staticClass: "img-fluid",
+                  attrs: { src: "img/time004.png", alt: "10分" }
+                })
+              ]
+            )
+          ])
+        ]
+      )
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "top-group" }, [
       _c("div", { staticClass: "backimg" }, [
         _c("img", {
-          staticClass: "otumami-img",
-          attrs: {
-            src: "img/tumami002.png",
-            width: "700",
-            height: "440",
-            alt: "おつまみの写真"
-          }
+          staticClass: "otumami-img img-fluid",
+          attrs: { src: "img/tumami002.png", alt: "おつまみの写真" }
         }),
         _vm._v(" "),
         _c("div", { staticClass: "on-group1" }, [
@@ -53264,11 +53232,11 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _vm._m(0)
+        _vm._m(1)
       ])
     ]),
     _vm._v(" "),
-    _vm._m(1)
+    _vm._m(2)
   ])
 }
 var staticRenderFns = [
@@ -53276,127 +53244,135 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "on-group2" }, [
-      _c("p", [_c("a", { attrs: { href: "" } }, [_vm._v("作ってみた")])])
+    return _c("div", [
+      _c("img", { staticClass: "img-fluid", attrs: { src: "img/time1.png" } })
     ])
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "main" }, [
-      _c("div", { staticClass: "main-box1" }, [
-        _c("div", { staticClass: "main-section1" }, [
-          _c("h2", [_vm._v("新発見おつまみ")]),
-          _vm._v(" "),
-          _c("p", [
-            _c("a", { attrs: { href: "#" } }, [
-              _vm._v("■  まさかの〇〇と□□で△△！？")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _c("a", { attrs: { href: "#" } }, [
-              _vm._v("■  まさかの〇〇と□□で△△！？")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _c("a", { attrs: { href: "#" } }, [
-              _vm._v("■  まさかの〇〇と□□で△△！？")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _c("a", { attrs: { href: "#" } }, [
-              _vm._v("■  まさかの〇〇と□□で△△！？")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _c("a", { attrs: { href: "#" } }, [
-              _vm._v("■  まさかの〇〇と□□で△△！？")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _c("a", { attrs: { href: "#" } }, [
-              _vm._v("■  まさかの〇〇と□□で△△！？")
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "main-box2" }, [
-        _c("div", { staticClass: "main-section2" }, [
-          _c("h2", [_vm._v("お酒に相性の良いおつまみ")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "main-list1" }, [
-            _c("div", { staticClass: "alcohol001" }, [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("img", {
-                  attrs: {
-                    src: "img/beer.png",
-                    width: "120",
-                    height: "120",
-                    alt: "ビール"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("p", [_vm._v("ビール")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "alcohol002" }, [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("img", {
-                  attrs: {
-                    src: "img/syoutyuu.png",
-                    width: "120",
-                    height: "120",
-                    alt: "焼酎"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("p", [_vm._v("焼酎")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "main-list2" }, [
-            _c("div", { staticClass: "alcohol003" }, [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("img", {
-                  attrs: {
-                    src: "img/wain.png",
-                    width: "120",
-                    height: "120",
-                    alt: "ワイン"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("p", [_vm._v("ワイン")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "alcohol004" }, [
-              _c("a", { attrs: { href: "#" } }, [
-                _c("img", {
-                  attrs: {
-                    src: "img/kakuteru.png",
-                    width: "120",
-                    height: "120",
-                    alt: "カクテル"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("p", [_vm._v("カクテル")])
-            ])
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "on-group2" }, [
+      _c("p", [_c("a", { attrs: { href: "#" } }, [_vm._v("作ってみた")])])
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "main mx-auto p-3 d-flex flex-wrap flex-sm-nowrap justify-content-around text-center",
+        staticStyle: { "font-size": "1.2rem" }
+      },
+      [
+        _c("div", { staticClass: "main-box1 m-3 p-3 bg-white" }, [
+          _c("h3", { staticClass: "p-3 mb-4 ml-sm-2 mr-sm-2" }, [
+            _vm._v("新発見おつまみ")
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "p-3" }, [
+            _c("a", { attrs: { href: "#" } }, [
+              _vm._v("■  まさかの〇〇と□□で△△！？")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "p-3" }, [
+            _c("a", { attrs: { href: "#" } }, [
+              _vm._v("■  まさかの〇〇と□□で△△！？")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "p-3" }, [
+            _c("a", { attrs: { href: "#" } }, [
+              _vm._v("■  まさかの〇〇と□□で△△！？")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "p-3" }, [
+            _c("a", { attrs: { href: "#" } }, [
+              _vm._v("■  まさかの〇〇と□□で△△！？")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "p-3" }, [
+            _c("a", { attrs: { href: "#" } }, [
+              _vm._v("■  まさかの〇〇と□□で△△！？")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "p-3" }, [
+            _c("a", { attrs: { href: "#" } }, [
+              _vm._v("■  まさかの〇〇と□□で△△！？")
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "main-box2 m-3 p-3 bg-white" }, [
+          _c("h3", { staticClass: "p-3 mb-3 ml-sm-2 mr-sm-2" }, [
+            _vm._v("お酒に相性の良いおつまみ")
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "main-list1 d-flex justify-content-around" },
+            [
+              _c("div", { staticClass: "alcohol001 p-3 w-75" }, [
+                _c("a", { attrs: { href: "#" } }, [
+                  _c("img", {
+                    staticClass: "img-fluid",
+                    attrs: { src: "img/beer.png", alt: "ビール" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "p-2" }, [_vm._v("ビール")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "alcohol002 p-3 w-75" }, [
+                _c("a", { attrs: { href: "#" } }, [
+                  _c("img", {
+                    staticClass: "img-fluid",
+                    attrs: { src: "img/syoutyuu.png", alt: "焼酎" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "p-2" }, [_vm._v("焼酎")])
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "main-list2 d-flex justify-content-around" },
+            [
+              _c("div", { staticClass: "alcohol003 p-3 w-75" }, [
+                _c("a", { attrs: { href: "#" } }, [
+                  _c("img", {
+                    staticClass: "img-fluid",
+                    attrs: { src: "img/wain.png", alt: "ワイン" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "p-2" }, [_vm._v("ワイン")])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "alcohol004 p-3 w-75" }, [
+                _c("a", { attrs: { href: "#" } }, [
+                  _c("img", {
+                    staticClass: "img-fluid",
+                    attrs: { src: "img/kakuteru.png", alt: "カクテル" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "p-2" }, [_vm._v("カクテル")])
+              ])
+            ]
+          )
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -70174,11 +70150,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _TopPage_vue_vue_type_template_id_4ffbace9_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TopPage.vue?vue&type=template&id=4ffbace9&scoped=true& */ "./resources/js/components/TopPage.vue?vue&type=template&id=4ffbace9&scoped=true&");
+/* harmony import */ var _TopPage_vue_vue_type_template_id_4ffbace9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TopPage.vue?vue&type=template&id=4ffbace9& */ "./resources/js/components/TopPage.vue?vue&type=template&id=4ffbace9&");
 /* harmony import */ var _TopPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TopPage.vue?vue&type=script&lang=js& */ "./resources/js/components/TopPage.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _TopPage_vue_vue_type_style_index_0_id_4ffbace9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TopPage.vue?vue&type=style&index=0&id=4ffbace9&scoped=true&lang=css& */ "./resources/js/components/TopPage.vue?vue&type=style&index=0&id=4ffbace9&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -70186,13 +70160,13 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
   _TopPage_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _TopPage_vue_vue_type_template_id_4ffbace9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _TopPage_vue_vue_type_template_id_4ffbace9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _TopPage_vue_vue_type_template_id_4ffbace9___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TopPage_vue_vue_type_template_id_4ffbace9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  "4ffbace9",
+  null,
   null
   
 )
@@ -70218,35 +70192,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/TopPage.vue?vue&type=style&index=0&id=4ffbace9&scoped=true&lang=css&":
-/*!******************************************************************************************************!*\
-  !*** ./resources/js/components/TopPage.vue?vue&type=style&index=0&id=4ffbace9&scoped=true&lang=css& ***!
-  \******************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TopPage_vue_vue_type_style_index_0_id_4ffbace9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./TopPage.vue?vue&type=style&index=0&id=4ffbace9&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TopPage.vue?vue&type=style&index=0&id=4ffbace9&scoped=true&lang=css&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TopPage_vue_vue_type_style_index_0_id_4ffbace9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TopPage_vue_vue_type_style_index_0_id_4ffbace9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TopPage_vue_vue_type_style_index_0_id_4ffbace9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TopPage_vue_vue_type_style_index_0_id_4ffbace9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TopPage_vue_vue_type_style_index_0_id_4ffbace9_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ "./resources/js/components/TopPage.vue?vue&type=template&id=4ffbace9&scoped=true&":
-/*!****************************************************************************************!*\
-  !*** ./resources/js/components/TopPage.vue?vue&type=template&id=4ffbace9&scoped=true& ***!
-  \****************************************************************************************/
+/***/ "./resources/js/components/TopPage.vue?vue&type=template&id=4ffbace9&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/TopPage.vue?vue&type=template&id=4ffbace9& ***!
+  \****************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TopPage_vue_vue_type_template_id_4ffbace9_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./TopPage.vue?vue&type=template&id=4ffbace9&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TopPage.vue?vue&type=template&id=4ffbace9&scoped=true&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TopPage_vue_vue_type_template_id_4ffbace9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TopPage_vue_vue_type_template_id_4ffbace9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./TopPage.vue?vue&type=template&id=4ffbace9& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TopPage.vue?vue&type=template&id=4ffbace9&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TopPage_vue_vue_type_template_id_4ffbace9___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TopPage_vue_vue_type_template_id_4ffbace9_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TopPage_vue_vue_type_template_id_4ffbace9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -70302,8 +70260,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/easyentry/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /var/www/easyentry/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /var/www/html/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /var/www/html/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
