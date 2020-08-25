@@ -1,9 +1,17 @@
+html{
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
   background-color: #FCFCDD;
+  color: #5d5d5d;
+  font-family: 'Kosugi Maru', sans-serif;
 }
 
+/* ここからheader */
+/* ヘッダー */
 .header {
   border-bottom: solid 1px #000;
   margin: 0;
@@ -11,14 +19,25 @@ body {
   background-color: #fff;
 }
 
-/*サイト名*/
-.site-logo h1 {
-  margin: 0 auto;
-  padding: 0;
-  height: 50px;
+/* ロゴ */
+.logo {
+  float: left;
+  width: auto;
 }
 
 /*ナビゲーション*/
+.navigation {
+  float: right;
+  width: auto;
+}
+
+/*floatの解除*/
+.header:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .menu-navigation ul {
   margin: 0;
   padding: 0;
@@ -52,135 +71,64 @@ body {
   display: block;
 }
 
-#nav-drawer {
-  position: relative;
-  margin: 13px 16px 13px 18px;
+.nav-item a {
+  color: black;
 }
 
-/*チェックボックス等は非表示に*/
-.nav-unshown {
-  display: none;
+/* ここまでheader */
+
+/* ここから各ページの検索フォーム */
+
+#form1 {
+  height: 5rem;
+  background-color: #ffd401;
 }
 
-/*アイコンのスペース*/
-#nav-open {
-  display: inline-block;
-  width: 30px;
-  height: 22px;
-  vertical-align: middle;
+#form1 input[type=text] {
+  height: 3rem;
+  border-radius:2rem;
+  border: solid #ff7a28;
+  width: 15rem;
+}
+
+.search_btn {
+  background-color: #FF8341;
+  color: #5d5d5d;
   text-align: center;
+  width: 100px;
+  padding: 14px;
+  border-radius: 25px;
 }
 
-/*ハンバーガーの形*/
-#nav-open span, #nav-open span:before, #nav-open span:after {
-  position: absolute;
-  height: 3px;
-  /*線の太さ*/
-  width: 25px;
-  /*長さ*/
-  border-radius: 3px;
-  background: #555;
-  display: block;
-  content: '';
-  cursor: pointer;
-}
-
-#nav-open span:before {
-  bottom: -8px;
-}
-
-#nav-open span:after {
-  bottom: -16px;
-}
-
-/*閉じる用の薄黒箇所*/
-#nav-close {
-  display: none;
-  position: fixed;
-  z-index: 99;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: black;
-  opacity: 0;
-  transition: .3s ease-in-out;
-}
-
-/*メニューの中身*/
-#nav-content {
-  overflow: auto;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  width: 90%;
-  max-width: 200px;
-  /*最大幅*/
-  height: 100%;
-  background: #fff;
-  transition: .3s ease-in-out;
-  -webkit-transform: translateX(-105%);
-  transform: translateX(-105%);
-}
-
-/*チェックがついたら表示させる*/
-#nav-input:checked~#nav-close {
-  display: block;
-  opacity: .5;
-}
-
-#nav-input:checked~#nav-content {
-  -webkit-transform: translateX(0%);
-  transform: translateX(0%);
-  box-shadow: 6px 0 25px rgba(0, 0, 0, .15);
-}
-
-.header-logo-menu {
-  display: flex;
-  display: -moz-flex;
-  display: -o-flex;
-  display: -webkit-flex;
-  display: -ms-flex;
-  flex-direction: row;
-  -moz-flex-direction: row;
-  -o-flex-direction: row;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-}
-
-#nav-content li {
-  clear: both;
-}
-
-#nav-content li a {
-  border-style: none;
-  width: 200px;
-}
-
-#nav-content li a:hover {
+/* .search_area {
   background-color: #FFD41F;
+  height: 50px;
 }
 
-/*headerの中を横に並べる設定*/
-.header:after {
-  content: "";
-  display: block;
-  clear: both;
+.search_form {
+  border: solid 4px #E2B840;
+  border-radius: 25px;
 }
 
-.logo {
-  float: left;
-  width: auto;
+.search_button {
+  background-color: #FF8341;
+  color: #fff;
+  text-align: center;
+  width: 100px;
+  padding: 14px;
+  border-radius: 25px;
+  border: none;
+  font-family: 'Kosugi Maru', sans-serif;
+} */
+
+/* ここまで各ページの検索フォーム */
+
+/* ランキング下のオレンジのライン */
+.navbar, .rankings {
+  border-bottom: inset 0.5em #fba50b;
 }
 
-/*ナビゲーション*/
-.navigation {
-  float: right;
-  width: auto;
-}
-
-/*フッター*/
+/*ここからfooter*/
 .footer {
   height: 100px;
   background-color: #FFD41F;
@@ -193,8 +141,23 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
+/*ここまでfooter*/
+
+/* ここから共通パーツ */
 /*送信ボタン*/
-button {
+/* 投稿ボタン */
+.create_button {
+  background-color: #A0FBBB;
+  color: #000000;
+  text-align: center;
+  width: auto;
+  padding: 14px;
+  border-radius: 25px;
+  border: none;
+  font-family: 'Kosugi Maru', sans-serif;
+}
+
+/* button {
   background-color: #C6F281;
   color: #5d5d5d;
   margin: 0 auto;
@@ -202,17 +165,4 @@ button {
   padding: 14px;
   border-radius: 25px;
   font-family: 'Kosugi Maru', sans-serif;
-}
-
-.parent {
-  text-align: center;
-}
-
-table {
-  width: 100%;
-  margin-left:  25%;
-}
-
-th{
-  width: 30%;
-}
+} */

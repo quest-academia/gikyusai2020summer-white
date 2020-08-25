@@ -1,38 +1,90 @@
-/* ここからユーザー登録ページ用 */
-.wrapper {
-  margin: 0 auto !important;
-}
-
-.form-group {
-  margin-top: 20px;
-}
-
-.container {
+/* ここからログイン用 */
+.transparent {
   margin-top: 2%;
-  padding-bottom: 4%;
+  padding-top: 5%;
+  padding-bottom: 10%;
   background-color: #fff;
+  opacity: 0.7;
+  border-radius: 25px;
 }
 
+@media (max-width: 576px) {
+  .transparent {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
 
-/* ここまでユーザー登録ページ用 */
+.wrapper {
+  min-height: 100vh;
+  position: relative; /*←相対位置*/
+  padding: 50px 0; /*←footerの高さ*/
+  box-sizing: border-box; /*←全て含めてmin-height:100vhに*/
+}
+
+.blue {
+  color: #2196f3;
+  margin-top: 7%;
+}
+
+.left-text a {
+  margin-top: 10%;
+}
+
+.login {
+  display: block;
+  margin-top: 15%;
+}
+
+button {
+  margin-top: 5%;
+}
+
+.pc {
+  display: block !important;
+}
+.sp {
+  display: none !important;
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+      min-height: 100vh;
+      position: relative; /*←相対位置*/
+      padding-bottom: 120px; /*←footerの高さ*/
+      box-sizing: border-box; /*←全て含めてmin-height:100vhに*/
+  }
+
+  .pc {
+      display: none !important;
+  }
+  .sp {
+      display: block !important;
+  }
+}
+
+.loginbackground {
+  background-image: url(../img/2e90317b2b525f9dd2295c6c7dfa1626.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* ここまでログイン用 */
 
 /* ここからマイページ用 */
-.background-color{
-  background-color: #fcfcdd!important;
-}
-
-img{
-  max-width:100%;
+img {
+  max-width: 100%;
   height: auto;
 }
 
-.repsipe_details {
+.recipe_details {
   background-color: #fff;
   border: solid 4px #FEEDB5;
   border-radius: 35px;
 }
 
-.everyone_resipe {
+.everyone_recipe {
   background-color: #fff;
   border: solid 4px #FEEDB5;
   border-radius: 35px;

@@ -1,43 +1,10 @@
-html{
-  font-family: 'Kosugi Maru', sans-serif;
-}
-
 /* showページ関連 */
-main {
-  background-color: #fcfddb;
-}
-
-#form1 {
-  height: 5rem;
-  background-color: #ffd401;
-}
-
-#form1 input[type=text] {
-  height: 3rem;
-  border-radius:2rem;
-  border: solid #ff7a28;
-  width: 15rem;
-}
-
 .btn {
-  background-color: #FF8341;
-  color: #5d5d5d;
-  text-align: center;
-  width: 100px;
-  padding: 14px;
   border-radius: 25px;
 }
 
-.navbar {
-  border-bottom: inset 0.5em #fba50b;
-}
-
 .whiteline {
-  background: linear-gradient(transparent 60%, #fdfdfd 60%);
-}
-
-.nav-item a {
-  color: black;
+  background: linear-gradient(transparent 60%, #cfd5db 60%);
 }
 
 .firstborder {
@@ -64,28 +31,5 @@ main {
 
 /* 修正ページ用 */
 .edit {
-  background-color: #F5F3F4;
-}
-
-.editbutton {
-  color: #fff;
-  background-color: #C6F281;
-}
-
-button {
-  background-color: #C6F281;
-  color: #fff;
-  text-align: center;
-  width: 100px;
-  padding: 14px;
-  border-radius: 25px;
-}
-
-.needbtn {
-  background-color:#F00808; 
-  color: #fff; 
-  text-align: center; 
-  width: 100px; 
-  padding: 3px; 
-  border-radius: 25px; 
+  background-color: #cfd5db;
 }

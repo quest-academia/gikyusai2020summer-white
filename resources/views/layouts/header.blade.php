@@ -1,13 +1,11 @@
 <div class="header">
+
   <!-- ここからロゴ部分 -->
   <div class="logo">
-    <div class="site-logo">
-      <h1>
-        <a href="{{ url('/') }}"><img class="width-height" src="{{ asset('img/oTosHi.png') }}" width="150" height="50" alt="otoshiロゴ"></a>
-      </h1>
-    </div>
+    <a href="{{ url('/') }}"><img class="width-height" src="{{ asset('img/oTosHi.png') }}" width="150" height="50" alt="otoshiロゴ"></a>
   </div>
   <!-- ここまでロゴ部分 -->
+
   <!-- ここから右のナビゲーション -->
   <div class="navigation">
     <nav class="menu-navigation">
@@ -26,7 +24,7 @@
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="{{ url('/') }}">{{ __('トップページ') }}</a>
               <a class="dropdown-item" href="{{ route('mypage') }}">{{ __('マイページ') }}</a>
-              <a class="dropdown-item" href="#">{{ __('レシピ一覧') }}</a>
+              <a class="dropdown-item" href="{{ url('/search-result') }}">{{ __('レシピ一覧') }}</a>
               <a class="dropdown-item" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">

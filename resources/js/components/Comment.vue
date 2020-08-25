@@ -13,18 +13,18 @@
         <button @click="addComment">コメント</button>
       </div>
 
-      <div class="comment text-left" v-for="post in comments" :key="post.id">
-        <div class="user_date">
-          <span>{{ post.user.name}}</span>
-          <span class="font-weight-lighter">{{post.updated_at}}</span>
+      <div class="comment" v-for="post in comments" :key="post.id">
+        <div class="user_date text-left">
+          <span class="font-weight-bold">{{ post.user.name}}</span>
+          <span class="font-weight-light">{{post.updated_at}}</span>
         </div>
-        <p class="content">
+        <p class="content text-left">
           {{post.comment}}
           <!-- !userだったら -->
           <a class="ml-3 text-success" @click="displayUpdate(post.id,post.comment)">編集</a>
           <a class="text-danger" data-toggle="modal" data-target="#deleteModal" >削除</a>
         </p>
-        <!-- modal -->
+        <!-- 削除modal -->
         <div class="modal fade" id="deleteModal" tabindex="-1"
         role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
