@@ -5,7 +5,6 @@
   <div class="row mb-4">
     <h2 class="whiteline font-weight-bold mx-auto">みんなのつくってみた</h2>
   </div>
-
   <!-- 作ってみた下 -->
   <div class="row justify-content-around">
 
@@ -32,28 +31,26 @@
             <!-- ログイン状態か -->
             <!-- チャレンジレシピのID -->
             <favorite :first-favorite="@json($challenge->isFavoritedBy(Auth::user()))" :first-count-favorites="@json($challenge->countFavorites())" :authorized="@json(Auth::check())" :challenge-id="@json($challenge->id)">
-              </favorite>
-              <p class="text-left small font-weight-lighter">
-                〇件のコメント▼
-              </p>
-            </div>
-            <!-- ! Vue:slack風にしたい -->
+            </favorite>
+            <comment :challenge-id="@json($challenge->id)">
+            </comment>
+          </div>
 
-            <div class="d-flex justify-content-around mt-4 mb-4">
-              @if(Auth::id() == $challenge->user_id)
-                <!-- 編集ボタン -->
-                <div>
-                  <button onclick="location.href='{{ route('challenges.edit', ['challenge_id' => $challenge->id]) }}'" class="btn btn-lg btn-success" style="width: 100px">編集</button>
-                </div>
-                <!-- 削除ボタン -->
-                <div>
-                  <form action="{{ route('challenges.delete', ['challenge_id' => $challenge->id]) }}" method="POST">
-                    {{ csrf_field() }}
-                    <button type="submit" class="btn btn-lg btn-danger" style="width: 100px">削除</button>
-                  </form>
-                </div>
-              @endif
+          <div class="d-flex justify-content-around mt-4 mb-4">
+            @if(Auth::id() == $challenge->user_id)
+            <!-- 編集ボタン -->
+            <div>
+              <button onclick="location.href='{{ route('challenges.edit', ['challenge_id' => $challenge->id]) }}'" class="btn btn-lg btn-success" style="width: 100px">編集</button>
             </div>
+            <!-- 削除ボタン -->
+            <div>
+              <form action="{{ route('challenges.delete', ['challenge_id' => $challenge->id]) }}" method="POST">
+                {{ csrf_field() }}
+                <button type="submit" class="btn btn-lg btn-danger" style="width: 100px">削除</button>
+              </form>
+            </div>
+            @endif
+          </div>
         </div>
       </div>
     </div>

@@ -16,6 +16,13 @@ class Challenge extends Model
 		return $this->belongsTo(Recipe::class);
 	}
 
+	//コメント関係↓
+	public function comments()
+	{
+		return $this->hasMany(Comment::class);
+	}
+
+	//いいね関係↓
 	public function favorites()
 	{
 		return $this->belongsToMany(User::class, 'favorites')->withTimestamps();

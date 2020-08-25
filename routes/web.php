@@ -42,8 +42,13 @@ Route::get('/favorite/{challenge}', 'FavoriteController@get');
 // レシピAPI
 Route::post('/recipes/searchByWord', 'RecipesController@searchByWord');
 
+//コメント関係↓
+Route::apiResource('/comments', 'CommentController');
+//チャレンジごとのコメント取得
+Route::get('/comments/challenge/{challenge_id}', 'CommentController@getChallengeComments');
+
 // トップページ（VueRouter使用）のルーティング 
 // ※ 他のルーティングに干渉しないように、このファイルの一番最後に記述すること
 Route::get('/{any}', function () {
-    return view('index');
+	return view('index');
 })->where('any', '.*');
