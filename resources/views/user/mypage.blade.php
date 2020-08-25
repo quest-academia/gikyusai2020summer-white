@@ -1,29 +1,26 @@
 @extends('layouts.user')
 
 @section('content')
-<div class="container background-color">
-  <div class="row">
-    <h2>{{ Auth::user()->name }}さんのマイページ</h2>
-  </div>
-</div>
 
-<div class="container">
-  <div class="row">
-
-    <div class="col-sm-3">
-      <div class="everyone_resipe">
-        <p class="padding-top text-center">登録情報</p>
-        <p>{{ Auth::user()->name }}さん</p>
-        <p>
-        ユーザーネームを変更する
-        <!-- モーダル 呼び出しボタン -->
-        <button type="button" data-toggle="modal" data-target="#renameModal">変更はこちら</button>
-        </p>
-        <p>他の方にイイねされている数</p>
-        <p class="inline padding_left2">イイね<img src="{{ asset('img/favorite.png') }}" width="30" height="30"alt=""></p>
-        <p class="inline">合計：{{ $followers }}</p>
-      </div>
+  <div class="container">
+    <div class="row">
+      <h2>{{ Auth::user()->name }}さんのマイページ</h2>
     </div>
+    <div class="row">
+      <div class="col-sm-3">
+        <div class="everyone_resipe">
+          <p class="padding-top text-center">登録情報</p>
+          <p>{{ Auth::user()->name }}さん</p>
+          <p>
+          ユーザーネームを変更する
+          <!-- モーダル 呼び出しボタン -->
+          <button type="button" data-toggle="modal" data-target="#renameModal">変更はこちら</button>
+          </p>
+          <p>他の方にイイねされている数</p>
+          <p class="inline padding_left2">イイね<img src="{{ asset('img/favorite.png') }}" width="30" height="30"alt=""></p>
+          <p class="inline">合計：{{ $followers }}</p>
+        </div>
+      </div>
 
     <!-- モーダルウィンドウの内容 -->
     <div class="modal fade" id="renameModal" tabindex="-1" role="dialog" aria-labelledby="renameModalLabel" aria-hidden="true">
@@ -61,76 +58,48 @@
     </div>
 
     <div class="repsipe_details col-sm-9">
-      <ul>
-        <li><h2>{{ Auth::user()->name }}さんが投稿・イイねしたリスト</h2></li>
-      </ul>
-      <!-- <div class="wrapper">
-        <ul>
-          <li><h3>投稿したレシピ</h3></li>
-        </ul>
-        <ul>
-          <li class="inline">
-            <img class="img-width" src="img/3416847_s.jpg" alt="" width="250" height="250">
-          </li>
-          <li class="inline">
-            アスパラベーコン巻き〇〇△△
-            <span class="padding_left2"><button type="submit">修正</button></span>
-          </li>
-        </ul>
-        <ul>
-          <a href="#" class="btn btn-outline-primary">投稿リスト一覧</a>
-        </ul>
-      </div> -->
-      <div class="wrapper">
-        <ul>
-          <li><h3>自分の作ってみた投稿</h3></li>
-        </ul>
-        @if(count($challenges)>0)
+  
+      <h2>{{ Auth::user()->name }}さんが投稿・イイねしたリスト</h2>
+    
+      <div class="d-flex flex-wrap justify-content-center">
+          @if(count($challenges)>0)
           @foreach ($challenges as $challenge)
-          <ul>
-            <li class="inline">
-              <img class="img-width" src="/storage/challenges_img/{{ $challenge->img }}" alt="" width="250" height="250">
-            </li>
-            <li class="inline">
-              {{ $challenge->recipe->name }}
-              <span class="padding_left2">
-                <button onclick="location.href='{{ route('challenges.edit', ['id' => $challenge->id]) }}'">修正</button>
-              </span>
-            </li>
-          </ul>
+        <div class="p-5 text-center">
+            <div class="">
+              <img class="img-fluid" src="/storage/challenges_img/{{ $challenge->img }}" alt="">
+            </div>
+            <div class="pt-3"><a href="{{route('challenges.show', ['id' => $challenge->id ])}}">{{ $challenge->recipe->name }}</a></div>
+            <div class="d-flex">
+              <button class=""><a href="{{ route('challenges.edit', ['challenge_id' => $challenge->id]) }}">修正</a></button>
+              <form action="{{ route('challenges.delete', ['challenge_id' => $challenge->id]) }}" class="mt-2" method="POST">
+              {{ csrf_field() }}
+              <button type="submit">削除</button>
+              </form>
+            </div>
+        </div>
           @endforeach
-          <!-- <ul>
-            <a href="#" class="btn btn-outline-primary">投稿リスト一覧</a>
-          </ul> -->
-        @else
-          <ul>現在、投稿された内容はありません。</ul>
-        @endif
+          @else
+          <h4>現在、イイねしてるものはありません。</h4>
+          @endif
       </div>
-      <div class="wrapper">
-        <ul>
-          <li><h3>自分がイイねした一覧</h3></li>
-        </ul>
-        @if(count($myFavors)>0)
+       
+      <h2>{{ Auth::user()->name }}さんがイイねした一覧</h2>
+
+
+      <div class="d-flex flex-wrap justify-content-center">
+          @if(count($myFavors)>0)
           @foreach ($myFavors as $myFavor)
-          <ul>
-            <li class="inline">
-              <img class="img-width" src="/storage/challenges_img/{{ $myFavor->img }}" alt="" width="250" height="250">
-            </li>
-            <li class="inline">
-              <!-- アスパラベーコン巻き〇〇△△ -->
-              {{ $myFavor->user->name }}さんの{{ $myFavor->recipe->name }}
-              <!-- <span class="padding_left2"><button type="submit">修正</button></span> -->
-            </li>
-          </ul>
+        <div class="p-5 text-center">
+            <div class="">
+              <img class="img-fluid" src="/storage/challenges_img/{{ $myFavor->img }}" alt="">
+            </div>
+            <div class="pt-3"><a href="{{route('challenges.show', ['id' => $myFavor->id ])}}">{{ $myFavor->user->name }}さんの{{ $myFavor->recipe->name }}</a></div>
+        </div>
           @endforeach
-          <!-- <ul>
-            <a href="#" class="btn btn-outline-primary">投稿リスト一覧</a>
-          </ul> -->
-        @else
-          <ul>現在、イイねしてるものはありません。</ul>
-        @endif
+          @else
+          <h4>現在、イイねしてるものはありません。</h4>
+          @endif
       </div>
     </div>
   </div>
-</div>
 @endsection
