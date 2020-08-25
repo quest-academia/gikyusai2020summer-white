@@ -84,8 +84,6 @@
       </div>
        
       <h2>{{ Auth::user()->name }}さんがイイねした一覧</h2>
-
-
       <div class="d-flex flex-wrap justify-content-center">
           @if(count($myFavors)>0)
           @foreach ($myFavors as $myFavor)
