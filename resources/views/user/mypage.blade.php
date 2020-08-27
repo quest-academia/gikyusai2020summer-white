@@ -4,20 +4,20 @@
 
   <div class="container">
     <div class="row">
-      <h2>{{ Auth::user()->name }}さんのマイページ</h2>
+      <p class="h2 p-5">{{ Auth::user()->name }}さんのマイページ</p>
     </div>
     <div class="row">
       <div class="col-sm-3">
-        <div class="everyone_resipe">
-          <p class="padding-top text-center">登録情報</p>
-          <p>{{ Auth::user()->name }}さん</p>
+        <div class="everyone_recipe">
+          <p class="pt-2 text-center font-weight-bold text-uppercase">登録情報</p>
+          <p class="h5 p-2">{{ Auth::user()->name }}さん</p>
           <p>
           ユーザーネームを変更する
           <!-- モーダル 呼び出しボタン -->
           <button type="button" data-toggle="modal" data-target="#renameModal">変更はこちら</button>
           </p>
-          <p>他の方にイイねされている数</p>
-          <p class="inline padding_left2">イイね<img src="{{ asset('img/favorite.png') }}" width="30" height="30"alt=""></p>
+          <p class="pt-3">他の方にイイねされている数</p>
+          <p class="inline">イイね<img src="{{ asset('img/favorite.png') }}" width="30" height="30"alt=""></p>
           <p class="inline">合計：{{ $followers }}</p>
         </div>
       </div>
@@ -57,16 +57,16 @@
       </div>
     </div>
 
-    <div class="repsipe_details col-sm-9">
+    <div class="recipe_details col-sm-9">
   
-      <h2>{{ Auth::user()->name }}さんが投稿・イイねしたリスト</h2>
+      <p class="h2 p-5">{{ Auth::user()->name }}さんが投稿したリスト</p>
     
       <div class="d-flex flex-wrap justify-content-center">
           @if(count($challenges)>0)
           @foreach ($challenges as $challenge)
         <div class="p-5 text-center">
             <div class="">
-              <img class="img-fluid" src="/storage/challenges_img/{{ $challenge->img }}" alt="">
+              <a href="{{route('challenges.show', ['id' => $challenge->id ])}}"><img class="img-fluid" src="/storage/challenges_img/{{ $challenge->img }}" alt=""></a>
             </div>
             <div class="pt-3"><a href="{{route('challenges.show', ['id' => $challenge->id ])}}">{{ $challenge->recipe->name }}</a></div>
             <div class="d-flex">
@@ -83,13 +83,13 @@
           @endif
       </div>
        
-      <h2>{{ Auth::user()->name }}さんがイイねした一覧</h2>
+      <p class="h2 p-5">{{ Auth::user()->name }}さんがイイねしたリスト</p>
       <div class="d-flex flex-wrap justify-content-center">
           @if(count($myFavors)>0)
           @foreach ($myFavors as $myFavor)
         <div class="p-5 text-center">
             <div class="">
-              <img class="img-fluid" src="/storage/challenges_img/{{ $myFavor->img }}" alt="">
+              <a href="{{route('challenges.show', ['id' => $myFavor->id ])}}"><img class="img-fluid" src="/storage/challenges_img/{{ $myFavor->img }}" alt=""></a>
             </div>
             <div class="pt-3"><a href="{{route('challenges.show', ['id' => $myFavor->id ])}}">{{ $myFavor->user->name }}さんの{{ $myFavor->recipe->name }}</a></div>
         </div>

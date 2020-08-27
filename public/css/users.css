@@ -30,21 +30,19 @@ img{
   height: auto;
 }
 
-.repsipe_details {
+.recipe_details {
   background-color: #fff;
   border: solid 4px #FEEDB5;
   border-radius: 35px;
 }
 
-.everyone_resipe {
+.everyone_recipe {
   background-color: #fff;
   border: solid 4px #FEEDB5;
   border-radius: 35px;
+  text-align: center;
 }
 
-/* .wrapper {
-  margin-top:5%;
-} */
 
 button {
   background-color: #c6f281;
@@ -60,18 +58,6 @@ button {
   display: inline-block;
 }
 
-ul {
-  list-style: none;
-}
-
-.padding-top {
-  padding-top: 7%;
-  font-weight: bold;
-}
-
-.padding_left2 {
-  margin-left:20px;
-}
 
 @media screen and (max-width: 480px) {
   .padding_left1 {
