@@ -5,6 +5,7 @@ import Vue from 'vue'
 import TopPage from "./components/TopPage.vue"
 import SearchResult from "./components/SearchResult.vue"
 import Favorite from './components/Favorite'
+import Comment from './components/Comment'
 
 // Vueルータコンポーネントの利用
 import VueRouter from 'vue-router'
@@ -46,6 +47,7 @@ const app = new Vue({
 	router,
 	store,
     components: {
-        Favorite
+        Favorite,
+        Comment,
     }
 });

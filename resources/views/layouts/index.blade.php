@@ -22,8 +22,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-    <!-- 「作ってみた」表示、投稿、修正ページ用のスタイルシート -->
-    <link href="{{ asset('css/challenges.css') }}" rel="stylesheet">
+    <!-- トップページ用のスタイルシート -->
+    <link href="{{ asset('css/top.css') }}" rel="stylesheet">
 </head>
 
 <body>
