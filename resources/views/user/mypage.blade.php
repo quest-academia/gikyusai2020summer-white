@@ -4,8 +4,9 @@
 
   <div class="container">
     <div class="row">
-      <p class="h2 p-5">{{ Auth::user()->name }}さんのマイページ</p>
+      <p class="h2 mx-auto p-3 p-sm-4">{{ Auth::user()->name }}さんのマイページ</p>
     </div>
+
     <div class="row">
       <div class="col-sm-3">
         <div class="everyone_recipe">
@@ -57,30 +58,42 @@
       </div>
     </div>
 
-    <div class="recipe_details col-sm-9">
-  
-      <p class="h2 p-5">{{ Auth::user()->name }}さんが投稿したリスト</p>
-    
+    <div class="recipe_details col-sm-9 m-3 m-sm-0 mb-sm-4">
+      <p class="h2 p-3 text-center">{{ Auth::user()->name }}さんが投稿したリスト</p>
       <div class="d-flex flex-wrap justify-content-center">
           @if(count($challenges)>0)
-          @foreach ($challenges as $challenge)
-        <div class="p-5 text-center">
-            <div class="">
-              <a href="{{route('challenges.show', ['id' => $challenge->id ])}}"><img class="img-fluid" src="/storage/challenges_img/{{ $challenge->img }}" alt=""></a>
-            </div>
-            <div class="pt-3"><a href="{{route('challenges.show', ['id' => $challenge->id ])}}" style="text-decoration: none;">{{ $challenge->recipe->name }}</a></div>
-            <div class="d-flex aline-items-center">
-              <button><a href="{{ route('challenges.edit', ['challenge_id' => $challenge->id]) }}" style="text-decoration: none;">修正</a></button>
-              <button onclick="location.href="{{ route('challenges.delete', ['challenge_id' => $challenge->id]) }}" style="color: #3490dc;">削除</button>  
-            </div>
-        </div>
-          @endforeach
+            @foreach ($challenges as $challenge)
+              <div class="mb-3 p-2 text-center">
+                <div>
+                  <a href="{{route('challenges.show', ['id' => $challenge->id ])}}">
+                    <img class="img-fluid" src="/storage/challenges_img/{{ $challenge->img }}" alt="">
+                  </a>
+                </div>
+                <div class="pt-3">
+                  <a href="{{route('challenges.show', ['id' => $challenge->id ])}}" style="text-decoration: none;">{{ $challenge->recipe->name }}</a>
+                </div>
+
+                <div class="d-flex aline-items-center mt-3">
+                  <!-- 編集ボタン -->
+                  <div class="mx-auto">
+                    <button onclick="location.href='{{ route('challenges.edit', ['challenge_id' => $challenge->id]) }}'" class="btn btn-lg btn-success" style="width: 100px">修正</button>
+                  </div>
+                  <!-- 削除ボタン -->
+                  <div class="mx-auto">
+                    <form action="{{ route('challenges.delete', ['challenge_id' => $challenge->id]) }}" method="POST">
+                      {{ csrf_field() }}
+                      <button type="submit" class="btn btn-lg btn-danger" style="width: 100px">削除</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            @endforeach
           @else
-          <h4>現在、イイねしてるものはありません。</h4>
+            <h4>現在、イイねしてるものはありません。</h4>
           @endif
       </div>
-       
-      <p class="h2 p-5">{{ Auth::user()->name }}さんがイイねしたリスト</p>
+
+      <p class="h2 p-3">{{ Auth::user()->name }}さんがイイねしたリスト</p>
       <div class="d-flex flex-wrap justify-content-center">
           @if(count($myFavors)>0)
           @foreach ($myFavors as $myFavor)

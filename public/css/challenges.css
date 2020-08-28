@@ -24,6 +24,19 @@
   border-bottom: dotted 0.1rem gray;
 }
 
+.comment_btn {
+  margin: 0 0 0 auto;
+  padding: 0.25rem;
+  background-color: #C6F281;
+  color: #5d5d5d;
+  border-radius: 15px;
+  border: none;
+}
+
+.text-success, .text-danger {
+  cursor: pointer;
+}
+
 /* 投稿・修正ページ関連 */
 .container {
   color: #5d5d5d;
