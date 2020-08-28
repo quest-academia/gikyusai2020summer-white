@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="text-left small font-weight-lighter">
+    <p class="text-left font-weight-lighter">
       {{ countComment }}件のコメント
       <a data-toggle="collapse" href="#comment">▼</a>
     </p>
@@ -10,11 +10,11 @@
       <!-- コメント入力欄 -->
       <div>
         <input type="text" v-model="comment" />
-        <button @click="addComment">コメント</button>
+        <button @click="addComment" class="comment_btn d-block mt-2 d-sm-inline">コメント</button>
       </div>
 
       <div class="comment" v-for="post in comments" :key="post.id">
-        <div class="user_date text-left">
+        <div class="user_date text-left mt-2">
           <span class="font-weight-bold">{{ post.user.name}}</span>
           <span class="font-weight-light">{{post.updated_at}}</span>
         </div>

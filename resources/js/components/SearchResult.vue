@@ -57,7 +57,7 @@
                 <span v-else-if="recipe.liqueur == 3">カクテル</span>
                 <span v-else>その他</span>
               </p>
-              <button class="challenge-button d-block mx-auto mt-4">みんなの作ってみた</button>
+              <button class="challenge-button d-block mx-auto mt-4">このレシピを見る</button>
             </div>
           </template>
         </div>
