@@ -68,13 +68,10 @@
             <div class="">
               <a href="{{route('challenges.show', ['id' => $challenge->id ])}}"><img class="img-fluid" src="/storage/challenges_img/{{ $challenge->img }}" alt=""></a>
             </div>
-            <div class="pt-3"><a href="{{route('challenges.show', ['id' => $challenge->id ])}}">{{ $challenge->recipe->name }}</a></div>
-            <div class="d-flex">
-              <button class=""><a href="{{ route('challenges.edit', ['challenge_id' => $challenge->id]) }}">修正</a></button>
-              <form action="{{ route('challenges.delete', ['challenge_id' => $challenge->id]) }}" class="mt-2" method="POST">
-              {{ csrf_field() }}
-              <button type="submit">削除</button>
-              </form>
+            <div class="pt-3"><a href="{{route('challenges.show', ['id' => $challenge->id ])}}" style="text-decoration: none;">{{ $challenge->recipe->name }}</a></div>
+            <div class="d-flex aline-items-center">
+              <button><a href="{{ route('challenges.edit', ['challenge_id' => $challenge->id]) }}" style="text-decoration: none;">修正</a></button>
+              <button onclick="location.href="{{ route('challenges.delete', ['challenge_id' => $challenge->id]) }}" style="color: #3490dc;">削除</button>  
             </div>
         </div>
           @endforeach
