@@ -57,7 +57,7 @@
                 <span v-else-if="recipe.liqueur == 3">カクテル</span>
                 <span v-else>その他</span>
               </p>
-              <button class="challenge-button d-block mx-auto mt-4">このレシピを見る</button>
+              <button class="challenge-button d-block mx-auto mt-4" v-on:click="locationChange('/recipes/show/' + recipe.id)">このレシピを見る</button>
             </div>
           </template>
         </div>
@@ -107,7 +107,14 @@ export default {
   },
   methods: {
     // store.jsにある検索ワード変換メソッドを持ってくる
-    ...mapMutations(["inputKeyword", "inputTime"]),
+    ...mapMutations([
+		"inputKeyword",
+		"inputTime"
+	]),
+	// 指定のURLに遷移させるメソッド
+	locationChange (url) {	
+		window.location = url;
+	},
     // キーワード検索メソッド
     searchByWord(word) {
       // 初期検索時は、必ず１ページ目を表示するように検索をかける
@@ -230,10 +237,6 @@ select {
   padding: 6px 12px;
   text-align: center;
   cursor: pointer;
-}
-
-.pagination li + li {
-  border-left: none;
 }
 
 .active {
