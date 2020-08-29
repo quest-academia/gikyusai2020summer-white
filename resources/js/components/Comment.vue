@@ -6,9 +6,8 @@
     </p>
     <!-- コメント一覧 -->
     <div class="collapse" id="comment">
-      <!-- !ログインしてたら -->
       <!-- コメント入力欄 -->
-      <div>
+      <div v-if="authorized">
         <input type="text" v-model="comment" />
         <button @click="addComment" class="comment_btn d-block mt-2 d-sm-inline">コメント</button>
       </div>
@@ -21,8 +20,8 @@
         <p class="content text-left">
           {{post.comment}}
           <!-- !userだったら -->
-          <a class="ml-3 text-success" @click="displayUpdate(post.id,post.comment)">編集</a>
-          <a class="text-danger" data-toggle="modal" data-target="#deleteModal" >削除</a>
+          <a class="ml-3 text-success" @click="displayUpdate(post.id,post.comment)" v-if="user_id === post.user.id">編集</a>
+          <a class="text-danger" data-toggle="modal" data-target="#deleteModal"  v-if="user_id === post.user.id" >削除</a>
         </p>
         <!-- 削除modal -->
         <div class="modal fade" id="deleteModal" tabindex="-1"
@@ -55,7 +54,14 @@ export default {
   props: {
     challengeId:{
       type: Number,
-    }
+    },
+    authorized:{
+      type: Boolean,
+      default: false
+    },
+    user_id:{
+      type: Number
+    },
   },
   data(){
     return{
