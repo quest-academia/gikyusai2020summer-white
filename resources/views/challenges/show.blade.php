@@ -32,7 +32,7 @@
             <!-- チャレンジレシピのID -->
             <favorite :first-favorite="@json($challenge->isFavoritedBy(Auth::user()))" :first-count-favorites="@json($challenge->countFavorites())" :authorized="@json(Auth::check())" :challenge-id="@json($challenge->id)">
             </favorite>
-            <comment :challenge-id="@json($challenge->id)">
+            <comment :challenge-id="@json($challenge->id)" :authorized="@json(Auth::check())" :user_id="@json(Auth::id())">
             </comment>
           </div>
 

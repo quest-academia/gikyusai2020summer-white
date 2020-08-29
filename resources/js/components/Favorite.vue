@@ -29,7 +29,7 @@ export default {
       type: Number,
       default: 0
     },
-    autrhorized: {
+    authorized: {
       type: Boolean,
       default: false,
     },
@@ -48,10 +48,10 @@ export default {
     // いいね追加メソッド
     addFavorite(){
       // !ログインしてない人は押せないように
-      // if(!this.autrhorized){
-      //   alert('ログインしてから推してね');
-      //   return
-      // }
+      if(!this.authorized){
+        alert('ログインしてから推してね');
+        return
+      }
       axios
       .put('/favorite',{
         challenge_id: this.challengeId,
@@ -63,11 +63,6 @@ export default {
     },
     // いいね削除メソッド
     removeFavorite(){
-      // !ログインしてない人は押せないように
-      // if(!this.autrhorized){
-      //   alert('ログインしてから推してね');
-      //   return
-      // }
       axios
       .put('/unfavorite',{
         challenge_id: this.challengeId,
